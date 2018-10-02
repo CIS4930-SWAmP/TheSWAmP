@@ -1,0 +1,6 @@
+SHOW TABLES;
+DROP TABLE IF EXISTS products, customers, orders;
+SHOW TABLES;
+CREATE TABLE products(id SERIAL, name VARCHAR(255));
+CREATE TABLE customers(id INT, fname VARCHAR(255), lname VARCHAR(255));
+SHOW TABLES;
