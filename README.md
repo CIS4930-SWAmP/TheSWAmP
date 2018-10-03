@@ -22,7 +22,7 @@ spring.datasource.password=ThePassword
 ```
 
 3. Implement the following REST API
-   1.Example URI: http://localhost:8080/<< yourAppName >>/store/items/jdoe
+   - Example URI: http://localhost:8080/<< yourAppName >>/store/items/jdoe
 ```
 Request: GET /items/{username}
 Request body: (empty)
@@ -34,9 +34,8 @@ Response body:
     "email": "jdoe@gmail.com"
 }
 ```
-2. Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&email=jdoe@gmail.com
-
-
+   - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&email=jdoe@gmail.com
+```
 Request: POST /customers
 Request body:
 {
@@ -46,15 +45,23 @@ Request body:
     "email": "jdoe@gmail.com"
 }
 Response body: (empty)
+```
 
-
-
-
-REST API
-list all items
-  /items
-list items by keyword
-  /items/:keyword
+#### Additional REST API function
+   - list all items
+```
+Request: GET /items
+Request body: (empty)
+Response body:
+[
+{
+},
+{
+}
+]
+```
+   -list items by keyword
+  /items/{keyword}
 
 list item by id
   /items/:id
