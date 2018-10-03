@@ -6,15 +6,15 @@ Implement a RESTful Web Service for your online store.  The product and user dat
 ### Technologies and Languages needed
 1. MySQL - for storing and retrieving data in the to and from your model.
 2. Java
-   a. JDBC - to connect your Data Access Object layer classes to your MySQL database. (See Spring JDBC tutorial
-   b. Jersey RESTful Web Services framework (https://jersey.github.io/) - standard and portable JAX-RS API 
+   - JDBC - to connect your Data Access Object layer classes to your MySQL database. (See Spring JDBC tutorial
+   - Jersey RESTful Web Services framework (https://jersey.github.io/) - standard and portable JAX-RS API 
 3. Apache Tomcat - to run your RESTful Web Service
 4. Postman (or similar) - to test your REST API implementation
 
 ### Assignment
 1. GitHub - Clone shared, public repository and create personal, private repository for this project.
 2. MySQL set up
-   a. See { spring tutorial } for database and user set up instructions
+   - See { spring tutorial } for database and user set up instructions
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/db_store
 spring.datasource.username=springuser
@@ -22,7 +22,7 @@ spring.datasource.password=ThePassword
 ```
 
 3. Implement the following REST API
-   - Example URI: http://localhost:8080/<< yourAppName >>/store/items/jdoe
+   - Example URI: http://localhost:8080/<< yourAppName >>/store/customers/jdoe
 ```
 Request: GET /items/{username}
 Request body: (empty)
@@ -34,7 +34,7 @@ Response body:
     "email": "jdoe@gmail.com"
 }
 ```
-   - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&email=jdoe@gmail.com
+   - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&username=jdoe&email=jdoe@gmail.com
 ```
 Request: POST /customers
 Request body:
