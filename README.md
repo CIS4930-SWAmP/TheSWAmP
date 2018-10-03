@@ -12,23 +12,18 @@ Implement a RESTful Web Service for your online store.  The product and user dat
 4. Postman (or similar) - to test your REST API implementation
 
 ### Assignment
-1. GitHub - Clone shared, public repository and create personal, private repo for this project.
-	
-
-
-MySQL set up
-   a. See <spring tutorial> for database and user set up instructions
+1. GitHub - Clone shared, public repository and create personal, private repository for this project.
+2. MySQL set up
+   a. See { spring tutorial } for database and user set up instructions
+```
 spring.datasource.url=jdbc:mysql://localhost:3306/db_store
 spring.datasource.username=springuser
 spring.datasource.password=ThePassword
+```
 
-Submission
-
-
-Example formats for spec
-1.
-Example URI: http://localhost:8080/<<yourAppName>>/store/items/jdoe
-
+3. Implement the following REST API
+   1.Example URI: http://localhost:8080/<< yourAppName >>/store/items/jdoe
+```
 Request: GET /items/{username}
 Request body: (empty)
 Response body:
@@ -38,9 +33,8 @@ Response body:
     "username: "jdoe",
     "email": "jdoe@gmail.com"
 }
-
-2.
-Postman Example URI: http://localhost:8080/<yourAppName>/store/customers?fname=Jane&lname=Doe&email=jdoe@gmail.com
+```
+2. Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&email=jdoe@gmail.com
 
 
 Request: POST /customers
@@ -79,6 +73,7 @@ buy item (remove from shopping cart and product list)
 list users who bought a specific product
 list products bought by a user
 
+### Submission
 
 
 * Tutorials
