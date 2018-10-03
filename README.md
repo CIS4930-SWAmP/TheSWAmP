@@ -27,7 +27,7 @@ Submission
 
 Example formats for spec
 1.
-Example URI: http://localhost:8080/<yourAppName>/store/items/jdoe
+Example URI: http://localhost:8080/<<yourAppName>>/store/items/jdoe
 
 Request: GET /items/{username}
 Request body: (empty)
