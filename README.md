@@ -80,8 +80,10 @@ buy item (remove from shopping cart and product list)
 list users who bought a specific product
 list products bought by a user
 
+### Tutorials
+- REST Best practices - https://code-maze.com/top-rest-api-best-practices/
+
 ### Submission
 
 
-* Tutorials
-REST Best practices - https://code-maze.com/top-rest-api-best-practices/
+
