@@ -22,33 +22,69 @@ spring.datasource.password=ThePassword
 ```
 
 3. Implement the following REST API
-   - Example URI: http://localhost:8080/<< yourAppName >>/store/customers/jdoe
+- lookup user
+  - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers/jdoe
 ```
-Request: GET /items/{username}
+Request: GET /customers/{username}
 Request body: (empty)
 Response body:
 {
     "fname": "Jane",
     "lname": "Doe",
-    "username: "jdoe",
+    "username": "jdoe",
     "email": "jdoe@gmail.com"
 }
 ```
-   - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&username=jdoe&email=jdoe@gmail.com
+- create user 
+  - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers?fname=Jane&lname=Doe&username=jdoe&email=jdoe@gmail.com
 ```
 Request: POST /customers
 Request body:
 {
     "fname": "Jane",
     "lname": "Doe",
-    "username: "jdoe",
+    "username": "jdoe",
     "email": "jdoe@gmail.com"
 }
 Response body: (empty)
 ```
 
 #### Additional REST API function
-   - list all items
+
+- create user 
+```
+Request: POST /customers
+Request body:
+{
+    "fname": "Jane",
+    "lname": "Doe",
+    "username": "jdoe",
+    "email": "jdoe@gmail.com"
+}
+Response body: (empty)
+```
+
+- update user
+```
+Request: PUT /customers
+Request body:
+{
+    "fname": "Jane",
+    "lname": "Doe",
+    "username": "jdoe",
+    "email": "jdoe@gmail.com"
+}
+Response body: (empty)
+```
+
+- delete user
+```
+Request: DELETE /customers/{username}
+Request body: (empty)
+Response body: (empty)
+```
+
+- list all items
 ```
 Request: GET /items
 Request body: (empty)
@@ -60,30 +96,100 @@ Response body:
 }
 ]
 ```
-   -list items by keyword
-  /items/{keyword}
 
-list item by id
-  /items/:id
+- list items by keyword
+```
+Request: GET /items/search/{keyword}
+Request body: (empty)
+Response body:
+[
+{
+},
+{
+}
+]
+```
 
-create user 
-update user
-delete user
+- list item by id
+```
+Request: GET /items/{id}
+Request body: (empty)
+Response body:
+{
+}
+```
+
+- add item to shoping cart
+```
+Request: POST /carts
+Request body:
+{
+    "productId": 123,
+    "username": "jdoe"
+}
+Response body: (empty)
+```
+
+- list items in user's shopping cart
+```
+Request: GET /carts
+Request body:
+{
+    "username: "jdoe",
+
+}
+Response body: (empty)
+```
+
+- remove item from shopping cart
+```
+Request: DELETE /carts
+Request body:
+{
+    "fname": "Jane",
+    "lname": "Doe",
+    "username: "jdoe",
+    "email": "jdoe@gmail.com"
+}
+Response body: (empty)
+```
+
+- buy item (adjust shopping cart status and product list count)
+```
+Request: POST /carts/purchase/{cartId}
+Request body: (empty)
+Response body: (empty)
+```
 
 
-add item to shoping cart
-list items in user's shopping cart
-remove item from shopping cart
-buy item (remove from shopping cart and product list)
-
-
-list users who bought a specific product
-list products bought by a user
+- list users who bought a specific product
+```
+Request: POST /carts
+Request body:
+{
+    "fname": "Jane",
+    "lname": "Doe",
+    "username: "jdoe",
+    "email": "jdoe@gmail.com"
+}
+Response body: (empty)
+```
+- list products bought by a user
+```
+Request: GET /carts
+Request body:
+{ 
+    "username: "jdoe"
+}
+Response body: (empty)
+```
 
 ### Tutorials
 - REST Best practices - https://code-maze.com/top-rest-api-best-practices/
 
 ### Submission
 
-
+1. In GitHub, upload all code, and add the TAs as collaborators (CIS4930WepAppTA).
+   - Do NOT make changes after the deadline. We will use the final timestamp as the submission time.
+2. In Canvas, provide your GitHub username and a link to this project’s repository.
 
