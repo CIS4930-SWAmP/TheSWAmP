@@ -6,10 +6,11 @@ Implement a RESTful Web Service for your online store.  The product and user dat
 ### Technologies and Languages needed
 1. MySQL - for storing and retrieving data in the to and from your model.
 2. Java
-   - JDBC - to connect your Data Access Object layer classes to your MySQL database. (See Spring JDBC tutorial
-   - Jersey RESTful Web Services framework (https://jersey.github.io/) - standard and portable JAX-RS API 
+   - JDBC - to connect your Data Access Object layer classes to your MySQL database. 
+      - [Spring JDBC tutorial] ()
+   - [Jersey] (https://jersey.github.io/) RESTful Web Services framework - standard and portable JAX-RS API 
 3. Apache Tomcat - to run your RESTful Web Service
-4. Postman (or similar) - to test your REST API implementation
+4. [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) (or similar) - to test your REST API implementation
 
 ### Assignment
 1. GitHub - Clone shared, public repository and create personal, private repository for this project.
@@ -22,6 +23,8 @@ spring.datasource.password=ThePassword
 ```
 
 3. Implement the following REST API
+The core of this project revolves around your RESTful Web Service taking the given input and returning the expected content.  The implementation of your controller(s), data access layer, and model will vary from student to student.
+
 - lookup user
   - Postman Example URI: http://localhost:8080/< yourAppName >/store/customers/jdoe
 ```
@@ -91,8 +94,28 @@ Request body: (empty)
 Response body:
 [
 {
+       "itemId": 107,
+        "name": "Rose Cottage Girls' Hunter Green  Jacket Dress",
+        "msrp": 20.0,
+        "salePrice": 11.6,
+        "upc": "048238056017",
+        "shortDescription": "Paired with its' trendy jacket or worn alone, this dress will go anywhere in style.",
+        "brandName": "Generic",
+        "size": "16",
+        "color": "Red",
+        "gender": "Male"
 },
 {
+       "itemId": 109,
+        "name": "Blue Sweater",
+        "msrp": 20.0,
+        "salePrice": 11.6,
+        "upc": "048238056019",
+        "shortDescription": "Trendy sweater.",
+        "brandName": "Generic",
+        "size": "08",
+        "color": "Blue",
+        "gender": "Female"
 }
 ]
 ```
@@ -104,8 +127,28 @@ Request body: (empty)
 Response body:
 [
 {
+       "itemId": 107,
+        "name": "Rose Cottage Girls' Hunter Green  Jacket Dress",
+        "msrp": 20.0,
+        "salePrice": 11.6,
+        "upc": "048238056017",
+        "shortDescription": "Paired with its' trendy jacket or worn alone, this dress will go anywhere in style.",
+        "brandName": "Generic",
+        "size": "16",
+        "color": "Red",
+        "gender": "Male"
 },
 {
+       "itemId": 109,
+        "name": "Blue Sweater",
+        "msrp": 20.0,
+        "salePrice": 11.6,
+        "upc": "048238056019",
+        "shortDescription": "Trendy sweater.",
+        "brandName": "Generic",
+        "size": "08",
+        "color": "Blue",
+        "gender": "Female"
 }
 ]
 ```
@@ -116,10 +159,20 @@ Request: GET /items/{id}
 Request body: (empty)
 Response body:
 {
+       "itemId": 107,
+        "name": "Rose Cottage Girls' Hunter Green  Jacket Dress",
+        "msrp": 20.0,
+        "salePrice": 11.6,
+        "upc": "048238056017",
+        "shortDescription": "Paired with its' trendy jacket or worn alone, this dress will go anywhere in style.",
+        "brandName": "Generic",
+        "size": "16",
+        "color": "Red",
+        "gender": "Male"
 }
 ```
 
-- add item to shoping cart
+- add item to shoping cart (Hint: If no current cart exists for this user, create at cart first).
 ```
 Request: POST /carts
 Request body:
@@ -130,15 +183,33 @@ Request body:
 Response body: (empty)
 ```
 
-- list items in user's shopping cart
+- show user's shopping cart
 ```
 Request: GET /carts
 Request body:
 {
     "username: "jdoe",
-
 }
-Response body: (empty)
+Response body:
+[
+{
+   "cartId": 002,
+   "items":[
+     {
+      "productId":123,
+      "productName": "Blue sweater",
+      "msrp": 20.99,
+      "salePrice": 15.99
+     },
+     {
+      "productId":125,
+      "productName": "Red sweater",
+      "msrp": 20.99,
+      "salePrice": 15.99
+     }
+   ]
+}
+]
 ```
 
 - remove item from shopping cart
@@ -146,17 +217,15 @@ Response body: (empty)
 Request: DELETE /carts
 Request body:
 {
-    "fname": "Jane",
-    "lname": "Doe",
-    "username: "jdoe",
-    "email": "jdoe@gmail.com"
+   "cartId": 002,
+   "productId":123
 }
 Response body: (empty)
 ```
 
-- buy item (adjust shopping cart status and product list count)
+- buy item (adjust shopping cart status and product list/count)
 ```
-Request: POST /carts/purchase/{cartId}
+Request: PUT /carts/purchase/{cartId}
 Request body: (empty)
 Response body: (empty)
 ```
@@ -164,13 +233,10 @@ Response body: (empty)
 
 - list users who bought a specific product
 ```
-Request: POST /carts
+Request: GET /carts
 Request body:
 {
-    "fname": "Jane",
-    "lname": "Doe",
-    "username: "jdoe",
-    "email": "jdoe@gmail.com"
+  "productID":123
 }
 Response body: (empty)
 ```
@@ -191,5 +257,6 @@ Response body: (empty)
 
 1. In GitHub, upload all code, and add the TAs as collaborators (CIS4930WepAppTA).
    - Do NOT make changes after the deadline. We will use the final timestamp as the submission time.
+   - If you are not using Maven as your build tool, you must submit a comparable config file and clear, complete steps to build.
 2. In Canvas, provide your GitHub username and a link to this project’s repository.
 
