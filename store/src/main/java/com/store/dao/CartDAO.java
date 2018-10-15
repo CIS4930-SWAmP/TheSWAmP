@@ -95,6 +95,23 @@ public class CartDAO {
 
     //Works
     public boolean removeItem(int itemId, int cartId){
+        Cart cart = new Cart();
+        String query = "Select cartId from carts where cartId =" + cartId + " AND purchased = false";
+        try {
+            this.jdbcTemplate.queryForObject(
+                    query, new RowMapper<Cart>() {
+                        @Override
+                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            cart.setCartId(rs.getInt(1));
+                            return cart;
+                        }
+                    });
+        }
+        //No cart exists with that item
+        catch(EmptyResultDataAccessException e){
+            return false;
+        }
+
         if(jdbcTemplate.update("Delete from cart_items where cartId = ? and itemId = ?", cartId, itemId) > 0){
             return true;
         }
@@ -162,6 +179,26 @@ public class CartDAO {
                 (rs, rowNum) -> new String(rs.getString("username"))).forEach(String -> users.add(String));
     }
     return users;
+    }
+
+    public int getCartId(String username){
+        Cart cart = new Cart(username);
+        String query = "Select cartID from carts where username ='" + cart.getUsername() + "'AND purchased = false";
+
+        try {
+            this.jdbcTemplate.queryForObject(
+                    query, new RowMapper<Cart>() {
+                        @Override
+                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            cart.setCartId(rs.getInt(1));
+                            return cart;
+                        }
+                    });
+        }
+        catch(EmptyResultDataAccessException e){
+            return 0;
+        }
+        return cart.getCartId();
     }
 
     public DriverManagerDataSource getDataSource() {

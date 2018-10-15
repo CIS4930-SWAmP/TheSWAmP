@@ -2,10 +2,12 @@ package com.store.dao;
 
 import com.store.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.support.xml.SqlXmlFeatureNotImplementedException;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
@@ -32,10 +34,13 @@ public class CustomerDAO {
     public Boolean createCustomer(Customer customer){
         String insert = "INSERT INTO customers (fname, lname, username, email)"
                 + " VALUES (?, ?, ?, ?)";
-        if(jdbcTemplate.update(insert, customer.getFName(), customer.getLName(), customer.getUsername(), customer.getEmail()) > 0)
+        try{
+            jdbcTemplate.update(insert, customer.getFName(), customer.getLName(), customer.getUsername(), customer.getEmail());
+        }
+        catch (DataIntegrityViolationException e){
+            return false;
+        }
         return true;
-
-        return false;
     }
 
     //Works

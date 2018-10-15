@@ -35,15 +35,6 @@ public class ProductController extends HttpServlet  {
     }
 
 
-
-    @GET
-    @Path("/hello/{param}")
-    public Response getMsg(@PathParam("param") String msg) {
-        String output = productService.getMsg(msg);
-
-        return Response.status(200).entity(output).build();
-    }
-
     //List all items
     @GET
     @Path("")

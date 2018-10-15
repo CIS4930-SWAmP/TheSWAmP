@@ -45,7 +45,7 @@ public class CustomerController extends HttpServlet{
         if(customerService.createCustomer(fname, lname, username, email)) {
             return Response.status(200).build();
         }
-        return Response.status(400).build();
+        return Response.status(409).build();
     }
 
     @PUT

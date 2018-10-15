@@ -116,7 +116,7 @@ public class Product {
 
     @Override
     public java.lang.String toString() {
-        return "Product{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", msrp=" + msrp +
@@ -127,6 +127,15 @@ public class Product {
                 ", size='" + size + '\'' +
                 ", color='" + color + '\'' +
                 ", gender='" + gender + '\'' +
+                '}';
+    }
+
+    public String toStringShort(){
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", msrp=" + msrp +
+                ", salePrice=" + salePrice +
                 '}';
     }
 }

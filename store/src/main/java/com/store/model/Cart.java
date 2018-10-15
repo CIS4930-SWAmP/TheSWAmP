@@ -10,6 +10,10 @@ public class Cart {
     String username;
     Collection<Product> products;
 
+    public Cart() {
+        cartId = -1;
+    }
+
     public Cart(int cartId, int custId, boolean isPurchased, String username) {
         this.cartId = cartId;
         this.custId = custId;
@@ -76,7 +80,7 @@ public class Cart {
 
     @Override
     public String toString() {
-        return "Cart{" +
+        return "{" +
                 "cartId=" + cartId +
                 ", custId=" + custId +
                 ", isPurchased=" + isPurchased +
