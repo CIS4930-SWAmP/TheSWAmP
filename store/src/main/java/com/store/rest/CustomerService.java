@@ -28,9 +28,16 @@ public class CustomerService {
 
     public boolean updateCustomer(String fname, String lname, String username, String email){
         Customer customer = customerDAO.getCustomerByUsername(username);
-        customer.setFName(fname);
-        customer.setLName(lname);
-        customer.setEmail(email);
-        return customerDAO.updateCustomer(customer);
+        if (customer!= null) {
+            customer.setFName(fname);
+            customer.setLName(lname);
+            customer.setEmail(email);
+            return customerDAO.updateCustomer(customer);
+        }
+        return false;
+    }
+
+    public boolean deleteCustomer(String username){
+        return customerDAO.deleteCustomer(username);
     }
 }

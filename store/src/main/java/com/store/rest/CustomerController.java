@@ -35,31 +35,37 @@ public class CustomerController extends HttpServlet{
         return customerService.getCustomer(username);
     }
 
-//    @POST
-//    @Path("")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response createCustomer(
-//            @QueryParam("fname") String fname,
-//            @QueryParam("lname") String lname,
-//            @QueryParam("username") String username,
-//            @QueryParam("email") String email){
-//        if(customerService.createCustomer(fname, lname, username, email)) {
-//            return Response.status(200).entity("hi").build();
-//        }
-//        return Response.status(400).build();
-//    }
+    @POST
+    @Path("")
+    public Response createCustomer(
+            @QueryParam("fname") String fname,
+            @QueryParam("lname") String lname,
+            @QueryParam("username") String username,
+            @QueryParam("email") String email){
+        if(customerService.createCustomer(fname, lname, username, email)) {
+            return Response.status(200).build();
+        }
+        return Response.status(400).build();
+    }
 
-//    @PUT
-//    @Path("")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response updateCustomer(
-//            @QueryParam("fname") String fname,
-//            @QueryParam("lname") String lname,
-//            @QueryParam("username") String username,
-//            @QueryParam("email") String email){
-//        if(customerService.updateCustomer(fname, lname, username, email)){
-//            return Response.status(200).build();
-//        }
-//        return Response.status(400).build();
-//    }
+    @PUT
+    @Path("")
+    public Response updateCustomer(
+            @QueryParam("fname") String fname,
+            @QueryParam("lname") String lname,
+            @QueryParam("username") String username,
+            @QueryParam("email") String email){
+        if(customerService.updateCustomer(fname, lname, username, email)){
+            return Response.status(200).build();
+        }
+        return Response.status(400).build();
+    }
+
+    @DELETE
+    @Path("{username}")
+    public Response deleteCustomer(@PathParam("username") String username){
+        if(customerService.deleteCustomer(username))
+            return Response.status(200).build();
+        return Response.status(400).build();
+    }
 }
