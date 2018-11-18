@@ -1,20 +1,18 @@
 package com.store.dao;
 
-import com.store.model.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.store.model.Ticket;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.support.xml.SqlXmlFeatureNotImplementedException;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
-public class CustomerDAO {
+public class TicketDAO {
 
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
@@ -22,20 +20,20 @@ public class CustomerDAO {
     private static final String dbUsername = "springuser";
     private static final String dbPassword = "ThePassword";
 
-    public CustomerDAO() {
+    public TicketDAO() {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
 
-    public CustomerDAO(JdbcTemplate jdbcTemp) {
+    public TicketDAO(JdbcTemplate jdbcTemp) {
         this.jdbcTemplate = jdbcTemp;
     }
 
     //Works
-    public Boolean createCustomer(Customer customer){
+    public Boolean createCustomer(Ticket ticket){
         String insert = "INSERT INTO customers (fname, lname, username, email)"
                 + " VALUES (?, ?, ?, ?)";
         try{
-            jdbcTemplate.update(insert, customer.getFName(), customer.getLName(), customer.getUsername(), customer.getEmail());
+            jdbcTemplate.update(insert, ticket.getFName(), ticket.getLName(), ticket.getUsername(), ticket.getEmail());
         }
         catch (DataIntegrityViolationException e){
             return false;
@@ -44,21 +42,21 @@ public class CustomerDAO {
     }
 
     //Works
-    public Customer getCustomerByUsername(String username){
-        Customer customer = new Customer(username);
+    public Ticket getCustomerByUsername(String username){
+        Ticket ticket = new Ticket(username);
 
         //Check if user exits
         String query ="SELECT id, fname, lname, email FROM customers where username=\"" + username+"\"";
         try {
             return this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Customer>() {
+                    query, new RowMapper<Ticket>() {
                         @Override
-                        public Customer mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            customer.setId(rs.getInt(1));
-                            customer.setFName(rs.getString(2));
-                            customer.setLName(rs.getString(3));
-                            customer.setEmail(rs.getString(4));
-                            return customer;
+                        public Ticket mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            ticket.setId(rs.getInt(1));
+                            ticket.setFName(rs.getString(2));
+                            ticket.setLName(rs.getString(3));
+                            ticket.setEmail(rs.getString(4));
+                            return ticket;
                         }
                     });
         }
@@ -68,9 +66,9 @@ public class CustomerDAO {
     }
 
     //Works
-    public Boolean updateCustomer(Customer customer){
+    public Boolean updateCustomer(Ticket ticket){
         String sqlUpdate = "UPDATE customers set fname=?, lname=?, username=?, email=? where id=?";
-        if(jdbcTemplate.update(sqlUpdate, customer.getFName(), customer.getLName(), customer.getUsername(), customer.getEmail(), customer.getId()) > 0)
+        if(jdbcTemplate.update(sqlUpdate, ticket.getFName(), ticket.getLName(), ticket.getUsername(), ticket.getEmail(), ticket.getId()) > 0)
             return true;
         return false;
     }

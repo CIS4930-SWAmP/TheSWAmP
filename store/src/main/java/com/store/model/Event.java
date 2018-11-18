@@ -2,7 +2,7 @@ package com.store.model;
 
 import java.util.Collection;
 
-public class Product {
+public class Event {
     private int id;
     private String name;
     private double msrp;
@@ -14,7 +14,7 @@ public class Product {
     private String color;
     private String gender;
 
-    public Product(int id, String name, double msrp, double salePrice, int upc, String desc, String brand, String size, String color, String gender) {
+    public Event(int id, String name, double msrp, double salePrice, int upc, String desc, String brand, String size, String color, String gender) {
         this.id = id;
         this.name = name;
         this.msrp = msrp;
@@ -27,10 +27,10 @@ public class Product {
         this.gender = gender;
     }
 
-    public Product() {
+    public Event() {
     }
 
-    public Product(int id) {
+    public Event(int id) {
         this.id = id;
     }
 

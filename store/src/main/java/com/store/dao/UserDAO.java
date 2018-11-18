@@ -1,9 +1,7 @@
 package com.store.dao;
 
-import com.store.model.Cart;
-import com.store.model.Customer;
-import com.store.model.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.store.model.User;
+import com.store.model.Event;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -16,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Component
-public class CartDAO {
+public class UserDAO {
 
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
@@ -24,90 +22,90 @@ public class CartDAO {
     private static final String dbUsername = "springuser";
     private static final String dbPassword = "ThePassword";
 
-    public CartDAO() {
+    public UserDAO() {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
-    public CartDAO(JdbcTemplate jdbcTemp) {
+    public UserDAO(JdbcTemplate jdbcTemp) {
         this.jdbcTemplate = jdbcTemp;
     }
 
     //Works
-    public Cart addItem(String username, int itemId){
+    public User addItem(String username, int itemId){
 
-        Cart cart = new Cart(username);
-        String query = "Select cartID from carts where username ='" + cart.getUsername() + "'AND purchased = false";
+        User user = new User(username);
+        String query = "Select cartID from carts where username ='" + user.getUsername() + "'AND purchased = false";
 
         try {
             this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Cart>() {
+                    query, new RowMapper<User>() {
                         @Override
-                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            cart.setCartId(rs.getInt(1));
-                            return cart;
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setCartId(rs.getInt(1));
+                            return user;
                         }
                     });
         }
-        //If cart does not exist create one
+        //If user does not exist create one
         catch(EmptyResultDataAccessException e){
             String insert = "INSERT INTO carts (username, purchased) VALUES (?,false)";
             jdbcTemplate.update(insert,username);
-            //Get new cart id
+            //Get new user id
             this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Cart>() {
+                    query, new RowMapper<User>() {
                         @Override
-                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            cart.setCartId(rs.getInt(1));
-                            return cart;
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setCartId(rs.getInt(1));
+                            return user;
                         }
                     });
         }
 
-        //Add item to cart
+        //Add item to user
         String insert = "insert into cart_items(cartId, itemID) values(?,?)";
-        jdbcTemplate.update(insert, cart.getCartId(), itemId);
-       return cart;
+        jdbcTemplate.update(insert, user.getCartId(), itemId);
+       return user;
     }
 
     //Works
-    public Collection<Product> getCartByUsername(String username){
-        Collection<Product> products = new ArrayList<Product>();
-        Cart cart = new Cart(username);
-        ProductDAO productDAO = new ProductDAO(jdbcTemplate);
+    public Collection<Event> getCartByUsername(String username){
+        Collection<Event> events = new ArrayList<Event>();
+        User user = new User(username);
+        EventDAO eventDAO = new EventDAO(jdbcTemplate);
         String query = "Select cartID from carts where username ='" + username + "'AND purchased = false";
 
         try {
             this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Cart>() {
+                    query, new RowMapper<User>() {
                         @Override
-                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            cart.setCartId(rs.getInt(1));
-                            return cart;
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setCartId(rs.getInt(1));
+                            return user;
                         }
                     });
         }
-        //No cart exists
+        //No user exists
         catch(EmptyResultDataAccessException e){
            return null;
         }
 
-        return getCartById(cart.getCartId());
+        return getCartById(user.getCartId());
     }
 
     //Works
     public boolean removeItem(int itemId, int cartId){
-        Cart cart = new Cart();
+        User user = new User();
         String query = "Select cartId from carts where cartId =" + cartId + " AND purchased = false";
         try {
             this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Cart>() {
+                    query, new RowMapper<User>() {
                         @Override
-                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            cart.setCartId(rs.getInt(1));
-                            return cart;
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setCartId(rs.getInt(1));
+                            return user;
                         }
                     });
         }
-        //No cart exists with that item
+        //No user exists with that item
         catch(EmptyResultDataAccessException e){
             return false;
         }
@@ -120,13 +118,13 @@ public class CartDAO {
 
     //Buy Item
     public boolean buyCart(int cartId){
-        //Update Cart Status
+        //Update User Status
 
         String update = "update carts set purchased= true where cartId=?";
         if(jdbcTemplate.update(update, cartId) > 0){
             //Update Products table
-            Collection<Product> products = getCartById(cartId);
-            for(Product p : products){
+            Collection<Event> events = getCartById(cartId);
+            for(Event p : events){
                 jdbcTemplate.update("UPDATE products set stocked=false where itemId=?", p.getId());
             }
             return true;
@@ -134,46 +132,46 @@ public class CartDAO {
         else return false;
     }
 
-    public Collection<Product> getCartById(int cartId){
-        Collection<Product> products = new ArrayList<Product>();
-        ProductDAO productDAO = new ProductDAO(jdbcTemplate);
+    public Collection<Event> getCartById(int cartId){
+        Collection<Event> events = new ArrayList<Event>();
+        EventDAO eventDAO = new EventDAO(jdbcTemplate);
 
         //Get item details
         this.jdbcTemplate.query(
                 "SELECT itemID FROM cart_items where cartId =" + cartId, new Object[] { },
-                (rs, rowNum) -> new Product(rs.getInt("itemId"))
-        ).forEach(product -> products.add(productDAO.getProductByIdMin(product.getId())));
+                (rs, rowNum) -> new Event(rs.getInt("itemId"))
+        ).forEach(product -> events.add(eventDAO.getProductByIdMin(product.getId())));
 
-        return products;
+        return events;
     }
 
     //getItems Bought by customer
-    public Collection<Product> itemsBoughtByUser(String username){
-        Collection<Product> products = new ArrayList<Product>();
-        Collection<Cart> pastPurchases = new ArrayList<Cart>();
+    public Collection<Event> itemsBoughtByUser(String username){
+        Collection<Event> events = new ArrayList<Event>();
+        Collection<User> pastPurchases = new ArrayList<User>();
 
         //Find Purchased Carts
         this.jdbcTemplate.query(
                 "SELECT cartId FROM carts where username=\""+ username +"\"and purchased=true", new Object[] { },
-                (rs, rowNum) -> new Cart(rs.getInt("cartId"))).forEach(cart -> pastPurchases.add(cart));
+                (rs, rowNum) -> new User(rs.getInt("cartId"))).forEach(user -> pastPurchases.add(user));
 
-        for(Cart c : pastPurchases){
-                ((ArrayList<Product>) products).addAll(products.size(),getCartById(c.getCartId()));
+        for(User c : pastPurchases){
+                ((ArrayList<Event>) events).addAll(events.size(),getCartById(c.getCartId()));
         }
 
-        return products;
+        return events;
     }
 
     //list users who bought a specific product
     public Collection<String> usersWhoBoughtProduct(int id){
-        Collection<Cart> carts = new ArrayList<Cart>();
+        Collection<User> carts = new ArrayList<User>();
         Collection<String> users = new ArrayList<String>();
 
         this.jdbcTemplate.query(
                 "SELECT cartId FROM cart_items where itemId="+ id, new Object[] { },
-                (rs, rowNum) -> new Cart(rs.getInt("cartId"))).forEach(cart -> carts.add(cart));
+                (rs, rowNum) -> new User(rs.getInt("cartId"))).forEach(user -> carts.add(user));
 
-     for(Cart c : carts){
+     for(User c : carts){
         this.jdbcTemplate.query(
                 "SELECT username FROM carts where cartId="+ c.getCartId()+ " and purchased=true", new Object[] { },
                 (rs, rowNum) -> new String(rs.getString("username"))).forEach(String -> users.add(String));
@@ -182,23 +180,23 @@ public class CartDAO {
     }
 
     public int getCartId(String username){
-        Cart cart = new Cart(username);
-        String query = "Select cartID from carts where username ='" + cart.getUsername() + "'AND purchased = false";
+        User user = new User(username);
+        String query = "Select cartID from carts where username ='" + user.getUsername() + "'AND purchased = false";
 
         try {
             this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Cart>() {
+                    query, new RowMapper<User>() {
                         @Override
-                        public Cart mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            cart.setCartId(rs.getInt(1));
-                            return cart;
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setCartId(rs.getInt(1));
+                            return user;
                         }
                     });
         }
         catch(EmptyResultDataAccessException e){
             return 0;
         }
-        return cart.getCartId();
+        return user.getCartId();
     }
 
     public DriverManagerDataSource getDataSource() {

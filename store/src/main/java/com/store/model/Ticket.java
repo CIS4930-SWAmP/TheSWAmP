@@ -2,21 +2,21 @@ package com.store.model;
 
 import java.util.Collection;
 
-public class Customer {
+public class Ticket {
     private int id;
     private String fName;
     private String lName;
     private String username;
     private String email;
 
-    public Customer(String fName, String lName, String username, String email) {
+    public Ticket(String fName, String lName, String username, String email) {
         this.fName = fName;
         this.lName = lName;
         this.username = username;
         this.email = email;
     }
 
-    public Customer(String username) {
+    public Ticket(String username) {
         this.username = username;
     }
 

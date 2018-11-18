@@ -2,39 +2,39 @@ package com.store.model;
 
 import java.util.Collection;
 
-public class Cart {
+public class User {
 
     int cartId;
     int custId;
     boolean isPurchased;
     String username;
-    Collection<Product> products;
+    Collection<Event> events;
 
-    public Cart() {
+    public User() {
         cartId = -1;
     }
 
-    public Cart(int cartId, int custId, boolean isPurchased, String username) {
+    public User(int cartId, int custId, boolean isPurchased, String username) {
         this.cartId = cartId;
         this.custId = custId;
         this.isPurchased = isPurchased;
         this.username = username;
     }
 
-    public Cart(int custId, boolean isPurchased, String username, Collection<Product> products) {
+    public User(int custId, boolean isPurchased, String username, Collection<Event> events) {
         this.custId = custId;
         this.isPurchased = isPurchased;
         this.username = username;
-        this.products = products;
+        this.events = events;
     }
 
-    public Cart(String username) {
+    public User(String username) {
 
         this.username = username;
         isPurchased = false;
     }
 
-    public Cart(int cartId) {
+    public User(int cartId) {
         this.cartId = cartId;
     }
 
@@ -70,12 +70,12 @@ public class Cart {
         this.username = username;
     }
 
-    public Collection<Product> getProducts() {
-        return products;
+    public Collection<Event> getEvents() {
+        return events;
     }
 
-    public void setProducts(Collection<Product> products) {
-        this.products = products;
+    public void setEvents(Collection<Event> events) {
+        this.events = events;
     }
 
     @Override
