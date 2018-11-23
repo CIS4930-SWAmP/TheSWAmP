@@ -82,19 +82,44 @@ public class TicketDAO {
         return tickets;
     }
 
+    public Ticket getTicketById(int id){
+        Ticket ticket = new Ticket();
+        String query ="SELECT * FROM tickets where ticketId=" + id;
+
+        try {
+            return this.jdbcTemplate.queryForObject(
+                    query, new RowMapper<Ticket>() {
+                        @Override
+                        public Ticket mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            ticket.setId(rs.getInt(1));
+                            ticket.setSellerId(rs.getInt(2));
+                            ticket.setEventId(rs.getInt(3));
+                            ticket.setPurchased(rs.getBoolean(4));
+                            ticket.setPrice(rs.getDouble(5));
+                            ticket.setBuyerId(rs.getInt(6));
+                            ticket.setAvailability(rs.getString(7));
+                            return ticket;
+                        }
+                    });
+        }
+        catch(EmptyResultDataAccessException e){
+            return null;
+        }
+    }
+
     //Update Done
     public Boolean updateTicket(Ticket ticket){
 
-        String sqlUpdate = "UPDATE tickets set price=?, availability=? where ticketId=?";
-        return jdbcTemplate.update(sqlUpdate, ticket.getPrice(), ticket.getAvailability(), ticket.getId()) > 0;
+        String sqlUpdate = "UPDATE tickets set price=?, availability=?, purchased=?, buyerId = ? where ticketId=?";
+        return jdbcTemplate.update(sqlUpdate, ticket.getPrice(), ticket.getAvailability(), ticket.getPurchased(), ticket.getBuyerId(), ticket.getId()) > 0;
 
     }
 
     //*
-    public Boolean sellTicket(int ticketId, int buyerId){
-        String query = "update tickets set purchased = ? and buyerId = ? where id = ?";
-        return jdbcTemplate.update(query, true, buyerId, ticketId) > 0;
-    }
+//    public Boolean sellTicket(int ticketId, int buyerId){
+//        String query = "update tickets set purchased = ? and buyerId = ? where id = ?";
+//        return jdbcTemplate.update(query, true, buyerId, ticketId) > 0;
+//    }
 
     //Delete *
     public boolean deleteTicket(int ticketId){

@@ -12,6 +12,16 @@ public class Ticket {
     public Ticket() {
     }
 
+    public Ticket(int id, double price, String availability) {
+        this.id = id;
+        this.price = price;
+        this.availability = availability;
+    }
+
+    public Ticket(int id){
+        this.id = id;
+    }
+
     public Ticket(int sellerId, int eventId, double price, String availability) {
         this.sellerId = sellerId;
         this.eventId = eventId;
@@ -77,7 +87,7 @@ public class Ticket {
         this.availability = availability;
     }
 
-    public boolean isPurchased() {
+    public boolean getPurchased() {
         return purchased;
     }
 
