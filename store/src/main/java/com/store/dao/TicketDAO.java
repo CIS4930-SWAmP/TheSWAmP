@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,8 +28,7 @@ public class TicketDAO {
 
     //Create done
     public Boolean createTicket(Ticket ticket){
-        String insert = "Insert into tickets(price, sellerId, availability, eventId)"
-                + " VALUES (?, ?, ?, ?)";
+        String insert = "Insert into tickets(price, sellerId, availability, eventId) VALUES (?, ?, ?, ?)";
         try{
             jdbcTemplate.update(insert, ticket.getPrice(), ticket.getSellerId(), ticket.getAvailability(), ticket.getEventId());
         }

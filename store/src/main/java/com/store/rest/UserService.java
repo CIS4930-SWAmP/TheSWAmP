@@ -24,9 +24,9 @@ public class UserService {
     }
 
     public User addItemToCart(int productId, String username){
-        if(ticketDAO.getCustomerByUsername(username) == null){
-            return null;
-        }
+//        if(ticketDAO.getCustomerByUsername(username) == null){
+//            return null;
+//        }
         return userDAO.addItem(username, productId);
     }
 

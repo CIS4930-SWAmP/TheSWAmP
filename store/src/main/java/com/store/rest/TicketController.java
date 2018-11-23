@@ -57,7 +57,7 @@ public class TicketController extends HttpServlet{
     }
 
     @POST
-    @Path("")
+    @Path("/create")
     public Response createTicket(
             @QueryParam("sellerId") int sellerId,
             @QueryParam("eventId") int eventId,
@@ -82,7 +82,6 @@ public class TicketController extends HttpServlet{
         }
         return Response.status(400).build();
     }
-
 
     @DELETE
     @Path("/delete/{id}")

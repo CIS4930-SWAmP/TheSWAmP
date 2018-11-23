@@ -15,10 +15,6 @@ public class TicketService {
     //@Autowired
     private TicketDAO ticketDAO = new TicketDAO();
 
-    public Collection<Ticket> eventTickets(int eventId){
-        return ticketDAO.getEventTickets(eventId);
-    }
-
     public boolean createTicket(int sellerId, int eventId, Double price, String availability){
         Ticket ticket = new Ticket(sellerId, eventId, price, availability);
         return ticketDAO.createTicket(ticket);
@@ -35,7 +31,7 @@ public class TicketService {
 
         ticket.setPurchased(purchased);
 
-        if(price != 0)
+        if(price != null)
             ticket.setPrice(price);
         else
             ticket.setPrice(oldTicket.getPrice());

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
    <groupId>com.store.rest</groupId>
-   <artifactId>store</artifactId>
+   <artifactId>TheSWAmP</artifactId>
    <packaging>war</packaging>
 
     <parent>
