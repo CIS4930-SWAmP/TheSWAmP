@@ -12,10 +12,12 @@ import javax.ws.rs.core.MediaType;
 
 import com.store.model.*;
 
+import java.util.Collection;
+
 @Controller
-@Path("customers")
+@Path("tickets")
 public class TicketController extends HttpServlet{
-    private TicketService eventService = new TicketService();
+    private TicketService ticketService = new TicketService();
 
     public void init(ServletConfig config) {
         try{
@@ -27,42 +29,65 @@ public class TicketController extends HttpServlet{
     }
 
     @GET
-    @Path("/{username}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Ticket getCustomer(@PathParam("username") String username){
-        return eventService.getCustomer(username);
+    public Ticket getCustomer(@PathParam("id") int id){
+        return ticketService.getTicketById(id);
+    }
+
+    @GET
+    @Path("/purchased/{userId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Ticket> getPurchasedTickets(@PathParam("userId") int userId){
+        return ticketService.getPurchasedTickets(userId);
+    }
+
+    @GET
+    @Path("/sold/{userId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Ticket> getSoldTickets(@PathParam("userId") int userId){
+        return ticketService.getSoldTickets(userId);
+    }
+
+    @GET
+    @Path("/event/{eventId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Ticket> getEventTickets(@PathParam("eventId") int eventId){
+        return ticketService.getEventTickets(eventId);
     }
 
     @POST
     @Path("")
-    public Response createCustomer(
-            @QueryParam("fname") String fname,
-            @QueryParam("lname") String lname,
-            @QueryParam("username") String username,
-            @QueryParam("email") String email){
-        if(eventService.createCustomer(fname, lname, username, email)) {
+    public Response createTicket(
+            @QueryParam("sellerId") int sellerId,
+            @QueryParam("eventId") int eventId,
+            @QueryParam("price") Double price,
+            @QueryParam("avail") String avail){
+        if(ticketService.createTicket(sellerId,eventId,price,avail)){
             return Response.status(200).build();
         }
         return Response.status(409).build();
     }
 
     @PUT
-    @Path("")
-    public Response updateCustomer(
-            @QueryParam("fname") String fname,
-            @QueryParam("lname") String lname,
-            @QueryParam("username") String username,
-            @QueryParam("email") String email){
-        if(eventService.updateCustomer(fname, lname, username, email)){
+    @Path("/update")
+    public Response updateTicket(
+            @QueryParam("price") Double price,
+            @QueryParam("avail") String avail,
+            @QueryParam("ticketId") int ticketId,
+            @QueryParam("purch") boolean purch,
+            @QueryParam("username") String username){
+        if(ticketService.updateTicket(price, avail, ticketId, purch, username )){
             return Response.status(200).build();
         }
         return Response.status(400).build();
     }
 
+
     @DELETE
-    @Path("{username}")
-    public Response deleteCustomer(@PathParam("username") String username){
-        if(eventService.deleteCustomer(username))
+    @Path("/delete/{id}")
+    public Response deleteCustomer(@PathParam("id") int id){
+        if(ticketService.deleteTicket(id))
             return Response.status(200).build();
         return Response.status(400).build();
     }

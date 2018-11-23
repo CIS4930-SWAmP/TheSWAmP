@@ -65,4 +65,8 @@ public class TicketService {
     public Collection<Ticket> getPurchasedTickets(int userId){
         return ticketDAO.getPurchasedTickets(userId);
     }
+
+    public Collection<Ticket> getEventTickets(int eventId){
+        return ticketDAO.getEventTickets(eventId);
+    }
 }
