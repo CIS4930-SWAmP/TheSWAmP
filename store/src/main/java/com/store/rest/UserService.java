@@ -13,40 +13,22 @@ public class UserService {
 
     //@Autowired
     private UserDAO userDAO = new UserDAO();
-    private TicketDAO ticketDAO = new TicketDAO();
 
-    public int getCartId(String username){
-        return userDAO.getCartId(username);
+    public User createUser(String username, String password, String phone, String fname, String lname, String email) {
+        User user = new User(username, password, phone, fname, lname, email);
+        return userDAO.createUser(user);
     }
 
-    public Collection<Event> getCart(String username){
-        return userDAO.getCartByUsername(username);
+    public User readUser(String username) {
+        return userDAO.readUser(username);
     }
 
-    public User addItemToCart(int productId, String username){
-        if(ticketDAO.getCustomerByUsername(username) == null){
-            return null;
-        }
-        return userDAO.addItem(username, productId);
+    public User updateUser(String username, String password, String phone, String fname, String lname, String email) {
+        User user = new User(username, password, phone, fname, lname, email);
+        return userDAO.updateUser(user);
     }
 
-    public boolean removeItem(int cartId, int itemId){
-        return userDAO.removeItem(itemId, cartId);
-    }
-
-    public boolean purchaseCart(int cartId){
-        return userDAO.buyCart(cartId);
-    }
-
-    public Collection<String > usersBoughtAProduct(int productId){
-        return userDAO.usersWhoBoughtProduct(productId);
-    }
-
-    public String shoppingCartToString(Collection<Event> events){
-        String response = null;
-        for(Event p : events){
-            response = response + p.toStringShort();
-        }
-        return response;
+    public boolean deleteUser(String username) {
+        return userDAO.deleteUser(username);
     }
 }

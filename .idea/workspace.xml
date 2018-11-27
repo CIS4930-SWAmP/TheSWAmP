@@ -2,37 +2,158 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c130c33a-5c89-4ba3-9933-45715fbdf48a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/readme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CartDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CustomerDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/ProductDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/ProductDAO$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/ProductDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/CartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/CartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE.war" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CartDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CustomerDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/ProductDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/ProductDAO$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/ProductDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/ProductService.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/store/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="281910035">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="5" />
+          <entry key="sql" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="5" />
+          <entry key="SQL" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2452" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2452" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding>
+                <element signature="e#637#638#0" expanded="true" />
+                <element signature="e#662#663#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#789#790#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#877#878#0" expanded="true" />
+                <element signature="e#912#913#0" expanded="true" />
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1063#1064#0" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1133#1134#0" expanded="true" />
+                <element signature="e#1167#1168#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+                <element signature="e#1269#1270#0" expanded="true" />
+                <element signature="e#1303#1304#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1363#1364#0" expanded="true" />
+                <element signature="e#1405#1406#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1471#1472#0" expanded="true" />
+                <element signature="e#1499#1500#0" expanded="true" />
+                <element signature="e#1541#1542#0" expanded="true" />
+                <element signature="e#1575#1576#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
-              <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
+            <state relative-caret-position="240">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,88 +161,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createDBTables.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/scripts/createDBTables.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="EventDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/EventDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/app/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/TicketDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1493#1494#0" expanded="true" />
+                <element signature="e#1522#1523#0" expanded="true" />
+                <element signature="e#1666#1667#0" expanded="true" />
+                <element signature="e#1713#1714#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -163,6 +223,12 @@
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/CartController.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketController.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/model/Event.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/EventDAO.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/model/User.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java" />
       </list>
     </option>
   </component>
@@ -181,11 +247,32 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="store" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="store" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="store" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="store" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="war" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="1944" />
@@ -196,8 +283,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,96 +295,23 @@
               <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543346308720" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -319,48 +331,30 @@
   <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="store" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.store.app.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -375,46 +369,46 @@
       <updated>1539606507815</updated>
       <workItem from="1539606509234" duration="23230000" />
       <workItem from="1542579524321" duration="366000" />
+      <workItem from="1542919752080" duration="8895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23596000" />
+    <option name="totallyTimeSpent" value="32491000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="1" visible="true" weight="0.18735363" />
-      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21855922" />
       <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Java Enterprise" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.3298969" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3298969" />
       <window_info anchor="bottom" id="Spring" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21623732" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.3298969" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3298969" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
       <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.18681319" />
+      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.18864469" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout>
   </component>
@@ -424,62 +418,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="184" column="29" selection-start-line="184" selection-start-column="29" selection-end-line="184" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-          <folding>
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/EventService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-168">
@@ -538,28 +481,158 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/User.java">
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/readme" />
+    <entry file="file://$PROJECT_DIR$/store/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/TicketDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/app/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/EventDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="48" column="40" lean-forward="true" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding>
+            <element signature="e#1172#1179#0" expanded="true" />
+            <element signature="e#3817#3824#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+        <state relative-caret-position="615">
+          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
+            <element signature="e#1155#1156#0" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+            <element signature="e#1559#1560#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1639#1640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/scripts/createDBTables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="34" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/scripts/populateDBTables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+            <element signature="e#1499#1500#0" expanded="true" />
+            <element signature="e#1541#1542#0" expanded="true" />
+            <element signature="e#1575#1576#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -568,72 +641,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1493#1494#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1666#1667#0" expanded="true" />
+            <element signature="e#1713#1714#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/scripts/createDBTables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/readme">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/EventDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/TicketDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/app/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
