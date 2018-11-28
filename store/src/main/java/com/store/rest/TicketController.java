@@ -57,7 +57,7 @@ public class TicketController extends HttpServlet{
     }
 
     @POST
-    @Path("/create")
+    @Path("")
     public Response createTicket(
             @QueryParam("sellerId") int sellerId,
             @QueryParam("eventId") int eventId,
@@ -70,7 +70,7 @@ public class TicketController extends HttpServlet{
     }
 
     @PUT
-    @Path("/update")
+    @Path("")
     public Response updateTicket(
             @QueryParam("price") Double price,
             @QueryParam("avail") String avail,
