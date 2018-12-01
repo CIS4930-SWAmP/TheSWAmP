@@ -4,7 +4,7 @@ var requestHistory = new XMLHttpRequest();
 
 const username = document.cookie.substr(document.cookie.indexOf('=')+1);
 
-request.open('GET', 'http://localhost:8080/store-2.0.3.RELEASE/store/users/'+username, true);
+request.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/'+username, true);
 request.onload = function () {
     if(request.readyState === 4) {
         if (request.status === 200) {
@@ -29,7 +29,7 @@ request.onload = function () {
             userInfo.appendChild(phone);
 
         } else {
-           window.location = 'http://localhost:8080/store-2.0.3.RELEASE/html/login.html'    ;
+           //window.location = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/html/index.html'    ;
         }
     }
 };
@@ -40,7 +40,7 @@ function submit() {
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
 
-    var apiUrl = "http://localhost:8080/store-2.0.3.RELEASE/store/users?fname="+fname+"&lname="+lname+
+    var apiUrl = "http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users?fname="+fname+"&lname="+lname+
     "&username="+username+"&phone="+phone+"&email="+email;
 
     requestUpdate.open('PUT', apiUrl, true );
@@ -48,17 +48,16 @@ function submit() {
     requestUpdate.onreadystatechange = function (){
         if(requestUpdate.readyState === 4){
             if(requestUpdate.status === 200){
-                window.location = "http://localhost:8080/store-2.0.3.RELEASE/html/profile.html";
+                window.location = "http://localhost:8080/TheSWAmP-2.0.3.RELEASE/html/profile.html";
             }
             else{
-                const errorMessage = document.createElement('marquee');
-                errorMessage.textContent = `Error`;
+                console.log('Error');
             }
         }
     }
 }
 
-requestHistory.open('GET',"http://localhost:8080/store-2.0.3.RELEASE/store/tickets/purchased/"+username, true);
+requestHistory.open('GET',"http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets/purchased/"+username, true);
 requestHistory.send();
 requestHistory.onreadystatechange = function (){
     if(requestHistory.readyState === 4){
@@ -73,24 +72,19 @@ requestHistory.onreadystatechange = function (){
                 const name = document.createElement('p');
                 name.textContent = product.eventId;
 
-                // const desc = document.createElement('p');
-                // product.description = product.price;
-                // desc.textContent = `Price: ${product.price}`;
 
                 const price = document.createElement('p');
                 product.description += product.price;
                 price.textContent = `Sale Price: $${product.price}`;
 
                 div.appendChild(name);
-                // div.appendChild(desc);
                 div.appendChild(price);
 
                 history.appendChild(div);
             });
         }
         else{
-            const errorMessage = document.createElement('marquee');
-            errorMessage.textContent = `Error`;
+            console.log('Error');
         }
     }
 };
