@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c130c33a-5c89-4ba3-9933-45715fbdf48a" name="Default" comment="Merge branch 'develop' into events&#10;&#10;# Conflicts:&#10;#&#9;.idea/artifacts/store_war.xml&#10;#&#9;.idea/artifacts/store_war_exploded.xml&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/webapp/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/store/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -125,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-3">
@@ -134,6 +134,15 @@
                 <element signature="e#1449#1450#0" expanded="true" />
                 <element signature="e#1506#1507#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/store/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="213" selection-start-line="8" selection-start-column="213" selection-end-line="8" selection-end-column="213" />
             </state>
           </provider>
         </entry>
@@ -187,6 +196,7 @@
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/UserService.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketService.java" />
+        <option value="$PROJECT_DIR$/store/src/main/webapp/index.html" />
       </list>
     </option>
   </component>
@@ -296,6 +306,14 @@
             </path>
             <path>
               <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -322,6 +340,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ars_6\Desktop\Fall 2018\WebApps\TheSWAmP\store\src\main\webapp" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -405,15 +428,16 @@
       <workItem from="1542579524321" duration="366000" />
       <workItem from="1542919752080" duration="8895000" />
       <workItem from="1543682074885" duration="1584000" />
-      <workItem from="1543687178474" duration="617000" />
+      <workItem from="1543687178474" duration="909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34789000" />
+    <option name="totallyTimeSpent" value="35081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="13" />
@@ -425,9 +449,9 @@
       <window_info anchor="right" id="Maven Projects" order="1" visible="true" weight="0.18623482" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.37924865" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.37924865" />
       <window_info anchor="bottom" id="Spring" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3291592" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3291592" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
       <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25182188" />
@@ -492,16 +516,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/EventController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -888,6 +902,13 @@
             <element signature="e#1449#1450#0" expanded="true" />
             <element signature="e#1506#1507#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="213" selection-start-line="8" selection-start-column="213" selection-end-line="8" selection-end-column="213" />
         </state>
       </provider>
     </entry>
