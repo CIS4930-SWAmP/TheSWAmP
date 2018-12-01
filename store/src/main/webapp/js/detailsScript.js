@@ -18,14 +18,14 @@ function addToCart1(id){
                 else {
                     const errorMessage = document.createElement('marquee');
                     errorMessage.textContent = `Error`;
-                    productDiv.appendChild(errorMessage);
+                    eventDiv.appendChild(errorMessage);
                 }
             }
         }
     }
     //user is not logged in
     else{
-        window.location = "/store-2.0.3.RELEASE/html/login.html"
+        window.location = "../index.html"
     }
     //event.stopPropagation();
 }
@@ -78,7 +78,7 @@ request.onload = function () {
         } else {
             const errorMessage = document.createElement('marquee');
             errorMessage.textContent = `Error`;
-            productDiv.appendChild(errorMessage);
+            eventDiv.appendChild(errorMessage);
         }
     }
 };

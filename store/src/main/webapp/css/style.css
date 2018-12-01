@@ -1,13 +1,11 @@
 html {
     line-height: 1.6;
-    background: gray;
 }
-
 
 h1 {
     text-align: center;
     padding: 1.5rem 2.5rem;
-    background: lightblue;
+    background: orange;
     font-size: 1.5rem;
 }
 
@@ -30,7 +28,6 @@ img {
 .card {
     margin: 1rem;
     padding-bottom: 1rem;
-    background: grey;
     overflow: hidden;
 }
 

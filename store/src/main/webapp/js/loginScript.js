@@ -9,7 +9,7 @@ function verifyLogin() {
         if(request.readyState === 4) {
             if (request.status === 200) {
                 document.cookie = "username="+username + "; path=/";
-                window.location = "../index.html";
+                window.location = "../html/eventTile.html";
             }
             else {
                 document.getElementById("warning").style.display = "block";
@@ -31,7 +31,7 @@ function createUser(){
         if (createRequest.readyState === 4) {
             if (createRequest.status === 200) {
                 document.cookie = "username="+username + "; path=/";
-                window.location = "../index.html";
+                window.location = "../html/eventTile.html";
             }
             else {
                 document.getElementById("warning2").style.display = "block";

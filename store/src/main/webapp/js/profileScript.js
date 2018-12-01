@@ -25,7 +25,7 @@ request.onload = function () {
             userInfo.appendChild(name);
 
         } else {
-           window.location = 'http://localhost:8080/store-2.0.3.RELEASE/html/login.html'    ;
+           window.location = '../index.html'    ;
         }
     }
 };
