@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="store:war exploded">
-    <output-path />
+    <output-path>$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
