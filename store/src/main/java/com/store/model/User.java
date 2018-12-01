@@ -3,63 +3,42 @@ package com.store.model;
 import java.util.Collection;
 
 public class User {
+    private int id;
+    private String username;
+    private String password;
+    private String phone;
+    private String fname;
+    private String lname;
+    private String email;
 
-    int cartId;
-    int custId;
-    boolean isPurchased;
-    String username;
-    Collection<Event> events;
+    public User(int id, String username, String password, String phone, String fname, String lname, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+    }
+
+    public User(String username, String password, String phone, String fname, String lname, String email) {
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+    }
 
     public User() {
-        cartId = -1;
     }
 
-    public User(int cartId, int custId, boolean isPurchased, String username) {
-        this.cartId = cartId;
-        this.custId = custId;
-        this.isPurchased = isPurchased;
-        this.username = username;
+    public int getId() {
+        return id;
     }
 
-    public User(int custId, boolean isPurchased, String username, Collection<Event> events) {
-        this.custId = custId;
-        this.isPurchased = isPurchased;
-        this.username = username;
-        this.events = events;
-    }
-
-    public User(String username) {
-
-        this.username = username;
-        isPurchased = false;
-    }
-
-    public User(int cartId) {
-        this.cartId = cartId;
-    }
-
-    public int getCartId() {
-        return cartId;
-    }
-
-    public void setCartId(int cartId) {
-        this.cartId = cartId;
-    }
-
-    public int getCustId() {
-        return custId;
-    }
-
-    public void setCustId(int custId) {
-        this.custId = custId;
-    }
-
-    public boolean getIsPurchased() {
-        return isPurchased;
-    }
-
-    public void setIsPurchased(boolean isPurchased) {
-        this.isPurchased = isPurchased;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -70,21 +49,56 @@ public class User {
         this.username = username;
     }
 
-    public Collection<Event> getEvents() {
-        return events;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEvents(Collection<Event> events) {
-        this.events = events;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                "cartId=" + cartId +
-                ", custId=" + custId +
-                ", isPurchased=" + isPurchased +
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Event{" +
+                "id=" + id +
                 ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
