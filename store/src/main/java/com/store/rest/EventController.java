@@ -6,17 +6,15 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import org.springframework.stereotype.Controller;
 
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.Collection;
 
 import com.store.model.*;
 
 @Controller
-@Path("items")
+@Path("events")
 public class EventController extends HttpServlet  {
 
 
@@ -37,8 +35,8 @@ public class EventController extends HttpServlet  {
     @GET
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<Event> getAllProducts() {
-        Collection<Event> events = eventService.getAllProducts();
+    public Collection<Event> getAllEvents() {
+        Collection<Event> events = eventService.getAllEvents();
         return events;
     }
 
@@ -46,15 +44,45 @@ public class EventController extends HttpServlet  {
     @GET
     @Path("/search/{keyword}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<Event> getItemsByKeyword(@PathParam("keyword") String keyword){
-        return eventService.getItemsByKeyword(keyword);
+    public Collection<Event> getEventsByKeyword(@PathParam("keyword") String keyword){
+        return eventService.getEventsByKeyword(keyword);
     }
 
     //List item by id
     @GET
-    @Path("/{id}")
+    @Path("/{eventId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Event getItemById(@PathParam("id") int id){
-        return eventService.getProductById(id);
+    public Event getEventById(@PathParam("eventId") int eventId){
+        return eventService.getEventById(eventId);
+    }
+
+    @POST
+    public Response createEvent(
+            @QueryParam("title") String title,
+            @QueryParam("eventDate") String date,
+            @QueryParam("description") String desc) {
+        if(eventService.createEvent(title, date, desc)) {
+            return Response.status(200).build();
+        }
+        return Response.status(409).build();
+    }
+
+    @PUT
+    public Response updateEvent(
+            @QueryParam("eventId") int eventId,
+            @QueryParam("title") String title,
+            @QueryParam("eventDate") String date,
+            @QueryParam("description") String desc) {
+        if(eventService.updateEvent(eventId, title, date, desc)) {
+            return Response.status(200).build();
+        }
+        return Response.status(409).build();
+    }
+
+    @DELETE
+    public Response deleteEvent(@QueryParam("eventId") int eventId){
+        if(eventService.deleteEvent(eventId))
+            return Response.status(200).build();
+        return Response.status(400).build();
     }
 }
