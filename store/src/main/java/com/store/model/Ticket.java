@@ -1,23 +1,42 @@
 package com.store.model;
 
-import java.util.Collection;
-
 public class Ticket {
     private int id;
-    private String fName;
-    private String lName;
-    private String username;
-    private String email;
+    private int buyerId;
+    private int sellerId;
+    private int eventId;
+    private double price;
+    private String availability;
+    private boolean purchased;
 
-    public Ticket(String fName, String lName, String username, String email) {
-        this.fName = fName;
-        this.lName = lName;
-        this.username = username;
-        this.email = email;
+    public Ticket() {
     }
 
-    public Ticket(String username) {
-        this.username = username;
+    public Ticket(int id, double price, String availability) {
+        this.id = id;
+        this.price = price;
+        this.availability = availability;
+    }
+
+    public Ticket(int id){
+        this.id = id;
+    }
+
+    public Ticket(int sellerId, int eventId, double price, String availability) {
+        this.sellerId = sellerId;
+        this.eventId = eventId;
+        this.price = price;
+        this.availability = availability;
+    }
+
+    public Ticket(int id, int sellerId, int eventId, boolean purchased, double price,int buyerId, String availability) {
+        this.id = id;
+        this.buyerId = buyerId;
+        this.sellerId = sellerId;
+        this.eventId = eventId;
+        this.price = price;
+        this.availability = availability;
+        this.purchased = purchased;
     }
 
     public int getId() {
@@ -28,47 +47,52 @@ public class Ticket {
         this.id = id;
     }
 
-    public String getFName() {
-        return fName;
+    public int getBuyerId() {
+        return buyerId;
     }
 
-    public void setFName(String fName) {
-        this.fName = fName;
+    public void setBuyerId(int buyerId) {
+        this.buyerId = buyerId;
     }
 
-    public String getLName() {
-        return lName;
+    public int getSellerId() {
+        return sellerId;
     }
 
-    public void setLName(String lName) {
-        this.lName = lName;
+    public void setSellerId(int sellerId) {
+        this.sellerId = sellerId;
     }
 
-    public String getUsername() {
-        return username;
+    public int getEventId() {
+        return eventId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
-    public String getEmail() {
-        return email;
+    public double getPrice() {
+        return price;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    @Override
-    public java.lang.String toString() {
-        return "{" +
-                "id=" + id +
-                ", fName='" + fName + '\'' +
-                ", lName='" + lName + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    public boolean getPurchased() {
+        return purchased;
+    }
+
+    public void setPurchased(boolean purchased) {
+        this.purchased = purchased;
     }
 }
 
