@@ -2,6 +2,7 @@ package com.store.dao;
 
 import com.store.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -18,7 +19,7 @@ public class EventDAO {
 
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/db_store";
+    private static final String url = "jdbc:mysql://localhost:3306/swamp_db";
     private static final String dbUsername = "springuser";
     private static final String dbPassword = "ThePassword";
 
@@ -32,40 +33,31 @@ public class EventDAO {
     }
 
     //Works
-    public Collection<Event> getAllProducts(){
+    public Collection<Event> getAllEvents(){
 
         Collection<Event> events = new ArrayList<Event>();
         this.jdbcTemplate.query(
-                "SELECT * FROM products", new Object[] { },
-                (rs, rowNum) -> new Event(rs.getInt("itemId"), rs.getString("name"), rs.getDouble("msrp"),
-                        rs.getDouble("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"),
-                        rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
-        ).forEach(product -> events.add(product));
+                "SELECT * FROM events", new Object[] { },
+                (rs, rowNum) -> new Event(rs.getInt("eventId"), rs.getString("title"),
+                        rs.getString("eventDate"), rs.getString("description"))
+        ).forEach(event -> events.add(event));
 
         return events;
     }
 
     //Works
-    public Event getProductById(int id){
-        Event event = new Event(id);
-        String query ="SELECT name, msrp, salePrice, upc, shortDescription, brandName, size, color, gender FROM products where itemId=" + id;
+    public Event getEventById(int eventId){
+        Event event = new Event();
+        String query ="SELECT * FROM events where eventId=" + eventId;
 
         try {
             return this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Event>() {
-                        @Override
-                        public Event mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            event.setName(rs.getString(1));
-                            event.setMsrp(rs.getDouble(2));
-                            event.setSalePrice(rs.getDouble(3));
-                            event.setUpc(rs.getInt(4));
-                            event.setDesc(rs.getString(5));
-                            event.setBrand(rs.getString(6));
-                            event.setSize(rs.getString(7));
-                            event.setColor(rs.getString(8));
-                            event.setGender(rs.getString(9));
-                            return event;
-                        }
+                    query, (rs, rowNumber) -> {
+                        event.setEventId(rs.getInt(1));
+                        event.setTitle(rs.getString(2));
+                        event.setDate(rs.getString(3));
+                        event.setDesc(rs.getString(4));
+                        return event;
                     });
         }
         catch(EmptyResultDataAccessException e){
@@ -73,38 +65,16 @@ public class EventDAO {
         }
     }
 
-    public Event getProductByIdMin(int id){
-        Event event = new Event(id);
-        String query ="SELECT name, msrp, salePrice FROM products where itemId=" + id;
-        try {
-            return this.jdbcTemplate.queryForObject(
-                    query, new RowMapper<Event>() {
-                        @Override
-                        public Event mapRow(ResultSet rs, int rowNumber) throws SQLException {
-                            event.setName(rs.getString(1));
-                            event.setMsrp(rs.getDouble(2));
-                            event.setSalePrice(rs.getDouble(3));
-                            return event;
-                        }
-                    });
-        }
-        catch(EmptyResultDataAccessException e){
-            return null;
-        }
-    }
-
-    public Collection<Event> getProductsByKeyword(String keyword){
+    public Collection<Event> getEventsByKeyword(String keyword){
 
         Collection<Event> events = new ArrayList<Event>();
-        String search = "SELECT * FROM  products WHERE name like \'%" + keyword + "%\' or shortDescription like \'%" + keyword + "%\' " +
-                "or brandName like \'%" + keyword + "%\' or size like \'%" + keyword + "%\' or color like \'%" + keyword + "%\' " +
-                "or gender like \'%" + keyword + "%\'";
+        String search = "SELECT * FROM  events WHERE title like \'%" + keyword + "%\' or description like \'%" + keyword + "%\' " +
+                "or eventDate like \'%" + keyword + "%\'";
         try {
             this.jdbcTemplate.query(search, new Object[]{},
-                    (rs, rowNum) -> new Event(rs.getInt("itemId"), rs.getString("name"), rs.getDouble("msrp"),
-                            rs.getDouble("salePrice"), rs.getInt("upc"), rs.getString("shortDescription"),
-                            rs.getString("brandName"), rs.getString("size"), rs.getString("color"), rs.getString("gender"))
-            ).forEach(product -> events.add(product));
+                    (rs, rowNum) -> new Event(rs.getInt("eventId"), rs.getString("title"),
+                            rs.getString("eventDate"), rs.getString("description"))
+            ).forEach(event -> events.add(event));
         }
         catch(EmptyResultDataAccessException e){
             return null;
@@ -112,8 +82,29 @@ public class EventDAO {
         return events;
     }
 
-    public boolean removeProduct(int id){
-        if(jdbcTemplate.update("delete from products where itemId=?", id) > 0){
+    public boolean createEvent(Event event){
+        String insert = "INSERT INTO events (title, eventDate, description)"
+                + " VALUES (?, ?, ?)";
+        try{
+            jdbcTemplate.update(insert, event.getTitle(), event.getDate(), event.getDesc());
+        }
+        catch (DataIntegrityViolationException e){
+            return false;
+        }
+        return true;
+    }
+
+    //Works
+    public Boolean updateEvent(Event event){
+        String sqlUpdate = "UPDATE events set title=?, eventDate=?, description=? where eventId=?";
+        if(jdbcTemplate.update(sqlUpdate, event.getTitle(), event.getDate(), event.getDesc(), event.getEventId()) > 0)
+            return true;
+        return false;
+    }
+
+
+    public boolean deleteEvent(int eventId){
+        if(jdbcTemplate.update("delete from events where eventId=?", eventId) > 0){
             return true;
         }
         else return false;
