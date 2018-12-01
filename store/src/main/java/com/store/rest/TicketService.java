@@ -23,9 +23,10 @@ public class TicketService {
     public boolean updateTicket(Double price, String availability, int ticketId, boolean purchased, String username){
         Ticket ticket = new Ticket(ticketId);
         Ticket oldTicket = ticketDAO.getTicketById(ticketId);
+        UserDAO userDAO = new UserDAO();
 
         if(username != null) {
-            int buyerId = 0;  //Get buyerId from user name using the userDAO.
+            int buyerId = userDAO.readUser(username).getId();
             ticket.setBuyerId(buyerId);
         }
 

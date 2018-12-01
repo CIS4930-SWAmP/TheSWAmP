@@ -19,7 +19,7 @@ public class UserDAO {
 
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/db_store";
+    private static final String url = "jdbc:mysql://localhost:3306/swamp_db";
     private static final String dbUsername = "springuser";
     private static final String dbPassword = "ThePassword";
 
