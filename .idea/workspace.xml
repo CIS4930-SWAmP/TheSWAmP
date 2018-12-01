@@ -3,6 +3,104 @@
   <component name="ChangeListManager">
     <list default="true" id="c130c33a-5c89-4ba3-9933-45715fbdf48a" name="Default" comment="Merge branch 'develop' into events&#10;&#10;# Conflicts:&#10;#&#9;.idea/artifacts/store_war.xml&#10;#&#9;.idea/artifacts/store_war_exploded.xml&#10;#&#9;.idea/workspace.xml">
       <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/LoginDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/app/Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/EventDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/LoginDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/TicketDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/TicketDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Event.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Login.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Ticket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/EventController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/EventService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/LoginService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/TicketController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/TicketService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/HikariCP-2.7.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/activation-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-core-asl-1.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-jaxrs-1.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-xc-1.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/javax.annotation-api-1.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jaxb-api-2.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jaxb-impl-2.2.3-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-bundle-1.19.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-core-1.19.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-json-1.19.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-server-1.19.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jettison-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/json-20170516.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jsr311-api-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/log4j-api-2.10.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/log4j-to-slf4j-2.10.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/logback-classic-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/logback-core-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/mysql-connector-java-5.1.46.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/snakeyaml-1.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-aop-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-beans-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-2.0.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-autoconfigure-2.0.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-2.0.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-jdbc-2.0.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-logging-2.0.3.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-context-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-core-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-expression-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-jcl-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-jdbc-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-tx-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-web-5.0.7.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/productDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/productList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/cartScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/detailsScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/loginScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/productListScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/productScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/profileScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/app/Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/EventDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/LoginDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/TicketDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/TicketDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/dao/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/model/Event.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/model/Login.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/model/Ticket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/EventController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/EventService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/LoginService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/TicketController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/TicketService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/classes/com/store/rest/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/store_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/store_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -112,11 +210,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="404">
+              <caret line="84" column="52" lean-forward="true" selection-start-line="84" selection-end-line="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,7 +225,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-41">
+            <state relative-caret-position="180">
               <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
                 <element signature="e#468#469#0" expanded="true" />
@@ -150,8 +248,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/LoginDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+            <state relative-caret-position="420">
+              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,14 +273,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -403,7 +498,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543704395209" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543704495762" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -471,12 +566,12 @@
       <workItem from="1542919752080" duration="8895000" />
       <workItem from="1543682074885" duration="1584000" />
       <workItem from="1543687178474" duration="909000" />
-      <workItem from="1543689603927" duration="11825000" />
+      <workItem from="1543689603927" duration="12141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46906000" />
+    <option name="totallyTimeSpent" value="47222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="6" />
@@ -686,9 +781,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/TicketDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-167">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="84" column="52" lean-forward="true" selection-start-line="84" selection-end-line="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/model/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
+        <state relative-caret-position="180">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
             <element signature="e#468#469#0" expanded="true" />
@@ -707,20 +829,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java">
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/LoginDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="27" />
+        <state relative-caret-position="420">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/TicketDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -738,33 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/LoginDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
