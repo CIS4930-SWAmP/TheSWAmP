@@ -9,7 +9,8 @@ CREATE TABLE users(
 	phone VARCHAR(255),
 	lname VARCHAR(255),
 	fname VARCHAR(255),
-	email VARCHAR(255)
+	email VARCHAR(255),
+	isAdmin BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE events(
