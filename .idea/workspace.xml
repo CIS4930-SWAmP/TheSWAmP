@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c130c33a-5c89-4ba3-9933-45715fbdf48a" name="Default" comment="Merge branch 'develop' into events&#10;&#10;# Conflicts:&#10;#&#9;.idea/artifacts/store_war.xml&#10;#&#9;.idea/artifacts/store_war_exploded.xml&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/store/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/webapp/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="c130c33a-5c89-4ba3-9933-45715fbdf48a" name="Default" comment="Merge branch 'develop' into events&#10;&#10;# Conflicts:&#10;#&#9;.idea/artifacts/store_war.xml&#10;#&#9;.idea/artifacts/store_war_exploded.xml&#10;#&#9;.idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/store/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -428,16 +426,15 @@
       <workItem from="1542579524321" duration="366000" />
       <workItem from="1542919752080" duration="8895000" />
       <workItem from="1543682074885" duration="1584000" />
-      <workItem from="1543687178474" duration="909000" />
+      <workItem from="1543687178474" duration="1392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35081000" />
+    <option name="totallyTimeSpent" value="35564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="13" />

@@ -1,13 +1,29 @@
 <html>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="../index.html">
+    <img src="../assets/logo.png" alt="logo" style="width:60px;height:50px">
+  </a>
+  <h4 style="color:orange">The SWAmP</h4>
+  <div style="position:absolute; right:2rem; color:orange;">
+    <span>Hello,</span>
+    <a href="html/profile.html">
+      <span id="username">Jimmy</span>
+    </a>
+    <br>
+    <a href="html/profile.html">
+      <span style="float:right">Logout</span>
+    </a>
+  </div>
+</nav>
 <script src="../js/loginScript.js"></script>
 <div style="border-style:solid;margin:10px;">
   <div class="row">
     <div class="col-sm-6" style="border-right:solid;">
       <h1 style="text-align:center">Login</h1>
       <div class="input-group" style="margin:20px">
-         <label for="username" style="margin-right:35px">Username</label>
-        <input type="text" class="form-control" placeholder="Username" id="username" style="margin-right:40px;">
+         <label for="usrname" style="margin-right:35px">Username</label>
+        <input type="text" class="form-control" placeholder="Username" id="usrname" style="margin-right:40px;">
       </div>
       <div id="warning" style="display:none;text-align:center">
         <p style="color:red">This User does not exist, please sign up for an account.</p>

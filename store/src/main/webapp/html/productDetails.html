@@ -1,20 +1,22 @@
 <html>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<div class="row" style="background:#e9ecef;padding:5px;">
-    <ol class="breadcrumb col-sm-9"  style="background:#e9ecef;margin-top:10px;">
-        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-        <li class="breadcrumb-item active" id="name">Product Name</li>
-    </ol>
-    <div class="col-sm-3">
-        <a href="profile.html">
-            <span class="glyphicon glyphicon-user" style="float:right;margin-right:5px;"></span>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../assets/logo.png" alt="logo" style="width:60px;height:50px">
+    </a>
+    <h4 style="color:orange">The SWAmP</h4>
+    <div style="position:absolute; right:2rem; color:orange;">
+        <span>Hello,</span>
+        <a href="html/profile.html">
+            <span id="username">Jimmy</span>
         </a>
-        <a href="cart.html">
-            <span class="glyphicon glyphicon-shopping-cart" style="float:right"></span>
+        <br>
+        <a href="html/profile.html">
+            <span style="float:right">Logout</span>
         </a>
     </div>
-</div>
+</nav>
 <div class="border border-dark" style="margin:5px;padding-bottom:50px">
     <div id="details" style="margin:5px"></div>
 </div>

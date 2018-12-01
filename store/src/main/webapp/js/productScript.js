@@ -48,7 +48,7 @@ function searchByKeyword(keyword) {
     };
 }
 
-const productDiv = document.getElementById('productList');
+const productDiv = document.getElementById('eventList');
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
