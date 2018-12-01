@@ -35,7 +35,27 @@ public class EventService {
     }
 
     public boolean updateEvent(int eventId, String title, String date, String desc) {
-        Event event = new Event(eventId, title, date, desc);
+        Event oldEvent = getEventById(eventId);
+        Event event = new Event();
+        event.setEventId(eventId);
+        if(title != null) {
+            event.setTitle(title);
+        }
+        else {
+            event.setTitle(oldEvent.getTitle());
+        }
+        if(desc != null) {
+            event.setDesc(desc);
+        }
+        else {
+            event.setDesc(oldEvent.getDesc());
+        }
+        if(date != null) {
+            event.setDate(date);
+        }
+        else {
+            event.setDate(oldEvent.getDate());
+        }
         return eventDAO.updateEvent(event);
     }
 
