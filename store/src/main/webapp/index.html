@@ -16,21 +16,25 @@
     </a>
   </div>
 </nav>
-<script src="js/loginScript.js"></script>
+<h5 style="text-align:center;margin:1rem;font-family:Tahoma">A place for UF students to buy and sell tickets for UF events</h5>
 <div style="border-style:solid;margin:10px;">
   <div class="row">
-    <div class="col-sm-6" style="border-right:solid;">
+    <div class="col-sm-6" style="border-right:solid;margin:.5rem">
       <h1 style="text-align:center">Login</h1>
       <div class="input-group" style="margin:20px">
          <label for="usrname" style="margin-right:35px">Username</label>
         <input type="text" class="form-control" placeholder="Username" id="usrname" style="margin-right:40px;">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="password" style="margin-right:35px">Password</label>
+        <input type="text" class="form-control" placeholder="Password" id="password" style="margin-right:40px;">
       </div>
       <div id="warning" style="display:none;text-align:center">
         <p style="color:red">This User does not exist, please sign up for an account.</p>
       </div>
       <button class="btn btn-default" onclick="verifyLogin()" type="submit" style="float:right">Login</button>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-5">
       <h1 style="text-align:center">Sign Up</h1>
       <div class="input-group" style="margin:20px">
         <label for="pass2" style="margin-right:10px">First Name</label>
@@ -45,14 +49,22 @@
         <input type="text" class="form-control" placeholder="Email" id="email1" style="margin-right:40px">
       </div>
       <div class="input-group" style="margin:20px">
+        <label for="phoneNum" style="margin-right:35px">Phone Number</label>
+        <input type="text" class="form-control" placeholder="Phone" id="phoneNum" style="margin-right:40px">
+      </div>
+      <div class="input-group" style="margin:20px">
          <label for="pass1" style="margin-right:10px">Username</label>
         <input type="text" class="form-control" placeholder="Username" id="pass1" style="margin-right:40px">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="passwd" style="margin-right:10px">Password</label>
+        <input type="text" class="form-control" placeholder="Password" id="passwd" style="margin-right:40px">
       </div>
       <div id="warning2" style="display:none;text-align:center">
         <p style="color:red">This username already exist, please try a different username.</p>
       </div>
       <button class="btn btn-default" onclick="createUser()" type="submit" style="float:right; margin-right:10px; margin-bottom:20px">Sign Up</button>
     </div>
-
   </div>
 </div>
+<script src="js/loginScript.js"></script>

@@ -64,7 +64,7 @@ request.onload = function () {
                 button.setAttribute('class', 'btn btn-success cart');
                 button.setAttribute('value', 'Add to Cart');
                 button.setAttribute('onclick', 'addToCart1('+itemId+')');
-                // button.setAttribute('onclick', 'addToCart1('+itemId+')');
+                // button.setAttribute('onclick', 'addToCart1('+eventId+')');
                 button.setAttribute('style', 'float:right');
 
                 productDiv.appendChild(h1);

@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Store</title>
-    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="eventTile.html">
@@ -18,7 +16,7 @@
     <div style="position:absolute; right:2rem; color:orange;">
         <span>Hello,</span>
         <a href="profile.html">
-            <span id="username">Jimmy</span>
+            <span id="username"></span>
         </a>
         <br>
         <a href="../index.html">
@@ -26,31 +24,18 @@
         </a>
     </div>
 </nav>
-<div class="row" style="margin: 1rem">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <button type="button" class="btn btn-dark" onclick="window.location='eventTile.html';">Tile View</button>
-    </div>
-    <div class="col-sm-6 input-group">
+<div style="text-align:center">
+    <h2 id="eventName"></h2>
+    <p id="eventDate"></p>
+    <p id="eventDesc"></p>
+    <div style="margin: 1rem">
         <input type="text" id="search" class="form-control" placeholder="Search">
         <span class="input-group-btn" >
-        <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
-      </span>
+            <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
+        </span>
     </div>
+    <div id="tickets"></div>
 </div>
-<div id="eventList" style="margin:1.5rem">
-    <table class="table table-striped table-hover">
-        <thead style="background:orange">
-        <tr>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody id='events'></tbody>
-    </table>
-</div>
-
-<script src="../js/eventListScript.js"></script>
 </body>
-
+<script src="../js/ticketScript.js"></script>
 </html>
