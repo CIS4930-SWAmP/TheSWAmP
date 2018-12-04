@@ -9,8 +9,8 @@ VALUES
 ("Big Orange", "2019-03-21", "UF's annual comedy show/concert");
 SELECT * FROM events; 
 
-INSERT INTO tickets(price, sellerId, buyerId, availability, eventId)
+INSERT INTO tickets(price, sellerId, buyerId, availability, eventId, quantity)
 VALUES
-(25, 1, 2, 'Monday 3pm',1),
-(15, 2, 1, 'Friday 8am',2);
+(25, 1, 2, 'Monday 3pm',1, 1),
+(15, 2, 1, 'Friday 8am',2, 2);
 SELECT * FROM tickets;
