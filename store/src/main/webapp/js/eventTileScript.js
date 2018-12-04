@@ -38,7 +38,7 @@ function createCards(data){
             data.forEach(event => {
                 const card = document.createElement('div');
                 card.setAttribute('class', 'card');
-                card.setAttribute('onClick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/productDetails.html#"+${event.id}`);
+                card.setAttribute('onClick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/ticket.html#"+${event.eventId}`);
 
                 const h1 = document.createElement('h1');
                 h1.textContent = event.title;

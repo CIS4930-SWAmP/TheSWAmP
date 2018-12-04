@@ -39,7 +39,7 @@ function createList(data){
     data.forEach(event => {
         const table =document.getElementById('events');
         const list = document.createElement('tr');
-        list.setAttribute('onclick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/productDetails.html#"+${event.id}`);
+        list.setAttribute('onclick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/ticket.html#"+${event.eventId}`);
 
         //columns
         const name = document.createElement('td');
