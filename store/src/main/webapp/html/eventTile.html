@@ -39,7 +39,8 @@
 <div>
   <div id="eventList"></div>
   <br>
-  <button  type="button" class="btn" data-toggle="modal" data-target="#addModal" style="margin-right:10rem">Sell Ticket</button>
+  <button  type="button" id="newEvent" class="btn" data-toggle="modal" data-target="#addEventModal" style="margin-right:10rem;display: none">Add Event</button>
+  <button  type="button" id="sell" class="btn" data-toggle="modal" data-target="#addModal" style="margin-right:10rem">Sell Ticket</button>
 </div>
 </body>
 
@@ -81,6 +82,50 @@
           <label for="availability" class="col-2 col-form-label">Availability</label>
           <div class="col-10">
             <input class="form-control" type="text" id="availability">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Event Modal -->
+<div class="modal fade" id="addEventModal" role="dialog" aria-labelledby="addEventModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add an Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <label for="name" class="col-3 col-form-label">Event Title</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" placeholder="Event Title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="desc" class="col-3 col-form-label">Description</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="desc" placeholder="Event Description">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="location" class="col-3 col-form-label">Location</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="location" placeholder="Event Location">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="date" class="col-3 col-form-label">Event Date</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="date" name="trip-start" value="2018-07-22" min="2018-01-01">
           </div>
         </div>
       </div>
