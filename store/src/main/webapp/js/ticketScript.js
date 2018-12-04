@@ -17,6 +17,12 @@ request.onload = function () {
 
             document.getElementById('eventDesc').innerHTML = data.desc;
 
+            // var option = document.createElement('option');
+            // option.innerText = data.title;
+            document.getElementById('name').innerHTML = data.title;
+
+            // var eventSelect = document.getElementById('eventNames');
+            // eventSelect.options[0] = new Option(`${data.title}, `${data.title});
 
         } else {
             console.log('Error');
