@@ -12,8 +12,8 @@ import com.store.model.*;
 public class LoginService {
     private LoginDAO loginDAO = new LoginDAO();
 
-    public Login createLogin(String sessionId, String username, int userId) {
-        Login login = new Login(sessionId, username, userId);
+    public Login createLogin(String sessionId, String username, int userId, boolean isAdmin) {
+        Login login = new Login(sessionId, username, userId, isAdmin);
         return loginDAO.createLogin(login);
     }
 
@@ -24,4 +24,6 @@ public class LoginService {
     public boolean deleteLogin(String sessionId) {
         return loginDAO.deleteLogin(sessionId);
     }
+
+    public int isAdmin(String sessionId) { return loginDAO.isAdmin(sessionId); }
 }

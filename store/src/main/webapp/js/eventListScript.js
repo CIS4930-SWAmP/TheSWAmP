@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = false;
+var isAdmin = true;
 
 if(isAdmin){
     document.getElementById('sell').style.display = "none";
@@ -42,6 +42,7 @@ productDiv.appendChild(container);
 
 function createList(data){
     data.forEach(event => {
+        //Table Data
         const table =document.getElementById('events');
         const list = document.createElement('tr');
         list.setAttribute('onclick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/ticket.html#"+${event.eventId}`);
@@ -65,6 +66,13 @@ function createList(data){
 
         //Append list to table
         table.appendChild(list);
+
+        //Add Ticket Modal
+        var eventSel = document.getElementById('eventNames');
+        var option = document.createElement('option');
+        option.text = event.title;
+        option.value = event.eventId;
+        eventSel.appendChild(option);
 
     });
 }

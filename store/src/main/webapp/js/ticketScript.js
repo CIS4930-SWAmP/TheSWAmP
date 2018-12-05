@@ -17,12 +17,9 @@ request.onload = function () {
 
             document.getElementById('eventDesc').innerHTML = data.desc;
 
-            // var option = document.createElement('option');
-            // option.innerText = data.title;
-            document.getElementById('name').innerHTML = data.title;
-
-            // var eventSelect = document.getElementById('eventNames');
-            // eventSelect.options[0] = new Option(`${data.title}, `${data.title});
+            var option = document.getElementById('name');
+            option.text = data.title;
+            option.value = data.title;
 
         } else {
             console.log('Error');
@@ -55,7 +52,7 @@ requestTickets.onload = function () {
                 price.textContent = ticket.price;
 
                 const avail = document.createElement('td');
-                avail.textContent = ticket.avail;
+                avail.textContent = ticket.availability;
 
                 //Get contact info
                 // const contact = document.createElement('td');

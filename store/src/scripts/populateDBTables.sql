@@ -6,7 +6,10 @@ SELECT * FROM users;
 INSERT INTO events(title, eventDate, description)
 VALUES
 ("Gator Growl", "2019-11-03", "Come show your school spirit at Gator Growl ft. Lil' Baby and Cardi B."),
-("Big Orange", "2019-03-21", "UF's annual comedy show/concert");
+("Big Orange", "2019-03-21", "UF's annual comedy show/concert"),
+("Florida v. Michigan", "2018-12-29", "Florida takes on Michigan in the Peach Bowl"),
+("Florida v. FGCU", "2018-12-22", "UF hosts FGCU in men's basketball"),
+("Dance Alive Ballet", "2018-12-16", "The college of performing arts celebrates the holidays with a performance of 'The Nutcracker.'");
 SELECT * FROM events; 
 
 INSERT INTO tickets(price, sellerId, buyerId, availability, eventId, quantity)

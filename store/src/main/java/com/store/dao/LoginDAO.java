@@ -1,6 +1,7 @@
 package com.store.dao;
 
 import com.store.model.Login;
+import com.store.model.User;
 import java.util.UUID;
 import com.store.model.Event;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -28,9 +29,9 @@ public class LoginDAO {
     }
 
     public Login createLogin(Login login) {
-        String query = "INSERT INTO login (sessionId, username, userId) VALUES (?, ?, ?)";
+        String query = "INSERT INTO login (sessionId, username, userId, isAdmin) VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(
-                query, login.getSessionId(), login.getUsername(), login.getUserId()
+                query, login.getSessionId(), login.getUsername(), login.getUserId(), login.isAdmin()
         );
         return login;
     }
@@ -58,6 +59,30 @@ public class LoginDAO {
             wasDeleted = true;
         }
         return wasDeleted;
+    }
+
+    public int isAdmin(String sessionId) {
+        String query = "SELECT * FROM login WHERE sessionId = ?";
+        Login login = null;
+        try {
+            login = jdbcTemplate.queryForObject(
+                    query, new Object[]{sessionId}, new BeanPropertyRowMapper<>(Login.class)
+            );
+        }
+        catch(EmptyResultDataAccessException e){
+            return 40;
+        }
+        String username = login.getUsername();
+        String checkAdmin = "SELECT isAdmin FROM users WHERE username = ?";
+        try {
+            int toReturn = jdbcTemplate.queryForObject(
+                    checkAdmin, new Object[] {username}, Integer.class
+            );
+            return toReturn;
+        }
+        catch(EmptyResultDataAccessException e){
+            return 30;
+        }
     }
 
     public DriverManagerDataSource getDataSource() {

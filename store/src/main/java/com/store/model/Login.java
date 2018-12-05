@@ -5,6 +5,13 @@ public class Login {
     private String sessionId;
     private String username;
     private int userId;
+    private boolean isAdmin;
+
+    public Login(String sessionId, String username, int userId, boolean isAdmin) {
+        this.sessionId = sessionId;
+        this.username = username;
+        this.userId = userId;
+    }
 
     public Login(String sessionId, String username, int userId) {
         this.sessionId = sessionId;
@@ -37,6 +44,14 @@ public class Login {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     @Override
