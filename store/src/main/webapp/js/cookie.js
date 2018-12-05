@@ -1,3 +1,8 @@
+var userInfo = {
+    userId: null,
+    isAdmin: false
+};
+
 function readCookie(name){
     var decodedCookie = decodeURIComponent(document.cookie);
     var first = name + "=";
