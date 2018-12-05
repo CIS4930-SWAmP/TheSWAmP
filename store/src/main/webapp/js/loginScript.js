@@ -19,7 +19,7 @@ function verifyLogin() {
                 // document.cookie="session="+split[2].toString();
                 // document.cookie="path=/";
                 userInfo.userId = split[7];
-                window.location = "./html/eventList.html";
+                window.location = "./html/eventTile.html";
             }
             else {
                 alert('Unable to log in at this time. Try again later');

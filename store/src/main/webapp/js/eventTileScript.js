@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = true;
+var isAdmin = userInfo.isAdmin;
 
 //Do login stuff
 if(isAdmin){
@@ -109,25 +109,8 @@ function updateEventModal(event, id){
 function addTicket(){
     var requestAddTicket = new XMLHttpRequest();
 
-    //Get Username from Verificaiton
-    var username;
+    var sellerId = userInfo.userId;
 
-    // var sellerId;
-    // var sId = new XMLHttpRequest();
-    // sId.open('GET','http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/'+username, true);
-    // sId.send();
-    // sId.onreadystatechange = function () {
-    //     if(sId.readyState === 4) {
-    //         if (sId.status >= 200 && request.status < 400) {
-    //             var data = JSON.parse(this.response);
-    //             sellerId = data.id;
-    //         } else {
-    //             console.log('Error');
-    //         }
-    //     }
-    // };
-
-    //Get event id from events Api
     var select = document.getElementById('events');
     var eventId = select.options[select.selectedIndex].value;
 
@@ -137,7 +120,7 @@ function addTicket(){
 
     var avail = document.getElementById('availability').value;
 
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + 1 + '&eventId=' + eventId
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
     + '&price=' + price + '&avail=' + avail + '&quantity=' + quantity;
 
     requestAddTicket.open('POST', apiUrl, true);
