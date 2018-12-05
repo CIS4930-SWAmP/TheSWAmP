@@ -37,10 +37,15 @@ public class LoginDAO {
 
     public Login readLogin(String sessionId) {
         String query = "SELECT * FROM login WHERE sessionId = ?";
-        Login login = jdbcTemplate.queryForObject(
-                query, new Object[]{sessionId}, new BeanPropertyRowMapper<>(Login.class)
-        );
-        return login;
+        try {
+            Login login = jdbcTemplate.queryForObject(
+                    query, new Object[]{sessionId}, new BeanPropertyRowMapper<>(Login.class)
+            );
+            return login;
+        }
+        catch(EmptyResultDataAccessException e){
+            return null;
+        }
     }
 
     public boolean deleteLogin(String sessionId) {

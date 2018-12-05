@@ -1,30 +1,35 @@
-var request = new XMLHttpRequest();
-var createRequest = new XMLHttpRequest();
-
 function verifyLogin() {
+    var loginRequest = new XMLHttpRequest();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    request.open('POST', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login?username='+username+'&password='+password, true);
-    request.send();
-    request.onreadystatechange = function() {
-        if(request.readyState === 4) {
-            if (request.status === 200) {
-                const temp = request.responseText;
+    console.log('username ', username.toString());
+    var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login?username='+username.toString()+'&password='+password.toString();
+    console.log(url);
+    loginRequest.open('POST', url, true);
+    loginRequest.send();
+    loginRequest.onreadystatechange = function() {
+        if(loginRequest.readyState === 4) {
+            console.log(loginRequest.status);
+            if (loginRequest.status === 200) {
+                const temp = loginRequest.responseText;
+                console.log('temp', temp);
                 const split = temp.split("\ ");
                 document.cookie="session="+split[2];
-                window.location = "./eventList.html";
+                userInfo.userId = split[7];
+                window.location = "./html/eventList.html";
             }
             else {
-                document.getElementById("warning").style.display = "block";
+                alert('Unable to log in at this time. Try again later');
             }
         }
     }
 }
 
-function createUser(){
+function createUser() {
+    var createRequest = new XMLHttpRequest();
     var firstname = document.getElementById("firstname").value;
     var lastname = document.getElementById("lastname").value;
-    var username = document.getElementById("createUser").value;
+    var username = document.getElementById("createUsername").value;
     var password = document.getElementById("createPass").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
@@ -40,13 +45,29 @@ function createUser(){
                 verifyLogin();
             }
             else {
-                document.getElementById("warning2").style.display = "block";
+                alert('Unable to create user at this time. Try again later');
             }
         }
     }
 }
 
 function logout() {
-    console.log(document.cookie);
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login/
+    // console.log(document.cookie);
+    var logoutRequest = new XMLHttpRequest();
+    const session = readCookie("session");
+    console.log('session', session);
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login/' + session;
+    logoutRequest.open('DELETE', apiUrl, true);
+    logoutRequest.send();
+    logoutRequest.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            if (logoutRequest.status === 200) {
+                document.cookie="session="+"";
+                window.location = '../';
+            }
+            else {
+                alert('Unable to log out at this time. Try again later');
+            }
+        }
+    }
 }
