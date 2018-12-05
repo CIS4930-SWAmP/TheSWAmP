@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = false;
+var isAdmin = userInfo.isAdmin;
 
 if(isAdmin){
     document.getElementById('sell').style.display = "none";
