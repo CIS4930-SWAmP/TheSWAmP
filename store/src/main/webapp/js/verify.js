@@ -1,7 +1,7 @@
 function verify() {
     var verifyRequest = new XMLHttpRequest();
     var session = readCookie("session");
-    if(session === "" || session === null ) {session = "c47dcc42-d70a-45ea-bf85-6a7111771e7a";}
+    if(session === "" || session === null ) {session = "1";}
     console.log('session', session);
     const apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login?sessionId=' + session.toString();
     console.log(apiUrl);
