@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = false;
+var isAdmin = true;
 
 //Do login stuff
 if(isAdmin){
@@ -71,16 +71,113 @@ function createCards(data){
                     updateBtn.setAttribute('class', 'btn btn-dark');
                     updateBtn.setAttribute('style', 'margin:0 0 0 14rem;position:absolute;bottom:1rem;');
                     updateBtn.setAttribute('class', 'btn btn-dark');
-                    updateBtn.setAttribute('onclick', `updateEvent(event,${event.eventId})`);
+                    updateBtn.setAttribute('onclick', `updateEventModal(event,${event.eventId})`);
                     updateBtn.innerText = 'Update';
                     card.appendChild(updateBtn);
                 }
+
+                //Add Ticket Modal
+                var eventSel = document.getElementById('events');
+                var option = document.createElement('option');
+                option.text = event.title;
+                option.value = event.eventId;
+                eventSel.appendChild(option);
             });
 }
 
-function updateEvent(event, id){
+function updateEventModal(event, id){
     event.stopPropagation();
-    window.location = "/TheSWAmP-2.0.3.RELEASE/html/updateEvent.html#"+id;
+    document.getElementById('submitUpdate').setAttribute('onclick', `updateEvent(${id})`);
+    var requestEvent = new XMLHttpRequest();
+    requestEvent.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/' + id, true);
+    requestEvent.send();
+    requestEvent.onreadystatechange = function () {
+            if(requestEvent.readyState === 4) {
+                if (requestEvent.status >= 200 && request.status < 400) {
+                    var data = JSON.parse(this.response);
+                    document.getElementById('newName').value = data.title;
+                    document.getElementById('newDesc').value = data.desc;
+                    document.getElementById('newDate').value = data.date;
+                    document.getElementById('update').click();
+                } else {
+                    console.log('Error');
+                }
+            }
+        }
 }
+
+function addTicket(){
+    var requestAddTicket = new XMLHttpRequest();
+
+    //Get Username from Verificaiton
+    var username;
+
+    // var sellerId;
+    // var sId = new XMLHttpRequest();
+    // sId.open('GET','http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/'+username, true);
+    // sId.send();
+    // sId.onreadystatechange = function () {
+    //     if(sId.readyState === 4) {
+    //         if (sId.status >= 200 && request.status < 400) {
+    //             var data = JSON.parse(this.response);
+    //             sellerId = data.id;
+    //         } else {
+    //             console.log('Error');
+    //         }
+    //     }
+    // };
+
+    //Get event id from events Api
+    var select = document.getElementById('events');
+    var eventId = select.options[select.selectedIndex].value;
+
+    var price = document.getElementById('price').value;
+
+    var quantity = document.getElementById('quantity').value;
+
+    var avail = document.getElementById('availability').value;
+
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + 1 + '&eventId=' + eventId
+    + '&price=' + price + '&avail=' + avail + '&quantity=' + quantity;
+
+    requestAddTicket.open('POST', apiUrl, true);
+    requestAddTicket.send();
+    requestAddTicket.onreadystatechange = function () {
+        if(requestAddTicket.readyState === 4) {
+            if (requestAddTicket.status >= 200 && request.status < 400) {
+                document.getElementById('close').click();
+            } else {
+                console.log('Error');
+            }
+        }
+    };
+}
+
+//To implement 
+function addEvent(){
+
+}
+
+function updateEvent(id){
+
+    var description  = document.getElementById('newDesc').value;
+    var title = document.getElementById('newName').value;
+    var date = document.getElementById('newDate').value;
+
+    var update = new XMLHttpRequest();
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?eventId=' + id + '&title=' + title + '&eventDate=' + date + '&description=' + description;
+    update.open('PUT', apiUrl, true);
+    update.send();
+    update.onreadystatechange = function () {
+        if (update.readyState === 4) {
+            if (update.status >= 200 && update.status < 400) {
+                location.reload();
+            } else {
+                console.log('Error');
+            }
+        }
+    }
+}
+
 
 request.send();
