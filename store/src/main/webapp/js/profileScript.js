@@ -1,10 +1,10 @@
 function updateProfile() {
-    var fname = document.getElementById("fname");
-    var lname = document.getElementById("lname");
-    var username = document.getElementById("username");
-    var password = document.getElementById("password");
-    var phone = document.getElementById("phone");
-    var email = document.getElementById("email");
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
     var updateRequest = new XMLHttpRequest();
     url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users?fname='+fname+'&lname='+lname+'&username='+username+'&password='+password+'&phone='+phone+'&email=' + email;
     updateRequest.open('PUT', url, true);
@@ -21,20 +21,24 @@ function updateProfile() {
     }
 }
 
-function getProfileInfo() {
-    var username = document.getElementById("username");
-    url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users?username='+username;
-    updateRequest.open('GET', url, true);
-    updateRequest.send();
-    updateRequest.onreadystatechange = function() {
-        if(updateRequest.readyState === 4) {
-            if(updateRequest.status === 200) {
-                var res = JSON.parse(verifyRequest.responseText);
-                console.log('get info', JSON.parse(verifyRequest.responseText));
+function getProfileInfo(username) {
+    // var username = document.getElementById("username");
+    // var username = userInfo.username;
+    console.log('got username', username);
+    var getProfileRequest = new XMLHttpRequest();
+    url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/'+username;
+    getProfileRequest.open('GET', url, true);
+    getProfileRequest.send();
+    getProfileRequest.onload = function() {
+        if(getProfileRequest.readyState === 4) {
+            if(getProfileRequest.status === 200) {
+                var res = JSON.parse(getProfileRequest.responseText);
+                console.log('get info', JSON.parse(getProfileRequest.responseText));
                 document.getElementById("fname").value = res.fname;
                 document.getElementById("lname").value = res.lname;
                 document.getElementById("phone").value = res.phone;
                 document.getElementById("email").value = res.email;
+                document.getElementById("password").value = res.password;
             }
             else {
                 alert('Unable to obtain information. Please try again later');
