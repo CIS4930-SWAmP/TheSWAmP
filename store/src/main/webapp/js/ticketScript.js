@@ -66,7 +66,6 @@ requestTickets.onload = function () {
                         if (requestUser.status === 200) {
                             var data = JSON.parse(this.response);
                             contact.textContent = data.phone;
-
                         } else {
                             console.log('Error');
                         }

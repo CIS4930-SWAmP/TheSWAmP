@@ -1,12 +1,7 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = userInfo.isAdmin;
-
+var isAdmin;
 //Do login stuff
-if(isAdmin){
-    document.getElementById('sell').style.display = "none";
-    document.getElementById('newEvent').style.display = "block";
-}
 
 function searchByKeyword(keyword) {
     requestKey.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/search/' + keyword, true);
@@ -65,7 +60,7 @@ function createCards(data){
                 card.appendChild(date);
                 card.appendChild(desc);
 
-                if(isAdmin){
+                if(document.getElementById('username').innerText === 'admin'){
                     var updateBtn = document.createElement('button');
                     updateBtn.setAttribute('type', 'button');
                     updateBtn.setAttribute('class', 'btn btn-dark');
@@ -74,6 +69,10 @@ function createCards(data){
                     updateBtn.setAttribute('onclick', `updateEventModal(event,${event.eventId})`);
                     updateBtn.innerText = 'Update';
                     card.appendChild(updateBtn);
+
+                    document.getElementById('sell').style.display = "none";
+                    document.getElementById('newEvent').style.display = "block";
+
                 }
 
                 //Add Ticket Modal
@@ -161,6 +160,5 @@ function updateEvent(id){
         }
     }
 }
-
 
 request.send();
