@@ -1,5 +1,10 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
+var isAdmin = false;
+
+if(isAdmin){
+    document.getElementById('sell').style.display = "none";
+}
 
 request.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events', true);
 request.onload = function () {

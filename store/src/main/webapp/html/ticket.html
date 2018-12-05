@@ -24,21 +24,37 @@
         </a>
     </div>
 </nav>
-<div style="text-align:center">
-    <h2 id="eventName"></h2>
-    <p id="eventDate"></p>
-    <p id="eventDesc"></p>
-    <div style="margin: 1rem">
-        <input type="text" id="search" class="form-control" placeholder="Search">
+<div>
+    <div style="text-align:center">
+        <h2 id="eventName"></h2>
+        <p id="eventDate"></p>
+        <p id="eventDesc"></p>
+    </div>
+    <div class="row" style="margin: 1rem">
+        <div class="col-10">
+            <input type="text" id="search" class="form-control" placeholder="Search">
+        </div>
         <span class="input-group-btn" >
             <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
         </span>
     </div>
-    <div id="tickets"></div>
+    <div id="ticketDiv" style="margin:1.5rem;overflow:auto; max-height:17rem">
+        <table class="table table-striped">
+            <thead style="background:orange">
+            <tr>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Availability</th>
+                <th>Contact</th>
+            </tr>
+            </thead>
+            <tbody id='tickets'></tbody>
+        </table>
+    </div>
 </div>
 </body>
 <br>
-<button  type="button" class="btn" data-toggle="modal" data-target="#addModal" style="margin-right:10rem">Sell Ticket</button>
+<button  type="button" class="btn" id="sell" data-toggle="modal" data-target="#addModal" >Sell Ticket</button>
 
 <!-- Add Ticket Modal -->
 <div class="modal fade" id="addModal" role="dialog" aria-labelledby="addModal" aria-hidden="true">

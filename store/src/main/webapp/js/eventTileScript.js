@@ -8,7 +8,6 @@ if(isAdmin){
     document.getElementById('newEvent').style.display = "block";
 }
 
-
 function searchByKeyword(keyword) {
     requestKey.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/search/' + keyword, true);
     requestKey.send();

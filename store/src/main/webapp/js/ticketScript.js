@@ -35,30 +35,40 @@ requestTickets.onload = function () {
     if(requestTickets.readyState === 4) {
         if (requestTickets.status === 200) {
             var data = JSON.parse(this.response);
-
             data.forEach(ticket => {
-                const ticketDiv = document.getElementById('tickets');
 
-                const div = document.createElement('div');
-                div.setAttribute('class','border');
+                const ticketDiv = document.getElementById('ticketDiv');
 
-                const h1 = document.createElement('h5');
-                h1.textContent = '1 Ticket';
+                const table =document.getElementById('tickets');
+                const list = document.createElement('tr');
 
-                const price = document.createElement('h5');
-                price.textContent = `$${ticket.price}`;
+                //columns
+                const quantity = document.createElement('td');
+                if(ticket.quantity === 1){
+                    quantity.textContent = ticket.quantity + ' Ticket';
+                }
+                else {
+                    quantity.textContent = ticket.quantity + ' Tickets';
+                }
 
-                // const contact = document.createElement('p');
-                // desc.textContent = ${ticket.desc};
+                const price = document.createElement('td');
+                price.textContent = ticket.price;
 
-                const avail = document.createElement('h5');
-                avail.textContent = ticket.availability;
+                const avail = document.createElement('td');
+                avail.textContent = ticket.avail;
 
-                div.appendChild(h1);
-                div.appendChild(price);
-                div.appendChild(avail);
+                //Get contact info
+                // const contact = document.createElement('td');
+                // contact.textContent = ticket.avail
 
-                ticketDiv.appendChild(div);
+
+                //Append Columns to list
+                list.appendChild(quantity);
+                list.appendChild(price);
+                list.appendChild(avail);
+
+                //Append list to table
+                table.appendChild(list);
             })
         } else {
             console.log('Error');
