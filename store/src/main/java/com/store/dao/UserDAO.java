@@ -41,11 +41,16 @@ public class UserDAO {
 
     //Get user by username
     public User readUser(String username) {
-        String toGet = "SELECT * FROM users WHERE username = ?";
-        User user = jdbcTemplate.queryForObject(
-                toGet, new Object[]{username}, new BeanPropertyRowMapper<>(User.class)
-        );
-        return user;
+        try {
+            String toGet = "SELECT * FROM users WHERE username = ?";
+            User user = jdbcTemplate.queryForObject(
+                    toGet, new Object[]{username}, new BeanPropertyRowMapper<>(User.class)
+            );
+            return user;
+        }
+        catch(EmptyResultDataAccessException e){
+            return null;
+        }
     }
 
     //Update user
