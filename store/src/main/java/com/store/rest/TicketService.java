@@ -15,12 +15,12 @@ public class TicketService {
     //@Autowired
     private TicketDAO ticketDAO = new TicketDAO();
 
-    public boolean createTicket(int sellerId, int eventId, Double price, String availability){
-        Ticket ticket = new Ticket(sellerId, eventId, price, availability);
+    public boolean createTicket(int sellerId, int eventId, Double price, String availability, int quantity){
+        Ticket ticket = new Ticket(sellerId, eventId, price, availability, quantity);
         return ticketDAO.createTicket(ticket);
     }
 
-    public boolean updateTicket(Double price, String availability, int ticketId, boolean purchased, String username){
+    public boolean updateTicket(Double price, String availability, int ticketId, boolean purchased, String username, int quantity){
         Ticket ticket = new Ticket(ticketId);
         Ticket oldTicket = ticketDAO.getTicketById(ticketId);
         UserDAO userDAO = new UserDAO();
@@ -28,6 +28,13 @@ public class TicketService {
         if(username != null) {
             int buyerId = userDAO.readUser(username).getId();
             ticket.setBuyerId(buyerId);
+        }
+
+        if(quantity != 0){
+            ticket.setQuantity(quantity);
+        }
+        else{
+            ticket.setQuantity(oldTicket.getQuantity());
         }
 
         ticket.setPurchased(purchased);

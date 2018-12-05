@@ -9,7 +9,8 @@ CREATE TABLE users(
 	phone VARCHAR(255),
 	lname VARCHAR(255),
 	fname VARCHAR(255),
-	email VARCHAR(255)
+	email VARCHAR(255),
+	isAdmin BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE events(
@@ -26,7 +27,8 @@ CREATE TABLE tickets(
 	purchased BOOLEAN DEFAULT false,
 	price DECIMAL(8, 2),
 	buyerId INT,
-	availability VARCHAR(255)
+	availability VARCHAR(255),
+	quantity INT
 );
 
 SHOW TABLES;
