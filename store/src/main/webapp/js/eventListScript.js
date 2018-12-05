@@ -1,8 +1,5 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = userInfo.isAdmin;
-
-
 
 request.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events', true);
 request.onload = function () {
@@ -72,6 +69,36 @@ function createList(data){
         option.value = event.eventId;
         eventSel.appendChild(option);
     });
+}
+
+function addTicket(){
+    var requestAddTicket = new XMLHttpRequest();
+
+    var sellerId = userInfo.userId;
+
+    var select = document.getElementById('eventNames');
+    var eventId = select.options[select.selectedIndex].value;
+
+    var price = document.getElementById('price').value;
+
+    var quantity = document.getElementById('quantity').value;
+
+    var avail = document.getElementById('availability').value;
+
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
+        + '&price=' + price + '&avail=' + avail + '&quantity=' + quantity;
+
+    requestAddTicket.open('POST', apiUrl, true);
+    requestAddTicket.send();
+    requestAddTicket.onreadystatechange = function () {
+        if(requestAddTicket.readyState === 4) {
+            if (requestAddTicket.status >= 200 && requestAddTicket.status < 400) {
+                document.getElementById('close').click();
+            } else {
+                console.log('Error');
+            }
+        }
+    };
 }
 request.send();
 

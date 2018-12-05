@@ -32,12 +32,12 @@
     </div>
 </nav>
 <div class="row" style="margin: 1rem">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <div class="btn-group btn-group-toggle col-sm-3" data-toggle="buttons">
         <button type="button" class="btn btn-dark" onclick="window.location='eventTile.html';">Tile View</button>
     </div>
     <div class="col-sm-6 input-group">
         <input type="text" id="search" class="form-control" placeholder="Search">
-        <span class="input-group-btn" >
+        <span class="input-group-btn col-2" >
         <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
       </span>
     </div>
@@ -100,7 +100,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="addTicket()">Save changes</button>
             </div>
         </div>
     </div>
