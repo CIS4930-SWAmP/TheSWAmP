@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -51,6 +51,15 @@
 </div>
 <br>
 <button  type="button" class="btn" id="sell" data-toggle="modal" data-target="#addModal" style="margin-right:10rem">Sell Ticket</button>
+<div id="google_translate_element" style="margin-left:10px;"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <!-- Add Ticket Modal -->
 <div class="modal fade" id="addModal" role="dialog" aria-labelledby="addModal" aria-hidden="true">
