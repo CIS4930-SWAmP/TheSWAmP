@@ -1,48 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Store</title>
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-
-<body>
-
-<div>
-  <div class="row" style="background:#e9ecef">
-    <div class="col-sm-3">
-      <ol class="breadcrumb"  style="background:#e9ecef;margin-top:10px">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-      </ol>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="index.html">
+    <img src="assets/logo.png" alt="logo" style="width:60px;height:50px">
+  </a>
+  <h4 style="color:orange">The SWAmP</h4>
+  <div style="position:absolute; right:2rem; color:orange;">
+    <span>Hello,</span>
+    <a href="./profile.html">
+      <span id="headerUsername"></span>
+    </a>
+    <br>
+    <a href="html/profile.html">
+      <span style="float:right">Logout</span>
+    </a>
+  </div>
+</nav>
+<h5 style="text-align:center;margin:1rem;font-family:Tahoma">A place for UF students to buy and sell tickets for UF events</h5>
+<script src="js/loginScript.js"></script>
+<div style="border-style:solid;margin:10px;">
+  <div class="row">
+    <div class="col-sm-6" style="border-right:solid;">
+      <h1 style="text-align:center">Login</h1>
+      <div class="input-group" style="margin:20px">
+        <label for="username" style="margin-right:35px">Username</label>
+        <input type="text" class="form-control" placeholder="Username" id="username" style="margin-right:40px;">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="password" style="margin-right:35px">Password</label>
+        <input type="password" class="form-control" placeholder="password" id="password" style="margin-right:40px;">
+      </div>
+      <div id="warning" style="display:none;text-align:center">
+        <p style="color:red">This User does not exist, please sign up for an account.</p>
+      </div>
+      <button class="btn btn-default" onclick="verifyLogin()" type="submit" style="float:right">Login</button>
     </div>
     <div class="col-sm-6">
-      <div class="input-group" style="margin:10px">
-        <input type="text" id="search" class="form-control" placeholder="Search for...">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
-          </span>
+      <h1 style="text-align:center">Sign Up</h1>
+      <div class="input-group" style="margin:20px">
+        <label for="firstname" style="margin-right:10px">First Name</label>
+        <input type="text" class="form-control" placeholder="First Name" id="firstname" style="margin-right:40px">
       </div>
+      <div class="input-group" style="margin:20px">
+        <label for="lastname" style="margin-right:10px">Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name" id="lastname" style="margin-right:40px">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="createUser" style="margin-right:10px">Username</label>
+        <input type="text" class="form-control" placeholder="Username" id="createUser" style="margin-right:40px">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="createPass" style="margin-right:35px">Password</label>
+        <input type="password" class="form-control" placeholder="password" id="createPass" style="margin-right:40px;">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="phone" style="margin-right:35px">Phone Number</label>
+        <input type="text" class="form-control" placeholder="Phone Number" id="phone" style="margin-right:40px">
+      </div>
+      <div class="input-group" style="margin:20px">
+        <label for="email" style="margin-right:35px">Email</label>
+        <input type="text" class="form-control" placeholder="Email" id="email" style="margin-right:40px">
+      </div>
+      <div id="warning2" style="display:none;text-align:center">
+        <p style="color:red">This username already exist, please try a different username.</p>
+      </div>
+      <button class="btn btn-default" onclick="createUser()" type="submit" style="float:right; margin-right:10px; margin-bottom:20px">Sign Up</button>
     </div>
-    <div class="col-sm-3">
-      <!--<button class="btn btn-default" type="button" style="float:right;margin:10px">Logout</button>-->
-      <a href="html/cart.html">
-        <span class="glyphicon glyphicon-shopping-cart" style="float:right; margin:15px"></span>
-      </a>
-      <a href="html/profile.html">
-        <span class="glyphicon glyphicon-user" style="float:right; margin:15px"></span>
-      </a>
-    </div>
+
   </div>
 </div>
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <button type="button" class="btn btn-dark" onclick="window.location='html/productList.html';" style="margin: 10px" >List View</button>
-</div>
-<div id="productList"></div>
-
-<script src="js/productScript.js"></script>
-</body>
-
-</html>
+<!--<html>-->
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+  <!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
+    <!--<a class="navbar-brand">-->
+      <!--<img src="assets/logo.png" alt="logo" style="width:60px;height:50px">-->
+    <!--</a>-->
+    <!--<h4 style="color:orange">The SWAmP</h4>-->
+  <!--</nav>-->
+  <!--<h5 style="text-align:center;margin:1rem;font-family:Tahoma">A place for UF students to buy and sell tickets for UF events</h5>-->
+  <!--<div style="border-style:solid;margin:10px;">-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-6" style="border-right:solid;margin:.5rem">-->
+        <!--<h1 style="text-align:center">Login</h1>-->
+        <!--<div class="input-group" style="margin:20px">-->
+           <!--<label for="usrname" style="margin-right:35px">Username</label>-->
+          <!--<input type="text" class="form-control" placeholder="Username" id="usrname" style="margin-right:40px;">-->
+        <!--</div>-->
+        <!--<div class="input-group" style="margin:20px">-->
+          <!--<label for="password" style="margin-right:35px">Password</label>-->
+          <!--<input type="text" class="form-control" placeholder="Password" id="password" style="margin-right:40px;">-->
+        <!--</div>-->
+        <!--<div id="warning" style="display:none;text-align:center">-->
+          <!--<p style="color:red">This User does not exist, please sign up for an account.</p>-->
+        <!--</div>-->
+        <!--<button class="btn btn-default" onclick="verifyLogin()" type="submit" style="float:right">Login</button>-->
+      <!--</div>-->
+      <!--<div class="col-sm-5">-->
+        <!--<h1 style="text-align:center">Sign Up</h1>-->
+        <!--<div class="input-group" style="margin:20px">-->
+          <!--<label for="pass2" style="margin-right:10px">First Name</label>-->
+          <!--<input type="text" class="form-control" placeholder="First Name" id="pass2" style="margin-right:40px">-->
+        <!--</div>-->
+        <!--<div class="input-group" style="margin:20px">-->
+          <!--<label for="pass3" style="margin-right:10px">Last Name</label>-->
+          <!--<input type="text" class="form-control" placeholder="Last Name" id="pass3" style="margin-right:40px">-->
+        <!--</div>-->
+        <!--<div class="input-group" style="margin:20px">-->
+           <!--<label for="email1" style="margin-right:35px">Email</label>-->
+          <!--<input type="text" class="form-control" placeholder="Email" id="email1" style="margin-right:40px">-->
+        <!--</div>-->
+        <!--<div class="input-group" style="margin:20px">-->
+          <!--<label for="phoneNum" style="margin-right:35px">Phone Number</label>-->
+          <!--<input type="text" class="form-control" placeholder="Phone" id="phoneNum" style="margin-right:40px">-->
+        <!--</div>-->
+        <!--<div class="input-group" style="margin:20px">-->
+           <!--<label for="pass1" style="margin-right:10px">Username</label>-->
+          <!--<input type="text" class="form-control" placeholder="Username" id="pass1" style="margin-right:40px">-->
+        <!--</div>-->
+        <!--<div class="input-group" style="margin:20px">-->
+          <!--<label for="passwd" style="margin-right:10px">Password</label>-->
+          <!--<input type="text" class="form-control" placeholder="Password" id="passwd" style="margin-right:40px">-->
+        <!--</div>-->
+        <!--<div id="warning2" style="display:none;text-align:center">-->
+          <!--<p style="color:red">This username already exist, please try a different username.</p>-->
+        <!--</div>-->
+        <!--<button class="btn btn-default" onclick="createUser()" type="submit" style="float:right; margin-right:10px; margin-bottom:20px">Sign Up</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<script src="js/loginScript.js"></script>-->

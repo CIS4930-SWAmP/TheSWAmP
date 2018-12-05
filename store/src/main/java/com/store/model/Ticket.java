@@ -8,6 +8,7 @@ public class Ticket {
     private double price;
     private String availability;
     private boolean purchased;
+    private int quantity;
 
     public Ticket() {
     }
@@ -29,7 +30,16 @@ public class Ticket {
         this.availability = availability;
     }
 
-    public Ticket(int id, int sellerId, int eventId, boolean purchased, double price,int buyerId, String availability) {
+    public Ticket(int sellerId, int eventId, double price, String availability, int quantity) {
+        this.sellerId = sellerId;
+        this.eventId = eventId;
+        this.price = price;
+        this.availability = availability;
+        this.quantity = quantity;
+    }
+
+
+    public Ticket(int id, int sellerId, int eventId, boolean purchased, double price,int buyerId, String availability, int quantity) {
         this.id = id;
         this.buyerId = buyerId;
         this.sellerId = sellerId;
@@ -37,6 +47,7 @@ public class Ticket {
         this.price = price;
         this.availability = availability;
         this.purchased = purchased;
+        this.quantity = quantity;
     }
 
     public int getId() {
@@ -93,6 +104,14 @@ public class Ticket {
 
     public void setPurchased(boolean purchased) {
         this.purchased = purchased;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
 

@@ -62,8 +62,9 @@ public class TicketController extends HttpServlet{
             @QueryParam("sellerId") int sellerId,
             @QueryParam("eventId") int eventId,
             @QueryParam("price") Double price,
-            @QueryParam("avail") String avail){
-        if(ticketService.createTicket(sellerId,eventId,price,avail)){
+            @QueryParam("avail") String avail,
+            @QueryParam("quantity") int quantity) {
+        if(ticketService.createTicket(sellerId,eventId,price,avail,quantity)){
             return Response.status(200).build();
         }
         return Response.status(409).build();
@@ -76,8 +77,9 @@ public class TicketController extends HttpServlet{
             @QueryParam("avail") String avail,
             @QueryParam("ticketId") int ticketId,
             @QueryParam("purch") boolean purch,
-            @QueryParam("username") String username){
-        if(ticketService.updateTicket(price, avail, ticketId, purch, username )){
+            @QueryParam("username") String username,
+            @QueryParam("quantity") int quantity){
+        if(ticketService.updateTicket(price, avail, ticketId, purch, username, quantity )){
             return Response.status(200).build();
         }
         return Response.status(400).build();

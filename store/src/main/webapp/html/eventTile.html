@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Store</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="eventTile.html">
+    <img src="../assets/logo.png" alt="logo" style="width:60px;height:50px">
+  </a>
+  <h4 style="color:orange">The SWAmP</h4>
+    <div style="position:absolute; right:2rem; color:orange;">
+      <span>Hello,</span>
+      <a href="profile.html">
+      <span id="username"></span>
+      </a>
+    <br>
+      <a href="../index.html">
+        <span style="float:right">Logout</span>
+      </a>
+    </div>
+</nav>
+<body>
+<div class="row" style="margin: 1rem">
+  <div class="col-sm-4 btn-group btn-group-toggle" data-toggle="buttons">
+    <button type="button" class="btn btn-dark" onclick="window.location='eventList.html';" >List View</button>
+  </div>
+    <div class="col-sm-6 input-group">
+      <input type="text" id="search" class="form-control" placeholder="Search">
+      <span class="input-group-btn" >
+        <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
+      </span>
+    </div>
+</div>
+<div>
+  <div id="eventList"></div>
+  <br>
+  <button  type="button" id="newEvent" class="btn" data-toggle="modal" data-target="#addEventModal" style="margin-right:10rem;display: none">Add Event</button>
+  <button  type="button" id="sell" class="btn" data-toggle="modal" data-target="#addModal" style="margin-right:10rem">Sell Ticket</button>
+</div>
+</body>
+
+<!-- Add Ticket Modal -->
+<div class="modal fade" id="addModal" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="text-align:center">Sell a Ticket</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <label for="events" class="col-2 col-form-label">Event</label>
+          <div class="col-10">
+            <select class="form-control" id="events">
+              <!--Add Options on load-->
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="price" class="col-2 col-form-label">Price</label>
+          <div class="col-10 input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input class="form-control" type="number" min="0" id="price">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="quantity" class="col-2 col-form-label">Quantity</label>
+          <div class="col-10">
+            <input class="form-control" type="number" min="0" id="quantity">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="availability" class="col-2 col-form-label">Availability</label>
+          <div class="col-10">
+            <input class="form-control" type="text" id="availability">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Event Modal -->
+<div class="modal fade" id="addEventModal" role="dialog" aria-labelledby="addEventModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add an Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+          <label for="name" class="col-3 col-form-label">Event Title</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" placeholder="Event Title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="desc" class="col-3 col-form-label">Description</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="desc" placeholder="Event Description">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="location" class="col-3 col-form-label">Location</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="location" placeholder="Event Location">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="date" class="col-3 col-form-label">Event Date</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="date" name="trip-start" value="2018-07-22" min="2018-01-01">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/eventTileScript.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

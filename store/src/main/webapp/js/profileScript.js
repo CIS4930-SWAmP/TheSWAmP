@@ -29,7 +29,7 @@ request.onload = function () {
             userInfo.appendChild(phone);
 
         } else {
-           //window.location = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/html/index.html'    ;
+           window.location = '../index.html'    ;
         }
     }
 };

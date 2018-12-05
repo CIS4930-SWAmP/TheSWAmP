@@ -27,7 +27,8 @@ CREATE TABLE tickets(
 	purchased BOOLEAN DEFAULT false,
 	price DECIMAL(8, 2),
 	buyerId INT,
-	availability VARCHAR(255)
+	availability VARCHAR(255),
+	quantity INT
 );
 
 CREATE TABLE login(

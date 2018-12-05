@@ -1,0 +1,60 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="eventTile.html">
+        <img src="../assets/logo.png" alt="logo" style="width:60px;height:50px">
+    </a>
+    <h4 style="color:orange">The SWAmP</h4>
+    <div style="position:absolute; right:2rem; color:orange;">
+        <span>Hello,</span>
+        <a href="profile.html">
+            <span id="username"></span>
+        </a>
+        <br>
+        <a href="../index.html">
+            <span style="float:right">Logout</span>
+        </a>
+    </div>
+</nav>
+<div>
+    <h3 id="eventName" style="text-align:center; margin-top:2rem">Update Event Name</h3>
+    <form style="margin:3rem 10rem 0 10rem">
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Event Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="Event Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="desc" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="desc" placeholder="Event Description">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="location" placeholder="Event Location">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="date" name="trip-start" value="2018-07-22" min="2018-01-01">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-11">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+            <div class="col-sm-1">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+        </div>
+    </form>
+</div>

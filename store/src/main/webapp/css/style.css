@@ -1,18 +1,22 @@
 html {
     line-height: 1.6;
-    background: gray;
 }
-
 
 h1 {
     text-align: center;
     padding: 1.5rem 2.5rem;
-    background: lightblue;
+    background: orange;
     font-size: 1.5rem;
 }
 
 p {
     padding: 0 1.5rem 1.5rem;
+}
+
+img {
+    width:50px;
+    height: 50px;
+    margin-left: 10px;
 }
 
 
@@ -24,7 +28,6 @@ p {
 .card {
     margin: 1rem;
     padding-bottom: 1rem;
-    background: grey;
     overflow: hidden;
 }
 
@@ -36,10 +39,6 @@ p {
 .btn {
     margin: 0 10px 0 20rem;
     float: right;
-}
-
-.desc {
-    /*align-content: center;*/
 }
 
 @media screen and (min-width: 00px) {

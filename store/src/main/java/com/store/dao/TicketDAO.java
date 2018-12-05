@@ -28,9 +28,9 @@ public class TicketDAO {
 
     //Create done
     public Boolean createTicket(Ticket ticket){
-        String insert = "Insert into tickets(price, sellerId, availability, eventId) VALUES (?, ?, ?, ?)";
+        String insert = "Insert into tickets(price, sellerId, availability, eventId, quantity) VALUES (?, ?, ?, ?, ?)";
         try{
-            jdbcTemplate.update(insert, ticket.getPrice(), ticket.getSellerId(), ticket.getAvailability(), ticket.getEventId());
+            jdbcTemplate.update(insert, ticket.getPrice(), ticket.getSellerId(), ticket.getAvailability(), ticket.getEventId(), ticket.getQuantity());
         }
         catch (DataIntegrityViolationException e){
             return false;
@@ -46,7 +46,7 @@ public class TicketDAO {
                 "SELECT * FROM tickets where purchased = false and eventId =" + eventId, new Object[] { },
                 (rs, rowNum) -> new Ticket(rs.getInt("ticketId"), rs.getInt("sellerId"), rs.getInt("eventId"),
                         rs.getBoolean("purchased"), rs.getDouble("price"), rs.getInt("buyerId"),
-                        rs.getString("availability"))
+                        rs.getString("availability"),rs.getInt("quantity"))
         ).forEach(ticket -> tickets.add(ticket));
 
         return tickets;
@@ -60,7 +60,7 @@ public class TicketDAO {
                 "SELECT * FROM tickets where sellerId =" + userId, new Object[] { },
                 (rs, rowNum) -> new Ticket(rs.getInt("ticketId"), rs.getInt("sellerId"), rs.getInt("eventId"),
                         rs.getBoolean("purchased"), rs.getDouble("price"), rs.getInt("buyerId"),
-                        rs.getString("availability"))
+                        rs.getString("availability"),rs.getInt("quantity"))
         ).forEach(ticket -> tickets.add(ticket));
 
         return tickets;
@@ -74,7 +74,7 @@ public class TicketDAO {
                 "SELECT * FROM tickets where buyerId =" + userId, new Object[] { },
                 (rs, rowNum) -> new Ticket(rs.getInt("ticketId"), rs.getInt("sellerId"), rs.getInt("eventId"),
                         rs.getBoolean("purchased"), rs.getDouble("price"), rs.getInt("buyerId"),
-                        rs.getString("availability"))
+                        rs.getString("availability"), rs.getInt("quantity"))
         ).forEach(ticket -> tickets.add(ticket));
 
         return tickets;
@@ -96,6 +96,7 @@ public class TicketDAO {
                             ticket.setPrice(rs.getDouble(5));
                             ticket.setBuyerId(rs.getInt(6));
                             ticket.setAvailability(rs.getString(7));
+                            ticket.setQuantity(rs.getInt(8));
                             return ticket;
                         }
                     });
@@ -108,16 +109,10 @@ public class TicketDAO {
     //Update Done
     public Boolean updateTicket(Ticket ticket){
 
-        String sqlUpdate = "UPDATE tickets set price=?, availability=?, purchased=?, buyerId = ? where ticketId=?";
-        return jdbcTemplate.update(sqlUpdate, ticket.getPrice(), ticket.getAvailability(), ticket.getPurchased(), ticket.getBuyerId(), ticket.getId()) > 0;
-
+        String sqlUpdate = "UPDATE tickets set price=?, availability=?, purchased=?, buyerId = ?, quantity = ? where ticketId=?";
+        return jdbcTemplate.update(sqlUpdate, ticket.getPrice(), ticket.getAvailability(), ticket.getPurchased(), ticket.getBuyerId(), ticket.getQuantity(), ticket.getId()) > 0;
     }
 
-    //*
-//    public Boolean sellTicket(int ticketId, int buyerId){
-//        String query = "update tickets set purchased = ? and buyerId = ? where id = ?";
-//        return jdbcTemplate.update(query, true, buyerId, ticketId) > 0;
-//    }
 
     //Delete *
     public boolean deleteTicket(int ticketId){
