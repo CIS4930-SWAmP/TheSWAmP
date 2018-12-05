@@ -2,6 +2,7 @@ package com.store.rest;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.*;
+import java.util.UUID;
 
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import org.springframework.stereotype.Controller;

@@ -31,4 +31,10 @@ CREATE TABLE tickets(
 	quantity INT
 );
 
+CREATE TABLE login(
+  sessionId VARCHAR(255) UNIQUE,
+  username VARCHAR(255),
+  userId INT
+);
+
 SHOW TABLES;
