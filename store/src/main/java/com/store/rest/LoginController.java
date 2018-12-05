@@ -10,16 +10,10 @@ import org.springframework.stereotype.Controller;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.Produces;
-import java.util.Collection;
-import java.util.ArrayList;
-
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
 
 import com.store.model.*;
-import com.store.dao.*;
-import java.util.UUID;
 
 @Controller
 @Path("login")

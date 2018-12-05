@@ -1,9 +1,7 @@
 package com.store.dao;
 
 import com.store.model.User;
-import com.store.model.Event;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -11,8 +9,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Component
 public class UserDAO {
@@ -26,11 +22,7 @@ public class UserDAO {
     public UserDAO() {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
-    public UserDAO(JdbcTemplate jdbcTemp) {
-        this.jdbcTemplate = jdbcTemp;
-    }
 
-    //Create new user
     public User createUser(User user) {
         String query = "INSERT INTO users (username, password, phone, fname, lname, email, isAdmin) VALUES (?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(
@@ -39,11 +31,9 @@ public class UserDAO {
         return user;
     }
 
-    //Get user by username
     public User readUser(String username) {
         User user = new User();
         String toGet = "SELECT * FROM users WHERE username = \"" + username + "\"";
-
         try {
             return this.jdbcTemplate.queryForObject(
                     toGet, new RowMapper<User>() {
@@ -92,7 +82,6 @@ public class UserDAO {
         }
     }
 
-    //Update user
     public User updateUser(User user) {
         String query = "UPDATE users SET password = ?, phone = ?, fname = ?, lname = ?, email = ? WHERE username = ?";
         jdbcTemplate.update(
@@ -101,7 +90,6 @@ public class UserDAO {
         return user;
     }
 
-    //Delete by username
     public boolean deleteUser(String username) {
         boolean wasDeleted = false;
         String query = "DELETE FROM users WHERE username = ?";
@@ -121,6 +109,5 @@ public class UserDAO {
         dataSource.setUsername(dbUsername);
         dataSource.setPassword(dbPassword);
         return dataSource;
-
     }
 }

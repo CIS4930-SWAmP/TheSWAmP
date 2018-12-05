@@ -6,13 +6,10 @@ import java.util.Collection;
 
 import com.store.dao.*;
 import com.store.model.*;
-import java.util.Date;
 
 @Service
 public class EventService {
 
-
-    //@Autowired
     private EventDAO eventDAO = new EventDAO();
 
     public Collection<Event> getAllEvents() {

@@ -26,7 +26,6 @@ public class TicketDAO {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
 
-    //Create done
     public Boolean createTicket(Ticket ticket){
         String insert = "Insert into tickets(price, sellerId, availability, eventId, quantity) VALUES (?, ?, ?, ?, ?)";
         try{
@@ -38,7 +37,6 @@ public class TicketDAO {
         return true;
     }
 
-    //Read done
     public Collection<Ticket> getEventTickets(int eventId){
         Collection<Ticket> tickets = new ArrayList<Ticket>();
 
@@ -52,7 +50,6 @@ public class TicketDAO {
         return tickets;
     }
 
-    //Done
     public Collection<Ticket> getSoldTickets(int userId){
         Collection<Ticket> tickets = new ArrayList<Ticket>();
 
@@ -106,15 +103,11 @@ public class TicketDAO {
         }
     }
 
-    //Update Done
     public Boolean updateTicket(Ticket ticket){
-
         String sqlUpdate = "UPDATE tickets set price=?, availability=?, purchased=?, buyerId = ?, quantity = ? where ticketId=?";
         return jdbcTemplate.update(sqlUpdate, ticket.getPrice(), ticket.getAvailability(), ticket.getPurchased(), ticket.getBuyerId(), ticket.getQuantity(), ticket.getId()) > 0;
     }
 
-
-    //Delete *
     public boolean deleteTicket(int ticketId){
         return jdbcTemplate.update("Delete from tickets where ticketId = ?", ticketId) > 0;
     }

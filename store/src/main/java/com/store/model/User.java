@@ -1,7 +1,5 @@
 package com.store.model;
 
-import java.util.Collection;
-
 public class User {
     private int id;
     private String username;

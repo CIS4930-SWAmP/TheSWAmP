@@ -38,7 +38,6 @@ public class Ticket {
         this.quantity = quantity;
     }
 
-
     public Ticket(int id, int sellerId, int eventId, boolean purchased, double price,int buyerId, String availability, int quantity) {
         this.id = id;
         this.buyerId = buyerId;
