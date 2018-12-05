@@ -1,5 +1,4 @@
 package com.store.model;
-import java.util.UUID;
 
 public class Login {
     private String sessionId;

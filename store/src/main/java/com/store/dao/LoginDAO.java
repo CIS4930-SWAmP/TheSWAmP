@@ -1,21 +1,14 @@
 package com.store.dao;
 
 import com.store.model.Login;
-import com.store.model.User;
-import java.util.UUID;
-import com.store.model.Event;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-
 
 public class LoginDAO {
     private JdbcTemplate jdbcTemplate;
@@ -37,16 +30,6 @@ public class LoginDAO {
     }
 
     public Login readLogin(String sessionId) {
-//        String query = "SELECT * FROM login WHERE sessionId = ?";
-//        try {
-//            Login login = jdbcTemplate.queryForObject(
-//                    query, new Object[]{sessionId}, new BeanPropertyRowMapper<>(Login.class)
-//            );
-//            return login;
-//        }
-//        catch(EmptyResultDataAccessException e){
-//            return null;
-//        }
 
         Login login = new Login();
         String toGet = "SELECT * FROM login WHERE sessionId = \"" + sessionId + "\"";

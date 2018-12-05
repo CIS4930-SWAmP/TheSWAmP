@@ -57,7 +57,6 @@ requestTickets.onload = function () {
                 var contact = document.createElement('td');
                 //Get contact info
                 var requestUser = new XMLHttpRequest();
-                console.log(ticket.sellerId);
                 requestUser.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/id/'+ticket.sellerId, true);
                 requestUser.send();
                 requestUser.onreadystatechange = function () {

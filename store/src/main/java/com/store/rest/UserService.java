@@ -2,16 +2,12 @@ package com.store.rest;
 
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-
-
 import com.store.dao.*;
 import com.store.model.*;
 
 @Service
 public class UserService {
 
-    //@Autowired
     private UserDAO userDAO = new UserDAO();
 
     public User createUser(String username, String password, String phone, String fname, String lname, String email, boolean isAdmin) {
