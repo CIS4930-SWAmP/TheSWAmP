@@ -37,12 +37,32 @@ public class LoginDAO {
     }
 
     public Login readLogin(String sessionId) {
-        String query = "SELECT * FROM login WHERE sessionId = ?";
+//        String query = "SELECT * FROM login WHERE sessionId = ?";
+//        try {
+//            Login login = jdbcTemplate.queryForObject(
+//                    query, new Object[]{sessionId}, new BeanPropertyRowMapper<>(Login.class)
+//            );
+//            return login;
+//        }
+//        catch(EmptyResultDataAccessException e){
+//            return null;
+//        }
+
+        Login login = new Login();
+        String toGet = "SELECT * FROM login WHERE sessionId = \"" + sessionId + "\"";
+
         try {
-            Login login = jdbcTemplate.queryForObject(
-                    query, new Object[]{sessionId}, new BeanPropertyRowMapper<>(Login.class)
-            );
-            return login;
+            return this.jdbcTemplate.queryForObject(
+                    toGet, new RowMapper<Login>() {
+                        @Override
+                        public Login mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            login.setSessionId(rs.getString(1));
+                            login.setUsername(rs.getString(2));
+                            login.setUserId(rs.getInt(3));
+                            login.setAdmin(rs.getBoolean(4));
+                            return login;
+                        }
+                    });
         }
         catch(EmptyResultDataAccessException e){
             return null;

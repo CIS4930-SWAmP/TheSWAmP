@@ -32,21 +32,45 @@ public class UserDAO {
 
     //Create new user
     public User createUser(User user) {
-        String query = "INSERT INTO users (username, password, phone, fname, lname, email) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO users (username, password, phone, fname, lname, email, isAdmin) VALUES (?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(
-                query, user.getUsername(), user.getPassword(), user.getPhone(), user.getFname(), user.getLname(), user.getEmail()
+                query, user.getUsername(), user.getPassword(), user.getPhone(), user.getFname(), user.getLname(), user.getEmail(), user.getAdmin()
         );
         return user;
     }
 
     //Get user by username
     public User readUser(String username) {
+//        try {
+//            String toGet = "SELECT * FROM users WHERE username = ?";
+//            User user = jdbcTemplate.queryForObject(
+//                    toGet, new Object[]{username}, new BeanPropertyRowMapper<>(User.class)
+//            );
+//            return user;
+//        }
+//        catch(EmptyResultDataAccessException e){
+//            return null;
+//        }
+
+        User user = new User();
+        String toGet = "SELECT * FROM users WHERE username = \"" + username + "\"";
+
         try {
-            String toGet = "SELECT * FROM users WHERE username = ?";
-            User user = jdbcTemplate.queryForObject(
-                    toGet, new Object[]{username}, new BeanPropertyRowMapper<>(User.class)
-            );
-            return user;
+            return this.jdbcTemplate.queryForObject(
+                    toGet, new RowMapper<User>() {
+                        @Override
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setId(rs.getInt(1));
+                            user.setUsername(rs.getString(2));
+                            user.setPassword(rs.getString(3));
+                            user.setPhone(rs.getString(4));
+                            user.setLname(rs.getString(5));
+                            user.setFname(rs.getString(6));
+                            user.setEmail(rs.getString(7));
+                            user.setAdmin(rs.getBoolean(8));
+                            return user;
+                        }
+                    });
         }
         catch(EmptyResultDataAccessException e){
             return null;

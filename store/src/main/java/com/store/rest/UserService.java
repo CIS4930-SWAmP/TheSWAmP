@@ -14,8 +14,8 @@ public class UserService {
     //@Autowired
     private UserDAO userDAO = new UserDAO();
 
-    public User createUser(String username, String password, String phone, String fname, String lname, String email) {
-        User user = new User(username, password, phone, fname, lname, email);
+    public User createUser(String username, String password, String phone, String fname, String lname, String email, boolean isAdmin) {
+        User user = new User(username, password, phone, fname, lname, email, isAdmin);
         return userDAO.createUser(user);
     }
 
