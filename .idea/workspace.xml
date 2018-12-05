@@ -2,21 +2,150 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c130c33a-5c89-4ba3-9933-45715fbdf48a" name="Default" comment="Merge branch 'develop' into events&#10;&#10;# Conflicts:&#10;#&#9;.idea/artifacts/store_war.xml&#10;#&#9;.idea/artifacts/store_war_exploded.xml&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/dao/LoginDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/model/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/security/MvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/store_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/store_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/store_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/webapp/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/webapp/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/security/MvcConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/security/WebSecurityConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/webapp/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/webapp/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/webapp/html/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/webapp/html/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/webapp/js/loginScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/webapp/js/loginScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/store/store.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE.war.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/app/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/EventDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/LoginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/TicketDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/TicketDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/Ticket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/EventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/EventService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/TicketController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/TicketService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/com/store/rest/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/security/MvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/classes/security/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/HikariCP-2.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/activation-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/attoparser-2.0.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/hibernate-validator-6.0.10.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-core-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-core-asl-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-databind-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-datatype-jdk8-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-datatype-jsr310-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-jaxrs-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-module-parameter-names-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jackson-xc-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jaxb-api-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jaxb-impl-2.2.3-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-bundle-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-core-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-json-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jersey-server-1.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jettison-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/json-20170516.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jsr311-api-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/log4j-api-2.10.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/log4j-to-slf4j-2.10.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/logback-classic-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/logback-core-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/mysql-connector-java-5.1.46.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/snakeyaml-1.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-aop-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-beans-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-autoconfigure-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-jdbc-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-json-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-logging-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-security-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-thymeleaf-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-tomcat-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-boot-starter-web-2.0.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-context-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-core-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-expression-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-jcl-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-jdbc-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-security-config-5.0.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-security-core-5.0.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-security-web-5.0.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-tx-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-web-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/spring-webmvc-5.0.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/thymeleaf-3.0.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/thymeleaf-extras-java8time-3.0.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/thymeleaf-spring5-3.0.9.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/tomcat-embed-core-8.5.31.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/tomcat-embed-el-8.5.31.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/tomcat-embed-websocket-8.5.31.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/unbescape-1.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/productDetails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/productList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/html/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/cartScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/detailsScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/loginScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/productListScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/productScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/js/profileScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/templates/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/templates/productDetails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/templates/productList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/templates/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/app/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/EventDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/LoginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/TicketDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/TicketDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/Ticket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/EventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/EventService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/TicketController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/TicketService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/com/store/rest/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/security/MvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/classes/security/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/group.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/store/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,37 +202,37 @@
     <session id="-131709675">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="5" />
+          <entry key="html" value="6" />
           <entry key="java" value="9" />
           <entry key="js" value="1" />
           <entry key="properties" value="1" />
           <entry key="sql" value="2" />
-          <entry key="xml" value="2" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="5" />
+          <entry key="HTML" value="6" />
           <entry key="JAVA" value="9" />
           <entry key="JavaScript" value="1" />
           <entry key="Properties" value="1" />
           <entry key="SQL" value="2" />
-          <entry key="XML" value="2" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="273" />
+          <entry key="html" value="304" />
           <entry key="java" value="148" />
-          <entry key="js" value="907" />
+          <entry key="js" value="1002" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="273" />
+          <entry key="HTML" value="304" />
           <entry key="JAVA" value="148" />
-          <entry key="JavaScript" value="907" />
+          <entry key="JavaScript" value="1002" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
@@ -122,8 +251,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/store/src/main/webapp/js/loginScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="38" column="69" lean-forward="true" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+            <state relative-caret-position="315">
+              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-232">
+              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#h4#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,8 +274,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+            <state relative-caret-position="23">
+              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,8 +286,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            <state relative-caret-position="388">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#491#492#0" expanded="true" />
@@ -165,6 +308,15 @@
                 <element signature="e#921#922#0" expanded="true" />
                 <element signature="e#995#996#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/store/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -193,21 +345,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
+            <state relative-caret-position="585">
               <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -240,8 +380,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="24">
+              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#nav#0;n#html#0;n#!!top" expanded="true" />
@@ -281,18 +421,6 @@
                 <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#4;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/src/main/java/security/WebSecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -347,7 +475,6 @@
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/TicketService.java" />
         <option value="$PROJECT_DIR$/store/src/main/webapp/templates/index.html" />
-        <option value="$PROJECT_DIR$/store/pom.xml" />
         <option value="$PROJECT_DIR$/store/src/main/java/security/MvcConfig.java" />
         <option value="$PROJECT_DIR$/store/src/main/java/security/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/store/src/main/resources/templates/index.html" />
@@ -359,7 +486,10 @@
         <option value="$PROJECT_DIR$/store/src/main/webapp/html/index.html" />
         <option value="$PROJECT_DIR$/store/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java" />
+        <option value="$PROJECT_DIR$/store/src/main/webapp/html/login.html" />
+        <option value="$PROJECT_DIR$/store/src/main/webapp/html/profile.html" />
         <option value="$PROJECT_DIR$/store/src/main/webapp/js/loginScript.js" />
+        <option value="$PROJECT_DIR$/store/pom.xml" />
       </list>
     </option>
   </component>
@@ -484,15 +614,6 @@
               <item name="store" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TheSWAmP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TheSWAmP" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -542,7 +663,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543963991531" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543969785769" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -618,12 +739,12 @@
       <workItem from="1543682074885" duration="1584000" />
       <workItem from="1543687178474" duration="1392000" />
       <workItem from="1543895826864" duration="1306000" />
-      <workItem from="1543941525914" duration="7136000" />
+      <workItem from="1543941525914" duration="8824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48112000" />
+    <option name="totallyTimeSpent" value="49800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1440" height="822" extended-state="0" />
@@ -662,40 +783,6 @@
       <window_info anchor="right" id="Ant Build" order="8" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2532189" />
-      <window_info id="Image Layers" order="6" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3298969" />
-      <window_info anchor="bottom" id="Spring" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3291592" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="4" />
-      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.3298969" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.32876712" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Bean Validation" order="0" weight="0.3297568" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="2" weight="0.18597998" />
-      <window_info anchor="right" id="Database" order="3" weight="0.17990276" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.24969475" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -838,13 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/java/security/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -897,10 +977,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ol#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="24">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#nav#0;n#html#0;n#!!top" expanded="true" />
@@ -944,6 +1039,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -958,49 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/webapp/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ol#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/src/main/java/com/store/rest/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/src/main/webapp/js/loginScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="38" column="69" lean-forward="true" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+        <state relative-caret-position="315">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
         </state>
       </provider>
     </entry>

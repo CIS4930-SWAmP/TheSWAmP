@@ -45,3 +45,8 @@ function createUser(){
         }
     }
 }
+
+function logout() {
+    console.log(document.cookie);
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login/
+}
