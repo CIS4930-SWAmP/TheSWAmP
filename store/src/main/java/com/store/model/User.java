@@ -10,6 +10,18 @@ public class User {
     private String fname;
     private String lname;
     private String email;
+    private boolean isAdmin;
+
+    public User(String username, String password, String phone, String fname, String lname, String email, boolean isAdmin) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+        this.isAdmin = isAdmin;
+    }
 
     public User(int id, String username, String password, String phone, String fname, String lname, String email) {
         this.id = id;
@@ -89,9 +101,17 @@ public class User {
         this.email = email;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Event{" +
+    public boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -99,6 +119,7 @@ public class User {
                 ", fname='" + fname + '\'' +
                 ", lname='" + lname + '\'' +
                 ", email='" + email + '\'' +
+                ", isAdmin=" + isAdmin +
                 '}';
     }
 }
