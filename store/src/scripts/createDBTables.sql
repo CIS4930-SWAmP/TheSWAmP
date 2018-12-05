@@ -1,5 +1,5 @@
 SHOW TABLES;
-DROP TABLE IF EXISTS users, events, tickets;
+DROP TABLE IF EXISTS users, events, tickets, login;
 SHOW TABLES;
 
 CREATE TABLE users(
@@ -34,7 +34,8 @@ CREATE TABLE tickets(
 CREATE TABLE login(
   sessionId VARCHAR(255) UNIQUE,
   username VARCHAR(255),
-  userId INT
+  userId INT,
+  isAdmin BOOLEAN NOT NULL DEFAULT false
 );
 
 SHOW TABLES;
