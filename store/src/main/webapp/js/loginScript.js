@@ -19,6 +19,7 @@ function verifyLogin() {
                 // document.cookie="session="+split[2].toString();
                 // document.cookie="path=/";
                 userInfo.userId = split[7];
+                localStorage['id'] = userInfo.userId;
                 window.location = "./html/eventTile.html";
             }
             else {
@@ -37,37 +38,6 @@ function createUser() {
     var password = document.getElementById("createPass").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
-
-    // var emailC = new XMLHttpRequest();
-    //
-    // var checkEmail = 'https://app.verify-email.org/api/v1/lIIFIMvFAlbizgxXlZ0aMXqAYi5iA3x2p44AvIgpMuobmmyWgk/verify/' + email;
-    // emailC.open('GET', checkEmail, true);
-    // emailC.send();
-    // emailC.onreadystatechange = function () {
-    //     if (emailC.readyState === 4) {
-    //         if (emailC.status === 200) {
-    //             const res = JSON.parse(emailC.responseText);
-    //             console.log('email res', res);
-    //             const data = JSON.parse(emailC.responseText);
-    //             console.log("Made it here");
-    //             if(data.status === 0) {
-    //                 document.getElementById("warning3").style.display = "block";
-    //             }
-    //             else{
-    //                 console.log("Data status is:" + data.status);
-    //                 isValid = true;
-    //                 return;
-    //             }
-    //         }
-    //     }
-    // }
-    //
-    // if(isValid === false){
-    //     console.log('wtf');
-    //     return;
-    // }
-    //
-    // console.log('made it past here');
 
     var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users?fname='+firstname+'&lname='+lastname+ '&username='+username+'&password='+password+'&phone='+phone+'&email='+email;
     createRequest.open('POST', apiUrl, true);
@@ -99,6 +69,7 @@ function logout() {
         if (logoutRequest.readyState === 4) {
             if (logoutRequest.status === 200) {
                 localStorage['session'] = null;
+                localStorage['id'] = null;
                 window.location = "../";
             }
             else {

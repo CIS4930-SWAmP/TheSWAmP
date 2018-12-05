@@ -27,7 +27,6 @@ function verify() {
                 if(endpoint[5] === 'profile.html' ) {
                     getProfileInfo(res.username);
                 }
-                console.log(userInfo.userId);
                 document.getElementById("username").innerText = res.username;
             }
             else {

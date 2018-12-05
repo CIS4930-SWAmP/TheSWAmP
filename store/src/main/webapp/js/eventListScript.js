@@ -52,7 +52,7 @@ function createList(data){
         name.textContent = event.title;
 
         const date = document.createElement('td');
-        var dateFormat = event.date.substr(6) + '-' + event.date.substr(0,4);
+        var dateFormat = event.date.substr(5) + '-' + event.date.substr(0,4);
         date.textContent = dateFormat;
 
         const desc = document.createElement('td');
