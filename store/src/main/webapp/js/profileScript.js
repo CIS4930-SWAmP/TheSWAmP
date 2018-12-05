@@ -29,7 +29,7 @@ request.onload = function () {
             userInfo.appendChild(phone);
 
         } else {
-           window.location = '../index.html'    ;
+           console.log('Error');
         }
     }
 };
