@@ -1,7 +1,5 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin;
-//Do login stuff
 
 function searchByKeyword(keyword) {
     requestKey.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/search/' + keyword, true);
@@ -87,6 +85,7 @@ function createCards(data){
 function updateEventModal(event, id){
     event.stopPropagation();
     document.getElementById('submitUpdate').setAttribute('onclick', `updateEvent(${id})`);
+    document.getElementById('delete').setAttribute('onclick', `deleteEvent(${id})`);
     var requestEvent = new XMLHttpRequest();
     requestEvent.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/' + id, true);
     requestEvent.send();
@@ -135,13 +134,7 @@ function addTicket(){
     };
 }
 
-//To implement 
-function addEvent(){
-
-}
-
 function updateEvent(id){
-
     var description  = document.getElementById('newDesc').value;
     var title = document.getElementById('newName').value;
     var date = document.getElementById('newDate').value;
@@ -161,4 +154,39 @@ function updateEvent(id){
     }
 }
 
+function addEvent(){
+    var description  = document.getElementById('desc').value;
+    var title = document.getElementById('name').value;
+    var date = document.getElementById('date').value;
+
+    var add = new XMLHttpRequest();
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?title=' + title + '&eventDate=' + date + '&description=' + description;
+    add.open('POST', apiUrl, true);
+    add.send();
+    add.onreadystatechange = function () {
+        if (add.readyState === 4) {
+            if (add.status >= 200 && add.status < 400) {
+                location.reload();
+            } else {
+                console.log('Error');
+            }
+        }
+    }
+}
+
+function deleteEvent(id){
+    var deleteEvent = new XMLHttpRequest();
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?eventId=' + id;
+    deleteEvent.open('DELETE', apiUrl, true);
+    deleteEvent.send();
+    deleteEvent.onreadystatechange = function () {
+        if (deleteEvent.readyState === 4) {
+            if (deleteEvent.status >= 200 && deleteEvent.status < 400) {
+                location.reload();
+            } else {
+                console.log('Error');
+            }
+        }
+    }
+}
 request.send();
