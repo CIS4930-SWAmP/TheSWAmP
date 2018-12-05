@@ -12,7 +12,7 @@ function verifyLogin() {
                 const temp = request.responseText;
                 const split = temp.split("\ ");
                 document.cookie="session="+split[2];
-                window.location = "./eventList.html";
+                window.location = "./html/eventList.html";
             }
             else {
                 document.getElementById("warning").style.display = "block";
@@ -47,6 +47,21 @@ function createUser(){
 }
 
 function logout() {
-    console.log(document.cookie);
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login/
+    // console.log(document.cookie);
+    const session = readCookie("session");
+    console.log('session', session);
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login/' + session;
+    request.open('DELETE', apiUrl, true);
+    request.send();
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                document.cookie="session="+"";
+                window.location = '../';
+            }
+            else {
+                alert('Unable to log out at this time. Try again later');
+            }
+        }
+    }
 }
