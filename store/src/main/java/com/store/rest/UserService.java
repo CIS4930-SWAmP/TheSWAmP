@@ -31,4 +31,9 @@ public class UserService {
     public boolean deleteUser(String username) {
         return userDAO.deleteUser(username);
     }
+
+    public User getUserById(int id){
+        return userDAO.getUserById(id);
+    }
 }
+

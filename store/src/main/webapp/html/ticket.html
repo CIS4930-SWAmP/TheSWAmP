@@ -9,11 +9,11 @@
 </head>
 <script src="../js/cookie.js" type="text/javascript"></script>
 <script src="../js/verify.js" type="text/javascript"></script>
+<script src="../js/loginScript.js" type="text/javascript"></script>
 <script>
     verify();
 </script>
 <body>
-<script src="../js/loginScript.js" type="text/javascript"></script>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="eventTile.html">
         <img src="../assets/logo.png" alt="logo" style="width:60px;height:50px">
@@ -60,56 +60,6 @@
 </div>
 </body>
 <br>
-<button type="button" class="btn" id="sell" data-toggle="modal" data-target="#addModal" style="float:right; margin-right:1rem" >Sell Ticket</button>
-
-<!-- Add Ticket Modal -->
-<div class="modal fade" id="addModal" role="dialog" aria-labelledby="addModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle" style="text-align:center">Sell a Ticket</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group row">
-                    <label for="eventNames" class="col-2 col-form-label">Event</label>
-                    <div class="col-10">
-                        <select class="form-control" id="eventNames">
-                            <option id="name"></option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="price" class="col-2 col-form-label">Price</label>
-                    <div class="col-10 input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">$</span>
-                        </div>
-                        <input class="form-control" type="number" min="0" id="price">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="quantity" class="col-2 col-form-label">Quantity</label>
-                    <div class="col-10">
-                        <input class="form-control" type="number" min="0" id="quantity">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="availability" class="col-2 col-form-label">Availability</label>
-                    <div class="col-10">
-                        <input class="form-control" type="text" id="availability">
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 <script src="../js/ticketScript.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

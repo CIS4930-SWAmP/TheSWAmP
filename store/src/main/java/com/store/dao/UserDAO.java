@@ -41,19 +41,34 @@ public class UserDAO {
 
     //Get user by username
     public User readUser(String username) {
-//        try {
-//            String toGet = "SELECT * FROM users WHERE username = ?";
-//            User user = jdbcTemplate.queryForObject(
-//                    toGet, new Object[]{username}, new BeanPropertyRowMapper<>(User.class)
-//            );
-//            return user;
-//        }
-//        catch(EmptyResultDataAccessException e){
-//            return null;
-//        }
-
         User user = new User();
         String toGet = "SELECT * FROM users WHERE username = \"" + username + "\"";
+
+        try {
+            return this.jdbcTemplate.queryForObject(
+                    toGet, new RowMapper<User>() {
+                        @Override
+                        public User mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                            user.setId(rs.getInt(1));
+                            user.setUsername(rs.getString(2));
+                            user.setPassword(rs.getString(3));
+                            user.setPhone(rs.getString(4));
+                            user.setLname(rs.getString(5));
+                            user.setFname(rs.getString(6));
+                            user.setEmail(rs.getString(7));
+                            user.setAdmin(rs.getBoolean(8));
+                            return user;
+                        }
+                    });
+        }
+        catch(EmptyResultDataAccessException e){
+            return null;
+        }
+    }
+
+    public User getUserById(int id) {
+        User user = new User();
+        String toGet = "SELECT * FROM users WHERE id =" + id;
 
         try {
             return this.jdbcTemplate.queryForObject(

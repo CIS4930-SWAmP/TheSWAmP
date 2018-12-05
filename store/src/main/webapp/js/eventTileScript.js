@@ -126,7 +126,7 @@ function addTicket(){
     requestAddTicket.send();
     requestAddTicket.onreadystatechange = function () {
         if(requestAddTicket.readyState === 4) {
-            if (requestAddTicket.status >= 200 && request.status < 400) {
+            if (requestAddTicket.status >= 200 && requestAddTicket.status < 400) {
                 document.getElementById('close').click();
             } else {
                 console.log('Error');

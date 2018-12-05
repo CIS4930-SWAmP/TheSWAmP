@@ -61,6 +61,14 @@ public class UserController extends HttpServlet{
         //return Response.status(200).entity(output).build();
     }
 
+    @GET
+    @Path("/id/{params}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public User getUserById(@PathParam("params") int id){
+        User user = userService.getUserById(id);
+        return user;
+    }
+
     @PUT
     @Path("")
     public Response updateUser(
