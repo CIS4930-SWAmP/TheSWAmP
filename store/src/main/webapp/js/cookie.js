@@ -1,12 +1,14 @@
 var userInfo = {
     userId: null,
-    isAdmin: false
+    isAdmin: false,
+    session: null
 };
 
 function readCookie(name){
-    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookie = userInfo.session;
     var first = name + "=";
-    const split = decodedCookie.split(";");
+    const split = cookie.split(";");
+    console.log('split', split);
     for(var i = 0; i <split.length; i++) {
         var c = split[i];
         while (c.charAt(0) == ' ') {
@@ -16,5 +18,5 @@ function readCookie(name){
             return c.substring(first.length, c.length);
         }
     }
-    return "";
+    return "1";
 }
