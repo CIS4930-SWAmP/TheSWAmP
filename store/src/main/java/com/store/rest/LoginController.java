@@ -50,8 +50,8 @@ public class LoginController extends HttpServlet{
         else {
             UUID idOne = UUID.randomUUID();
             String sessionId = idOne.toString();
-            String toReturn = "Session ID: " + sessionId + " Username: " + username + " User ID: " + user.getId();
-            loginService.createLogin(sessionId, username, user.getId());
+            String toReturn = "Session ID: " + sessionId + " Username: " + username + " User ID: " + user.getId() + "Is admin: ";
+            loginService.createLogin(sessionId, username, user.getId(), false);
             return Response.status(200).entity(toReturn).build();
         }
     }
@@ -70,5 +70,12 @@ public class LoginController extends HttpServlet{
         String output = "Deleting session " + sessionId;
         loginService.deleteLogin(sessionId);
         return Response.status(200).entity(output).build();
+    }
+
+    @GET
+    @Path("/check/{params}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public int checkAdmin(@PathParam("params") String sessionId) {
+        return loginService.isAdmin(sessionId);
     }
 }
