@@ -24,4 +24,6 @@ public class LoginService {
     public boolean deleteLogin(String sessionId) {
         return loginDAO.deleteLogin(sessionId);
     }
+    
+    public int isAdmin(String sessionId) { return loginDAO.isAdmin(sessionId); }
 }
