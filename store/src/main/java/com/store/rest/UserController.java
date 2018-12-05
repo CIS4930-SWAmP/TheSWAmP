@@ -45,7 +45,7 @@ public class UserController extends HttpServlet{
             @QueryParam("phone") String phone,
             @QueryParam("email") String email) {
 
-        userService.createUser(username, password, phone, fname, lname, email);
+        userService.createUser(username, password, phone, fname, lname, email, false);
 
         return Response
                 .status(200)
