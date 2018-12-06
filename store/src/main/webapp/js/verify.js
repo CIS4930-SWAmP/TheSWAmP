@@ -18,7 +18,7 @@ function verify() {
                 const url = window.location.href;
                 const endpoint = url.split('/');
                 console.log('endpoint', endpoint);
-                if(endpoint[5] === 'profile.html' ) {
+                if(endpoint[4] === 'profile.html' ) {
                     getProfileInfo(res.username);
                 }
                 document.getElementById("username").innerText = res.username;

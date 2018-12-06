@@ -49,7 +49,7 @@ sellerId = sellerId.replace(/\D/g,'');
 var url = 'https://the-swamp.herokuapp.com/store/tickets/purchased/'+sellerId;
 purchaseRequest.open('GET', url, true);
 purchaseRequest.send();
-purchaseRequest.onload = function() {
+purchaseRequest.onreadystatechange = function() {
     if(purchaseRequest.readyState === 4) {
         if(purchaseRequest.status === 200) {
             var res = JSON.parse(purchaseRequest.responseText);
@@ -102,10 +102,10 @@ purchaseRequest.onload = function() {
 var soldRequest = new XMLHttpRequest();
 var buyerId = localStorage['id'];
 buyerId = sellerId.replace(/\D/g,'');
-var url = 'https://the-swamp.herokuapp.com/tickets/sold/'+buyerId;
-soldRequest.open('GET', url, true);
+var apiUrl = 'https://the-swamp.herokuapp.com/store/tickets/sold/'+buyerId;
+soldRequest.open('GET', apiUrl, true);
 soldRequest.send();
-soldRequest.onload = function() {
+soldRequest.onreadystatechange = function() {
     if(soldRequest.readyState === 4) {
         if(soldRequest.status === 200) {
             var res = JSON.parse(soldRequest.responseText);
@@ -141,14 +141,12 @@ soldRequest.onload = function() {
                     }
                 };
 
-
                 btn.setAttribute('type', 'button');
                 btn.setAttribute('class', 'btn btn-dark');
                 btn.setAttribute('style', 'float:right');
                 btn.innerText = 'Update';
 
                 update.appendChild(btn);
-
 
                 const price = document.createElement('td');
                 price.textContent = ticket.price;
@@ -191,8 +189,6 @@ function updateModal(id, title){
     };
     document.getElementById('submit').setAttribute('onclick', 'updateTicket('+id+')');
     document.getElementById('update').click();
-
-
 }
 
 function deleteTicket(id){
