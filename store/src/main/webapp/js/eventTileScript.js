@@ -45,7 +45,7 @@ function createCards(data){
                 h1.setAttribute('style', 'background-color:orange');
 
                 const date = document.createElement('p');
-                var dateFormat = event.date.substr(6) + '-' + event.date.substr(0,4);
+                var dateFormat = event.date.substr(5) + '-' + event.date.substr(0,4);
                 date.textContent = `Date: ${dateFormat}`;
                 date.setAttribute("style", 'color:#343a40');
 

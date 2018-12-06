@@ -14,6 +14,13 @@ function verify() {
                 var res = JSON.parse(verifyRequest.responseText);
                 userInfo.userId = res.userId;
                 userInfo.isAdmin = res.isAdmin;
+                userInfo.username = res.username;
+                const url = window.location.href;
+                const endpoint = url.split('/');
+                console.log('endpoint', endpoint);
+                if(endpoint[5] === 'profile.html' ) {
+                    getProfileInfo(res.username);
+                }
                 document.getElementById("username").innerText = res.username;
             }
             else {

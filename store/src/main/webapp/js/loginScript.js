@@ -12,6 +12,7 @@ function verifyLogin() {
                 const split = temp.split("\ ");
                 localStorage['session'] = split[2].toString();
                 userInfo.userId = split[7];
+                localStorage['id'] = userInfo.userId;
                 window.location = "./html/eventTile.html";
             }
             else {
@@ -22,6 +23,7 @@ function verifyLogin() {
 }
 
 function createUser() {
+    var isValid = false;
     var createRequest = new XMLHttpRequest();
     var firstname = document.getElementById("firstname").value;
     var lastname = document.getElementById("lastname").value;
@@ -57,6 +59,7 @@ function logout() {
         if (logoutRequest.readyState === 4) {
             if (logoutRequest.status === 200) {
                 localStorage['session'] = null;
+                localStorage['id'] = null;
                 window.location = "../";
             }
             else {

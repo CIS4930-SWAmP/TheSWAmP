@@ -1,7 +1,8 @@
 var userInfo = {
     userId: null,
     isAdmin: false,
-    session: null
+    session: null,
+    username: null,
 };
 
 function readCookie(name){
