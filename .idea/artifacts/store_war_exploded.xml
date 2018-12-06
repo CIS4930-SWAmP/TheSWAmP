@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="store:war exploded">
-    <output-path>$PROJECT_DIR$/store/target/store-2.0.3.RELEASE</output-path>
+    <output-path>$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -48,7 +48,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/store/target/store-2.0.3.RELEASE/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/store/target/TheSWAmP-2.0.3.RELEASE/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="store/web/Web" />
     </root>

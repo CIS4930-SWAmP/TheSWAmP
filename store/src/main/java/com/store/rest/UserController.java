@@ -6,12 +6,16 @@ import javax.servlet.*;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import org.springframework.stereotype.Controller;
 
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.Produces;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
+
+import com.store.model.*;
 
 @Controller
-@Path("carts")
+@Path("users")
 public class UserController extends HttpServlet{
     private UserService userService = new UserService();
 
@@ -24,47 +28,62 @@ public class UserController extends HttpServlet{
         }
     }
 
-    @GET
-    @Path("")
-    public Response showUsersCart(
-            @QueryParam("username") String username,
-            @QueryParam("productId") int productId){
-        if(username!=null && productId == 0) {
-            int cartId = userService.getCartId(username);
-            if (cartId == 0) {
-                return Response.status(409).build();
-            }
-
-            return Response.status(200).entity("[{\"cartId\": "+ cartId +",\n\"items\": " + userService.getCart(username).toString() + "}\n]").build();
-        }
-        else if(productId != 0 && username==null){
-            return Response.status(200).entity(userService.usersBoughtAProduct(productId).toString()).build();
-        }
-        return Response.status(409).build();
-    }
-
     @POST
     @Path("")
-    public Response addItemToCart(@QueryParam("productId") int productId, @QueryParam("username") String username){
-        if(userService.addItemToCart(productId, username) != null)
-            return Response.status(200).build();
-        return Response.status(409).build();
+    public Response createUser(
+            @QueryParam("fname") String fname,
+            @QueryParam("lname") String lname,
+            @QueryParam("username") String username,
+            @QueryParam("password") String password,
+            @QueryParam("phone") String phone,
+            @QueryParam("email") String email) {
+
+        userService.createUser(username, password, phone, fname, lname, email, false);
+
+        return Response
+                .status(200)
+                .entity("Created customer:  " + fname + " " + lname + " " +  username + " " +  email).build();
     }
 
-    @DELETE
-    @Path("")
-    public Response deleteItem(@QueryParam("cartId") int cartId, @QueryParam("productId") int productId){
-        if(userService.removeItem(cartId,productId))
-            return Response.status(200).build();
-        return Response.status(409).build();
+    @GET
+    @Path("/{params}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public User readUser(@PathParam("params") String username){
+        User user = userService.readUser(username);
+        return user;
+    }
+
+    @GET
+    @Path("/id/{params}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public User getUserById(@PathParam("params") int id){
+        User user = userService.getUserById(id);
+        return user;
     }
 
     @PUT
-    @Path("/purchase/{cartId}")
-    public Response purchaseCart(@PathParam("cartId") int cartId){
-        if(userService.purchaseCart(cartId))
-            return Response.status(200).build();
-        return Response.status(409).build();
+    @Path("")
+    public Response updateUser(
+            @QueryParam("fname") String fname,
+            @QueryParam("lname") String lname,
+            @QueryParam("username") String username,
+            @QueryParam("password") String password,
+            @QueryParam("phone") String phone,
+            @QueryParam("email") String email) {
+
+        userService.updateUser(username, password, phone, fname, lname, email);
+
+        return Response
+                .status(200)
+                .entity("Updated customer:  " + fname + " " + lname + " " +  username + " " +  email).build();
+
     }
 
+    @DELETE
+    @Path("/{params}")
+    public Response deleteUser(@PathParam("params") String username){
+        String output = "Deleting user " + username;
+        userService.deleteUser(username);
+        return Response.status(200).entity(output).build();
+    }
 }

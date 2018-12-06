@@ -10,13 +10,15 @@ import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Component
 public class TicketDAO {
 
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/db_store";
+    private static final String url = "jdbc:mysql://localhost:3306/swamp_db";
     private static final String dbUsername = "springuser";
     private static final String dbPassword = "ThePassword";
 
@@ -24,16 +26,10 @@ public class TicketDAO {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());
     }
 
-    public TicketDAO(JdbcTemplate jdbcTemp) {
-        this.jdbcTemplate = jdbcTemp;
-    }
-
-    //Works
-    public Boolean createCustomer(Ticket ticket){
-        String insert = "INSERT INTO customers (fname, lname, username, email)"
-                + " VALUES (?, ?, ?, ?)";
+    public Boolean createTicket(Ticket ticket){
+        String insert = "Insert into tickets(price, sellerId, availability, eventId, quantity) VALUES (?, ?, ?, ?, ?)";
         try{
-            jdbcTemplate.update(insert, ticket.getFName(), ticket.getLName(), ticket.getUsername(), ticket.getEmail());
+            jdbcTemplate.update(insert, ticket.getPrice(), ticket.getSellerId(), ticket.getAvailability(), ticket.getEventId(), ticket.getQuantity());
         }
         catch (DataIntegrityViolationException e){
             return false;
@@ -41,21 +37,63 @@ public class TicketDAO {
         return true;
     }
 
-    //Works
-    public Ticket getCustomerByUsername(String username){
-        Ticket ticket = new Ticket(username);
+    public Collection<Ticket> getEventTickets(int eventId){
+        Collection<Ticket> tickets = new ArrayList<Ticket>();
 
-        //Check if user exits
-        String query ="SELECT id, fname, lname, email FROM customers where username=\"" + username+"\"";
+        jdbcTemplate.query(
+                "SELECT * FROM tickets where purchased = false and eventId =" + eventId, new Object[] { },
+                (rs, rowNum) -> new Ticket(rs.getInt("ticketId"), rs.getInt("sellerId"), rs.getInt("eventId"),
+                        rs.getBoolean("purchased"), rs.getDouble("price"), rs.getInt("buyerId"),
+                        rs.getString("availability"),rs.getInt("quantity"))
+        ).forEach(ticket -> tickets.add(ticket));
+
+        return tickets;
+    }
+
+    public Collection<Ticket> getSoldTickets(int userId){
+        Collection<Ticket> tickets = new ArrayList<Ticket>();
+
+        jdbcTemplate.query(
+                "SELECT * FROM tickets where sellerId =" + userId, new Object[] { },
+                (rs, rowNum) -> new Ticket(rs.getInt("ticketId"), rs.getInt("sellerId"), rs.getInt("eventId"),
+                        rs.getBoolean("purchased"), rs.getDouble("price"), rs.getInt("buyerId"),
+                        rs.getString("availability"),rs.getInt("quantity"))
+        ).forEach(ticket -> tickets.add(ticket));
+
+        return tickets;
+    }
+
+
+    public Collection<Ticket> getPurchasedTickets(int userId){
+        Collection<Ticket> tickets = new ArrayList<Ticket>();
+
+        jdbcTemplate.query(
+                "SELECT * FROM tickets where buyerId =" + userId, new Object[] { },
+                (rs, rowNum) -> new Ticket(rs.getInt("ticketId"), rs.getInt("sellerId"), rs.getInt("eventId"),
+                        rs.getBoolean("purchased"), rs.getDouble("price"), rs.getInt("buyerId"),
+                        rs.getString("availability"), rs.getInt("quantity"))
+        ).forEach(ticket -> tickets.add(ticket));
+
+        return tickets;
+    }
+
+    public Ticket getTicketById(int id){
+        Ticket ticket = new Ticket();
+        String query ="SELECT * FROM tickets where ticketId=" + id;
+
         try {
             return this.jdbcTemplate.queryForObject(
                     query, new RowMapper<Ticket>() {
                         @Override
                         public Ticket mapRow(ResultSet rs, int rowNumber) throws SQLException {
                             ticket.setId(rs.getInt(1));
-                            ticket.setFName(rs.getString(2));
-                            ticket.setLName(rs.getString(3));
-                            ticket.setEmail(rs.getString(4));
+                            ticket.setSellerId(rs.getInt(2));
+                            ticket.setEventId(rs.getInt(3));
+                            ticket.setPurchased(rs.getBoolean(4));
+                            ticket.setPrice(rs.getDouble(5));
+                            ticket.setBuyerId(rs.getInt(6));
+                            ticket.setAvailability(rs.getString(7));
+                            ticket.setQuantity(rs.getInt(8));
                             return ticket;
                         }
                     });
@@ -65,20 +103,13 @@ public class TicketDAO {
         }
     }
 
-    //Works
-    public Boolean updateCustomer(Ticket ticket){
-        String sqlUpdate = "UPDATE customers set fname=?, lname=?, username=?, email=? where id=?";
-        if(jdbcTemplate.update(sqlUpdate, ticket.getFName(), ticket.getLName(), ticket.getUsername(), ticket.getEmail(), ticket.getId()) > 0)
-            return true;
-        return false;
+    public Boolean updateTicket(Ticket ticket){
+        String sqlUpdate = "UPDATE tickets set price=?, availability=?, purchased=?, buyerId = ?, quantity = ? where ticketId=?";
+        return jdbcTemplate.update(sqlUpdate, ticket.getPrice(), ticket.getAvailability(), ticket.getPurchased(), ticket.getBuyerId(), ticket.getQuantity(), ticket.getId()) > 0;
     }
 
-    //Works
-    public boolean deleteCustomer(String username){
-        if(jdbcTemplate.update("Delete from customers where username = ?", username) > 0){
-            return true;
-        }
-        return false;
+    public boolean deleteTicket(int ticketId){
+        return jdbcTemplate.update("Delete from tickets where ticketId = ?", ticketId) > 0;
     }
 
     public DriverManagerDataSource getDataSource() {
@@ -88,6 +119,5 @@ public class TicketDAO {
         dataSource.setUsername(dbUsername);
         dataSource.setPassword(dbPassword);
         return dataSource;
-
     }
 }

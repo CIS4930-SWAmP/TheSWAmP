@@ -2,38 +2,71 @@ package com.store.rest;
 
 import org.springframework.stereotype.Service;
 
-
 import com.store.dao.*;
 import com.store.model.*;
+
+import java.util.Collection;
 
 @Service
 public class TicketService {
 
-
-    //@Autowired
     private TicketDAO ticketDAO = new TicketDAO();
 
-    public Ticket getCustomer(String username){
-        return ticketDAO.getCustomerByUsername(username);
+    public boolean createTicket(int sellerId, int eventId, Double price, String availability, int quantity){
+        Ticket ticket = new Ticket(sellerId, eventId, price, availability, quantity);
+        return ticketDAO.createTicket(ticket);
     }
 
-    public boolean createCustomer(String fname, String lname, String username, String email){
-        Ticket ticket = new Ticket(fname, lname, username, email);
-        return ticketDAO.createCustomer(ticket);
-    }
+    public boolean updateTicket(Double price, String availability, int ticketId, boolean purchased, String username, int quantity){
+        Ticket ticket = new Ticket(ticketId);
+        Ticket oldTicket = ticketDAO.getTicketById(ticketId);
+        UserDAO userDAO = new UserDAO();
 
-    public boolean updateCustomer(String fname, String lname, String username, String email){
-        Ticket ticket = ticketDAO.getCustomerByUsername(username);
-        if (ticket != null) {
-            ticket.setFName(fname);
-            ticket.setLName(lname);
-            ticket.setEmail(email);
-            return ticketDAO.updateCustomer(ticket);
+        if(username != null) {
+            int buyerId = userDAO.readUser(username).getId();
+            ticket.setBuyerId(buyerId);
         }
-        return false;
+
+        if(quantity != 0){
+            ticket.setQuantity(quantity);
+        }
+        else{
+            ticket.setQuantity(oldTicket.getQuantity());
+        }
+
+        ticket.setPurchased(purchased);
+
+        if(price != null)
+            ticket.setPrice(price);
+        else
+            ticket.setPrice(oldTicket.getPrice());
+
+        if(availability != null)
+            ticket.setAvailability(availability);
+        else
+            ticket.setAvailability(oldTicket.getAvailability());
+
+        return ticketDAO.updateTicket(ticket);
+
     }
 
-    public boolean deleteCustomer(String username){
-        return ticketDAO.deleteCustomer(username);
+    public boolean deleteTicket(int ticketId){
+        return ticketDAO.deleteTicket(ticketId);
+    }
+
+    public Ticket getTicketById(int ticketId){
+        return ticketDAO.getTicketById(ticketId);
+    }
+
+    public Collection<Ticket> getSoldTickets(int userId){
+        return ticketDAO.getSoldTickets(userId);
+    }
+
+    public Collection<Ticket> getPurchasedTickets(int userId){
+        return ticketDAO.getPurchasedTickets(userId);
+    }
+
+    public Collection<Ticket> getEventTickets(int eventId){
+        return ticketDAO.getEventTickets(eventId);
     }
 }

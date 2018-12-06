@@ -10,26 +10,53 @@ import com.store.model.*;
 @Service
 public class EventService {
 
-
-    //@Autowired
     private EventDAO eventDAO = new EventDAO();
 
+    public Collection<Event> getAllEvents() {
 
-    public String getMsg( String msg) {
-        return "Hello : " + msg;
-    }
-
-    public Collection<Event> getAllProducts() {
-
-        Collection<Event> events = eventDAO.getAllProducts();
+        Collection<Event> events = eventDAO.getAllEvents();
         return events;
     }
 
-    public Collection<Event> getItemsByKeyword(String keyword){
-        return eventDAO.getProductsByKeyword(keyword);
+    public Collection<Event> getEventsByKeyword(String keyword){
+        return eventDAO.getEventsByKeyword(keyword);
     }
 
-    public Event getProductById(int id){
-        return eventDAO.getProductById(id);
+    public Event getEventById(int id){
+        return eventDAO.getEventById(id);
+    }
+
+    public boolean createEvent(String title, String date, String desc){
+        Event event = new Event(title, date, desc);
+        return eventDAO.createEvent(event);
+    }
+
+    public boolean updateEvent(int eventId, String title, String date, String desc) {
+        Event oldEvent = getEventById(eventId);
+        Event event = new Event();
+        event.setEventId(eventId);
+        if(title != null) {
+            event.setTitle(title);
+        }
+        else {
+            event.setTitle(oldEvent.getTitle());
+        }
+        if(desc != null) {
+            event.setDesc(desc);
+        }
+        else {
+            event.setDesc(oldEvent.getDesc());
+        }
+        if(date != null) {
+            event.setDate(date);
+        }
+        else {
+            event.setDate(oldEvent.getDate());
+        }
+        return eventDAO.updateEvent(event);
+    }
+
+    public boolean deleteEvent(int eventId){
+        return eventDAO.deleteEvent(eventId);
     }
 }
