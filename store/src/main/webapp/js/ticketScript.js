@@ -3,7 +3,7 @@ var requestTickets = new XMLHttpRequest();
 var url = window.location.href;
 var eventId = url.substr(url.indexOf('#')+1,url.length - url.indexOf('#')-1);
 
-request.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/'+eventId, true);
+request.open('GET', 'https://the-swamp.herokuapp.com/store/events/'+eventId, true);
 request.onload = function () {
     if(request.readyState === 4) {
         if (request.status === 200) {
@@ -27,7 +27,7 @@ request.onload = function () {
     }
 };
 
-requestTickets.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets/event/'+eventId, true);
+requestTickets.open('GET', 'https://the-swamp.herokuapp.com/store/tickets/event/'+eventId, true);
 requestTickets.onload = function () {
     if(requestTickets.readyState === 4) {
         if (requestTickets.status === 200) {
@@ -57,7 +57,7 @@ requestTickets.onload = function () {
                 var contact = document.createElement('td');
                 //Get contact info
                 var requestUser = new XMLHttpRequest();
-                requestUser.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/id/'+ticket.sellerId, true);
+                requestUser.open('GET', 'https://the-swamp.herokuapp.com/store/users/id/'+ticket.sellerId, true);
                 requestUser.send();
                 requestUser.onreadystatechange = function () {
                     if(requestUser.readyState === 4) {

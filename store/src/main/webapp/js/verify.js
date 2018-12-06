@@ -5,7 +5,7 @@ function verify() {
         localStorage['session'] = null;
         window.location = "../";
     }
-    const apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login?sessionId=' + session.toString();
+    const apiUrl = 'https://the-swamp.herokuapp.com/store/login?sessionId=' + session.toString();
     verifyRequest.open('GET', apiUrl, true);
     verifyRequest.send();
     verifyRequest.onload = function () {

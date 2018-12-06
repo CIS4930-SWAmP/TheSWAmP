@@ -25,7 +25,7 @@ describe('Public Pages', function() {
     describe('Load Tile View', () => {
         it('should load without error', done => {
             // your actual testing urls will likely be `http://localhost:port/path`
-            nightmare.goto('http://localhost:8080/TheSWAmP-2.0.3.RELEASE/html/eventTile.html')
+            nightmare.goto('https://the-swamp.herokuapp.com/html/eventTile.html')
                 .wait(1000)
                 .end()
                 .then(function (result) {
@@ -38,7 +38,7 @@ describe('Public Pages', function() {
     describe('Load List View', () => {
         it('should load without error', done => {
             // Should load list view without issue
-            nightmare.goto('http://localhost:8080/TheSWAmP-2.0.3.RELEASE/html/eventList.html')
+            nightmare.goto('https://the-swamp.herokuapp.com/html/eventList.html')
                 .wait(1000)
                 .end()
                 .then(function (result) {
@@ -51,7 +51,7 @@ describe('Public Pages', function() {
     describe('/users/createUser', () => {
         it('should work register a new user then go to homepage', done => {
             nightmare
-                .goto('http://localhost:8080/TheSWAmP-2.0.3.RELEASE/')
+                .goto('https://the-swamp.herokuapp.com/')
                 .type('#username', '1234')
                 .type('[name="password"]', '1234')
                 .type('[type="text"]', 't'+r1)
@@ -69,7 +69,7 @@ describe('Public Pages', function() {
     describe('Fail login', () => {
         it('should fail to sign in due to mismatch with password and password confirmation', done => {
             nightmare
-                .goto('http://localhost:8080/TheSWAmP-2.0.3.RELEASE/')
+                .goto('https://the-swamp.herokuapp.com/')
                 .type('#username', '1234')
                 .type('[name="password"]', '12345')
                 .click('#submitbtn')
@@ -83,7 +83,7 @@ describe('Public Pages', function() {
     describe('Pass Login', () => {
         it('should sign in to account 1234', done => {
             nightmare
-                .goto('http://localhost:8080/TheSWAmP-2.0.3.RELEASE/')
+                .goto('https://the-swamp.herokuapp.com/')
                 .type('#username', '1234')
                 .type('[name="password"]', '1234')
                 .click('#submitbtn')

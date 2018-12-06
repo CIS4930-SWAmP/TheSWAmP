@@ -2,7 +2,7 @@ var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
 
 function searchByKeyword(keyword) {
-    requestKey.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/search/' + keyword, true);
+    requestKey.open('GET', 'https://the-swamp.herokuapp.com/store/events/search/' + keyword, true);
     requestKey.send();
     requestKey.onreadystatechange = function () {
         if(requestKey.readyState === 4) {
@@ -22,7 +22,7 @@ const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
 eventDiv.appendChild(container);
-request.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events', true);
+request.open('GET', 'https://the-swamp.herokuapp.com/store/events', true);
 request.onload = function () {
     if(request.readyState === 4) {
         if (request.status >= 200 && request.status < 400) {
@@ -38,7 +38,7 @@ function createCards(data){
             data.forEach(event => {
                 const card = document.createElement('div');
                 card.setAttribute('class', 'card');
-                card.setAttribute('onClick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/ticket.html#"+${event.eventId}`);
+                card.setAttribute('onClick',`window.location = "/the-swamp.herokuapp.com/html/ticket.html#"+${event.eventId}`);
 
                 const h1 = document.createElement('h1');
                 h1.textContent = event.title;
@@ -87,7 +87,7 @@ function updateEventModal(event, id){
     document.getElementById('submitUpdate').setAttribute('onclick', `updateEvent(${id})`);
     document.getElementById('delete').setAttribute('onclick', `deleteEvent(${id})`);
     var requestEvent = new XMLHttpRequest();
-    requestEvent.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/' + id, true);
+    requestEvent.open('GET', 'https://the-swamp.herokuapp.com/store/events/' + id, true);
     requestEvent.send();
     requestEvent.onreadystatechange = function () {
             if(requestEvent.readyState === 4) {
@@ -118,7 +118,7 @@ function addTicket(){
 
     var avail = document.getElementById('availability').value;
 
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
     + '&price=' + price + '&avail=' + avail + '&quantity=' + quantity;
 
     requestAddTicket.open('POST', apiUrl, true);
@@ -140,7 +140,7 @@ function updateEvent(id){
     var date = document.getElementById('newDate').value;
 
     var update = new XMLHttpRequest();
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?eventId=' + id + '&title=' + title + '&eventDate=' + date + '&description=' + description;
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/events?eventId=' + id + '&title=' + title + '&eventDate=' + date + '&description=' + description;
     update.open('PUT', apiUrl, true);
     update.send();
     update.onreadystatechange = function () {
@@ -160,7 +160,7 @@ function addEvent(){
     var date = document.getElementById('date').value;
 
     var add = new XMLHttpRequest();
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?title=' + title + '&eventDate=' + date + '&description=' + description;
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/events?title=' + title + '&eventDate=' + date + '&description=' + description;
     add.open('POST', apiUrl, true);
     add.send();
     add.onreadystatechange = function () {
@@ -176,7 +176,7 @@ function addEvent(){
 
 function deleteEvent(id){
     var deleteEvent = new XMLHttpRequest();
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?eventId=' + id;
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/events?eventId=' + id;
     deleteEvent.open('DELETE', apiUrl, true);
     deleteEvent.send();
     deleteEvent.onreadystatechange = function () {

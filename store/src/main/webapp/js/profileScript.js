@@ -6,7 +6,7 @@ function updateProfile() {
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var updateRequest = new XMLHttpRequest();
-    url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users?fname='+fname+'&lname='+lname+'&username='+username+'&password='+password+'&phone='+phone+'&email=' + email;
+    url = 'https://the-swamp.herokuapp.com/store/users?fname='+fname+'&lname='+lname+'&username='+username+'&password='+password+'&phone='+phone+'&email=' + email;
     updateRequest.open('PUT', url, true);
     updateRequest.send();
     updateRequest.onreadystatechange = function() {
@@ -23,7 +23,7 @@ function updateProfile() {
 
 function getProfileInfo(username) {
     var getProfileRequest = new XMLHttpRequest();
-    url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/'+username;
+    url = 'https://the-swamp.herokuapp.com/store/users/'+username;
     getProfileRequest.open('GET', url, true);
     getProfileRequest.send();
     getProfileRequest.onload = function() {
@@ -46,7 +46,7 @@ function getProfileInfo(username) {
 var purchaseRequest = new XMLHttpRequest();
 var sellerId = localStorage['id'];
 sellerId = sellerId.replace(/\D/g,'');
-var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets/purchased/'+sellerId;
+var url = 'https://the-swamp.herokuapp.com/store/tickets/purchased/'+sellerId;
 purchaseRequest.open('GET', url, true);
 purchaseRequest.send();
 purchaseRequest.onload = function() {
@@ -63,7 +63,7 @@ purchaseRequest.onload = function() {
                 const date = document.createElement('td');
 
                 var eventDet = new XMLHttpRequest();
-                eventDet.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/' + ticket.eventId);
+                eventDet.open('GET', 'https://the-swamp.herokuapp.com/store/events/' + ticket.eventId);
                 eventDet.send();
                 eventDet.onreadystatechange = function () {
                     if(eventDet.readyState === 4){
@@ -103,7 +103,7 @@ var today = new Date();
 var soldRequest = new XMLHttpRequest();
 var buyerId = localStorage['id'];
 buyerId = sellerId.replace(/\D/g,'');
-var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets/sold/'+buyerId;
+var url = 'https://the-swamp.herokuapp.com/tickets/sold/'+buyerId;
 soldRequest.open('GET', url, true);
 soldRequest.send();
 soldRequest.onload = function() {
@@ -122,7 +122,7 @@ soldRequest.onload = function() {
                 const btn = document.createElement('button');
 
                 var eventDet1 = new XMLHttpRequest();
-                eventDet1.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/' + ticket.eventId);
+                eventDet1.open('GET', 'https://the-swamp.herokuapp.com/store/events/' + ticket.eventId);
                 eventDet1.send();
                 eventDet1.onreadystatechange = function () {
                     if(eventDet1.readyState === 4){
@@ -174,7 +174,7 @@ function updateModal(id, title){
     document.getElementById('delete').setAttribute('onclick' , 'deleteTicket('+id+')');
     document.getElementById('eventNames').innerHTML = title;
     var ticketInfo = new XMLHttpRequest();
-    ticketInfo.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets/'+id );
+    ticketInfo.open('GET', 'https://the-swamp.herokuapp.com/store/tickets/'+id );
     ticketInfo.send();
     ticketInfo.onreadystatechange = function() {
         if(ticketInfo.readyState === 4){
@@ -198,7 +198,7 @@ function updateModal(id, title){
 
 function deleteTicket(id){
    var deleteTicket = new XMLHttpRequest();
-   deleteTicket.open('DELETE', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets/delete/'+id);
+   deleteTicket.open('DELETE', 'https://the-swamp.herokuapp.com/store/tickets/delete/'+id);
    deleteTicket.send();
    deleteTicket.onreadystatechange = function() {
        if(deleteTicket.readyState === 4){
@@ -222,9 +222,9 @@ function updateTicket(id) {
     console.log(purchaser);
     var updateTicket = new XMLHttpRequest();
     if(purchaser === "" || purchaser=== null){
-        var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?price='+price+'&avail=' + availability + '&ticketId='+id+ '&purch=' + purchased + '&quantity=' + quantity;
+        var url = 'https://the-swamp.herokuapp.com/store/tickets?price='+price+'&avail=' + availability + '&ticketId='+id+ '&purch=' + purchased + '&quantity=' + quantity;
     }else{
-        var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?price='+price+'&avail=' + availability + '&ticketId='+id+ '&purch=' + purchased+ '&username=' + purchaser + '&quantity=' + quantity;
+        var url = 'https://the-swamp.herokuapp.com/store/tickets?price='+price+'&avail=' + availability + '&ticketId='+id+ '&purch=' + purchased+ '&username=' + purchaser + '&quantity=' + quantity;
     }
 
     updateTicket.open('PUT', url, true);

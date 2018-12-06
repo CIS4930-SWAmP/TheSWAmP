@@ -16,9 +16,9 @@ public class EventDAO {
 
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/swamp_db";
-    private static final String dbUsername = "springuser";
-    private static final String dbPassword = "ThePassword";
+    private static final String url = "jdbc:mysql:// us-cdbr-iron-east-01.cleardb.net/heroku_d1de9c21ec8283e?reconnect=true";
+    private static final String dbUsername = "bbc8595c09e838";
+    private static final String dbPassword = "c5c39b6b";
 
     public EventDAO() {
         this.jdbcTemplate = new JdbcTemplate(this.getDataSource());

@@ -2,7 +2,7 @@ function verifyLogin() {
     var loginRequest = new XMLHttpRequest();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login?username='+username.toString()+'&password='+password.toString();
+    var url = 'https://the-swamp.herokuapp.com/store/login?username='+username.toString()+'&password='+password.toString();
     loginRequest.open('POST', url, true);
     loginRequest.send();
     loginRequest.onreadystatechange = function() {
@@ -32,7 +32,7 @@ function createUser() {
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
 
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users?fname='+firstname+'&lname='+lastname+ '&username='+username+'&password='+password+'&phone='+phone+'&email='+email;
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/users?fname='+firstname+'&lname='+lastname+ '&username='+username+'&password='+password+'&phone='+phone+'&email='+email;
     createRequest.open('POST', apiUrl, true);
     createRequest.send();
     createRequest.onreadystatechange = function () {
@@ -52,7 +52,7 @@ function createUser() {
 function logout() {
     var logoutRequest = new XMLHttpRequest();
     const session = localStorage['session'];
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/login/' + session;
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/login/' + session;
     logoutRequest.open('DELETE', apiUrl, true);
     logoutRequest.send();
     logoutRequest.onreadystatechange = function () {

@@ -1,7 +1,7 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
 
-request.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events', true);
+request.open('GET', 'https://the-swamp.herokuapp.com/store/events', true);
 request.onload = function () {
     if(request.readyState === 4) {
         if (request.status >= 200 && request.status < 400) {
@@ -14,7 +14,7 @@ request.onload = function () {
 };
 
 function searchByKeyword(keyword) {
-    requestKey.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/search/' + keyword, true);
+    requestKey.open('GET', 'https://the-swamp.herokuapp.com/store/events/search/' + keyword, true);
     requestKey.send();
     requestKey.onreadystatechange = function () {
         if(requestKey.readyState === 4) {
@@ -40,7 +40,7 @@ function createList(data){
         //Table Data
         const table =document.getElementById('events');
         const list = document.createElement('tr');
-        list.setAttribute('onclick',`window.location = "/TheSWAmP-2.0.3.RELEASE/html/ticket.html#"+${event.eventId}`);
+        list.setAttribute('onclick',`window.location = "/the-swamp.herokuapp.com/html/ticket.html#"+${event.eventId}`);
 
         //columns
         const name = document.createElement('td');
@@ -85,7 +85,7 @@ function addTicket(){
 
     var avail = document.getElementById('availability').value;
 
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
+    var apiUrl = 'https://the-swamp.herokuapp.com/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
         + '&price=' + price + '&avail=' + avail + '&quantity=' + quantity;
 
     requestAddTicket.open('POST', apiUrl, true);
