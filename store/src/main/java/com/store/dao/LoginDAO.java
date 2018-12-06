@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class LoginDAO {
     private JdbcTemplate jdbcTemplate;
     private static final String driverClassName = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql:// us-cdbr-iron-east-01.cleardb.net/heroku_d1de9c21ec8283e?reconnect=true";
+    private static final String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_d1de9c21ec8283e?reconnect=true";
     private static final String dbUsername = "bbc8595c09e838";
     private static final String dbPassword = "c5c39b6b";
 

@@ -38,7 +38,7 @@ function createCards(data){
             data.forEach(event => {
                 const card = document.createElement('div');
                 card.setAttribute('class', 'card');
-                card.setAttribute('onClick',`window.location = "/the-swamp.herokuapp.com/html/ticket.html#"+${event.eventId}`);
+                card.setAttribute('onClick',`window.location.replace("https://the-swamp.herokuapp.com/html/ticket.html#${event.eventId}")`);
 
                 const h1 = document.createElement('h1');
                 h1.textContent = event.title;

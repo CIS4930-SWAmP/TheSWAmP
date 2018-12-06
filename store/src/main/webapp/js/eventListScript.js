@@ -40,7 +40,7 @@ function createList(data){
         //Table Data
         const table =document.getElementById('events');
         const list = document.createElement('tr');
-        list.setAttribute('onclick',`window.location = "/the-swamp.herokuapp.com/html/ticket.html#"+${event.eventId}`);
+        list.setAttribute('onclick',`redirect(${event.eventId})`);
 
         //columns
         const name = document.createElement('td');
@@ -99,6 +99,10 @@ function addTicket(){
             }
         }
     };
+}
+
+function redirect (id) {
+    window.location.replace("https://the-swamp.herokuapp.com/html/ticket.html#" + id);
 }
 request.send();
 

@@ -99,7 +99,6 @@ purchaseRequest.onload = function() {
     }
 };
 
-var today = new Date();
 var soldRequest = new XMLHttpRequest();
 var buyerId = localStorage['id'];
 buyerId = sellerId.replace(/\D/g,'');
