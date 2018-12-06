@@ -221,7 +221,12 @@ function updateTicket(id) {
     var purchaser = document.getElementById('purchaser').value;
     console.log(purchaser);
     var updateTicket = new XMLHttpRequest();
-    var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?price='+price+'&avil=' + availability + '&ticketId='+id+ '&purch=' + purchased+ '&username=' + purchaser + '&quantity=' + quantity;
+    if(purchaser === "" || purchaser=== null){
+        var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?price='+price+'&avail=' + availability + '&ticketId='+id+ '&purch=' + purchased + '&quantity=' + quantity;
+    }else{
+        var url = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?price='+price+'&avail=' + availability + '&ticketId='+id+ '&purch=' + purchased+ '&username=' + purchaser + '&quantity=' + quantity;
+    }
+
     updateTicket.open('PUT', url, true);
     updateTicket.send();
     updateTicket.onreadystatechange = function() {
