@@ -2,7 +2,6 @@ package com.store.rest;
 
 import org.springframework.stereotype.Service;
 
-
 import com.store.dao.*;
 import com.store.model.*;
 
@@ -11,8 +10,6 @@ import java.util.Collection;
 @Service
 public class TicketService {
 
-
-    //@Autowired
     private TicketDAO ticketDAO = new TicketDAO();
 
     public boolean createTicket(int sellerId, int eventId, Double price, String availability, int quantity){
@@ -48,7 +45,6 @@ public class TicketService {
             ticket.setAvailability(availability);
         else
             ticket.setAvailability(oldTicket.getAvailability());
-
 
         return ticketDAO.updateTicket(ticket);
 

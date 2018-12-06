@@ -10,16 +10,10 @@ import org.springframework.stereotype.Controller;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.Produces;
-import java.util.Collection;
-import java.util.ArrayList;
-
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
 
 import com.store.model.*;
-import com.store.dao.*;
-import java.util.UUID;
 
 @Controller
 @Path("login")
@@ -50,8 +44,8 @@ public class LoginController extends HttpServlet{
         else {
             UUID idOne = UUID.randomUUID();
             String sessionId = idOne.toString();
-            String toReturn = "Session ID: " + sessionId + " Username: " + username + " User ID: " + user.getId() + "Is admin: ";
-            loginService.createLogin(sessionId, username, user.getId(), false);
+            String toReturn = "Session ID: " + sessionId + " Username: " + username + " User ID: " + user.getId() + "Is admin: " + user.getAdmin();
+            loginService.createLogin(sessionId, username, user.getId(), user.getAdmin());
             return Response.status(200).entity(toReturn).build();
         }
     }

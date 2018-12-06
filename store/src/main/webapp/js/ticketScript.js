@@ -54,15 +54,27 @@ requestTickets.onload = function () {
                 const avail = document.createElement('td');
                 avail.textContent = ticket.availability;
 
+                var contact = document.createElement('td');
                 //Get contact info
-                // const contact = document.createElement('td');
-                // contact.textContent = ticket.avail
-
+                var requestUser = new XMLHttpRequest();
+                requestUser.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/users/id/'+ticket.sellerId, true);
+                requestUser.send();
+                requestUser.onreadystatechange = function () {
+                    if(requestUser.readyState === 4) {
+                        if (requestUser.status === 200) {
+                            var data = JSON.parse(this.response);
+                            contact.textContent = data.phone;
+                        } else {
+                            console.log('Error');
+                        }
+                    }
+                };
 
                 //Append Columns to list
                 list.appendChild(quantity);
                 list.appendChild(price);
                 list.appendChild(avail);
+                list.appendChild(contact);
 
                 //Append list to table
                 table.appendChild(list);
@@ -73,6 +85,6 @@ requestTickets.onload = function () {
     }
 };
 
-
 request.send();
 requestTickets.send();
+

@@ -1,5 +1,4 @@
 package com.store.model;
-import java.util.UUID;
 
 public class Login {
     private String sessionId;
@@ -11,6 +10,7 @@ public class Login {
         this.sessionId = sessionId;
         this.username = username;
         this.userId = userId;
+        this.isAdmin = isAdmin;
     }
 
     public Login(String sessionId, String username, int userId) {
@@ -54,14 +54,5 @@ public class Login {
         isAdmin = admin;
     }
 
-    @Override
-    public String toString() {
-        return "Login{" +
-                "sessionId=" + sessionId +
-                ", username='" + username + '\'' +
-                ", userId='" + userId + '\'' +
-                '}';
-    }
+
 }
-
-

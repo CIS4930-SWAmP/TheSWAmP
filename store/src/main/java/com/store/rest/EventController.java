@@ -5,7 +5,6 @@ import javax.servlet.*;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import org.springframework.stereotype.Controller;
 
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -17,8 +16,6 @@ import com.store.model.*;
 @Path("events")
 public class EventController extends HttpServlet  {
 
-
-    //@Autowired
     private EventService eventService = new EventService();
 
     public void init(ServletConfig config) {
@@ -30,8 +27,7 @@ public class EventController extends HttpServlet  {
         }
     }
 
-
-    //List all items
+    //List all events
     @GET
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
@@ -40,7 +36,7 @@ public class EventController extends HttpServlet  {
         return events;
     }
 
-    //List items by keyword
+    //List events by keyword
     @GET
     @Path("/search/{keyword}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -48,7 +44,7 @@ public class EventController extends HttpServlet  {
         return eventService.getEventsByKeyword(keyword);
     }
 
-    //List item by id
+    //List event by id
     @GET
     @Path("/{eventId}")
     @Produces(MediaType.APPLICATION_JSON)

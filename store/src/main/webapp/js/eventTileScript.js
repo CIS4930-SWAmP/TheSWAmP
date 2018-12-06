@@ -1,12 +1,5 @@
 var request = new XMLHttpRequest();
 var requestKey = new XMLHttpRequest();
-var isAdmin = true;
-
-//Do login stuff
-if(isAdmin){
-    document.getElementById('sell').style.display = "none";
-    document.getElementById('newEvent').style.display = "block";
-}
 
 function searchByKeyword(keyword) {
     requestKey.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/search/' + keyword, true);
@@ -65,7 +58,7 @@ function createCards(data){
                 card.appendChild(date);
                 card.appendChild(desc);
 
-                if(isAdmin){
+                if(document.getElementById('username').innerText === 'admin'){
                     var updateBtn = document.createElement('button');
                     updateBtn.setAttribute('type', 'button');
                     updateBtn.setAttribute('class', 'btn btn-dark');
@@ -74,6 +67,10 @@ function createCards(data){
                     updateBtn.setAttribute('onclick', `updateEventModal(event,${event.eventId})`);
                     updateBtn.innerText = 'Update';
                     card.appendChild(updateBtn);
+
+                    document.getElementById('sell').style.display = "none";
+                    document.getElementById('newEvent').style.display = "block";
+
                 }
 
                 //Add Ticket Modal
@@ -88,6 +85,7 @@ function createCards(data){
 function updateEventModal(event, id){
     event.stopPropagation();
     document.getElementById('submitUpdate').setAttribute('onclick', `updateEvent(${id})`);
+    document.getElementById('delete').setAttribute('onclick', `deleteEvent(${id})`);
     var requestEvent = new XMLHttpRequest();
     requestEvent.open('GET', 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events/' + id, true);
     requestEvent.send();
@@ -109,8 +107,8 @@ function updateEventModal(event, id){
 function addTicket(){
     var requestAddTicket = new XMLHttpRequest();
 
+    var sellerId = userInfo.userId;
 
-    //Get event id from events Api
     var select = document.getElementById('events');
     var eventId = select.options[select.selectedIndex].value;
 
@@ -120,14 +118,14 @@ function addTicket(){
 
     var avail = document.getElementById('availability').value;
 
-    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + 1 + '&eventId=' + eventId
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/tickets?sellerId=' + sellerId + '&eventId=' + eventId
     + '&price=' + price + '&avail=' + avail + '&quantity=' + quantity;
 
     requestAddTicket.open('POST', apiUrl, true);
     requestAddTicket.send();
     requestAddTicket.onreadystatechange = function () {
         if(requestAddTicket.readyState === 4) {
-            if (requestAddTicket.status >= 200 && request.status < 400) {
+            if (requestAddTicket.status >= 200 && requestAddTicket.status < 400) {
                 document.getElementById('close').click();
             } else {
                 console.log('Error');
@@ -136,13 +134,7 @@ function addTicket(){
     };
 }
 
-//To implement 
-function addEvent(){
-
-}
-
 function updateEvent(id){
-
     var description  = document.getElementById('newDesc').value;
     var title = document.getElementById('newName').value;
     var date = document.getElementById('newDate').value;
@@ -162,5 +154,39 @@ function updateEvent(id){
     }
 }
 
+function addEvent(){
+    var description  = document.getElementById('desc').value;
+    var title = document.getElementById('name').value;
+    var date = document.getElementById('date').value;
 
+    var add = new XMLHttpRequest();
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?title=' + title + '&eventDate=' + date + '&description=' + description;
+    add.open('POST', apiUrl, true);
+    add.send();
+    add.onreadystatechange = function () {
+        if (add.readyState === 4) {
+            if (add.status >= 200 && add.status < 400) {
+                location.reload();
+            } else {
+                console.log('Error');
+            }
+        }
+    }
+}
+
+function deleteEvent(id){
+    var deleteEvent = new XMLHttpRequest();
+    var apiUrl = 'http://localhost:8080/TheSWAmP-2.0.3.RELEASE/store/events?eventId=' + id;
+    deleteEvent.open('DELETE', apiUrl, true);
+    deleteEvent.send();
+    deleteEvent.onreadystatechange = function () {
+        if (deleteEvent.readyState === 4) {
+            if (deleteEvent.status >= 200 && deleteEvent.status < 400) {
+                location.reload();
+            } else {
+                console.log('Error');
+            }
+        }
+    }
+}
 request.send();

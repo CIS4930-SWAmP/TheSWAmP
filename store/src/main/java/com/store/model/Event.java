@@ -1,7 +1,5 @@
 package com.store.model;
 
-import java.util.Date;
-
 public class Event {
     private int eventId;
     private String eventDate;
@@ -65,13 +63,4 @@ public class Event {
                 ", description='" + description + '\'' +
                 '}';
     }
-
-//    public String toStringShort(){
-//        return "{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", msrp=" + msrp +
-//                ", salePrice=" + salePrice +
-//                '}';
-//    }
 }

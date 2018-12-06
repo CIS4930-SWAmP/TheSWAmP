@@ -9,7 +9,6 @@ function readCookie(name){
     var cookie = userInfo.session;
     var first = name + "=";
     const split = cookie.split(";");
-    console.log('split', split);
     for(var i = 0; i <split.length; i++) {
         var c = split[i];
         while (c.charAt(0) == ' ') {

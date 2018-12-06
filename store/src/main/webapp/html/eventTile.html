@@ -32,12 +32,12 @@
 </nav>
 <body>
 <div class="row" style="margin: 1rem">
-  <div class="col-sm-4 btn-group btn-group-toggle" data-toggle="buttons">
+  <div class="col-sm-3 btn-group btn-group-toggle" data-toggle="buttons">
     <button type="button" class="btn btn-dark" onclick="window.location='eventList.html';" >List View</button>
   </div>
     <div class="col-sm-6 input-group">
-      <input type="text" id="search" class="form-control" placeholder="Search">
-      <span class="input-group-btn" >
+      <input type="text" id="search" class="form-control col-10" placeholder="Search">
+      <span class="input-group-btn col-2" >
         <button class="btn btn-default" type="button" onclick="searchByKeyword(document.getElementById('search').value)">Go!</button>
       </span>
     </div>
@@ -169,6 +169,7 @@
         </div>
       </div>
       <div class="modal-footer">
+        <button type="button" id="delete" class="btn btn-danger">Delete</button>
         <button type="button" id="closeUpdate" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" id="submitUpdate" class="btn btn-primary">Save changes</button>
       </div>
@@ -180,11 +181,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <div id="google_translate_element" style="margin-left:10px;"></div>
-
 <script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
 </script>
-
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
